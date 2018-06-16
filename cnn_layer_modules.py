@@ -300,6 +300,7 @@ class FcLayer(object):
 
             self.layer_logit        = tf.nn.dropout(x=logit_before_dropout,
                                                     keep_prob=self.dropout_keep_prob,
+                                                    seed=SEED,
                                                     name=self.variable_scope_name + '_dropout')
             self.layer_out = self.activation()
         print ('[%s] Making fc layer  ' % self.variable_scope_name)
