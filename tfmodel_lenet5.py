@@ -63,7 +63,7 @@ class Lenet5(object):
                                num_filters=6,
                                filter_stride=1,
                                filter_padding="SAME",
-                               activation_type='tanh',
+                               activation_type='relu',
                                dtype=self.dtype)
 
         self.s2_layer = PoolingLayer(layer_index=2,
@@ -79,7 +79,7 @@ class Lenet5(object):
                                    num_filters=16,
                                    filter_stride=1,
                                    filter_padding="VALID",
-                                   activation_type='tanh',
+                                   activation_type='relu',
                                    dtype=self.dtype)
 
         self.s4_layer = PoolingLayer(layer_index=4,
@@ -95,14 +95,14 @@ class Lenet5(object):
                                    num_filters=120,
                                    filter_stride=1,
                                    filter_padding="VALID",
-                                   activation_type='tanh',
+                                   activation_type='relu',
                                    dtype=self.dtype)
 
         self.f6_layer = FcLayer(layer_index=6,
                                   num_input_nodes=self.c5_layer.num_output_channels,
                                   num_output_nodes= 84,
                                   dropout_keep_prob =self.dropout_keeprate_for_fc,
-                                  activation_type='tanh',
+                                  activation_type='relu',
                                    dtype= self.dtype)
 
         self.out_layer = FcLayer(layer_index=7,
@@ -177,16 +177,20 @@ class Lenet5(object):
         self.c5_layer_out    = self.c5_layer.make_conv2dlayer( layer_input =self.s4_layer_out)
 
         c5_layer_out_shape = self.c5_layer_out.get_shape().as_list()
+        # print ('[conv_c5] layer_out_shape = %s' % c5_layer_out_shape)
 
         # data Tensor reshaping for conv_layer to fc_layer pipeline
         #
         # [batchsize, height, width, channelnum]  ==> [batchsize, height * width * channelnum]
         #  in lenet5, which is [ batchsize, 1*1*120]
-        # c5_layer_out_reshape = tf.reshape(tensor=self.c5_layer_out,
-        #                                   shape =tf.TensorShape([c5_layer_out_shape[0],
-        #                                           c5_layer_out_shape[1]*c5_layer_out_shape[2]*c5_layer_out_shape[3]]))
+        c5_layer_out_reshape = tf.reshape(tensor=self.c5_layer_out,
+                                          shape =[-1,c5_layer_out_shape[1]*c5_layer_out_shape[2]*c5_layer_out_shape[3]])
 
-        c5_layer_out_reshape = tf.contrib.layers.flatten(self.c5_layer_out)
+        # print ('[conv_c5] c5_layer_out_reshape = %s' % c5_layer_out_reshape.get_shape().as_list())
+
+        # Tflite ops does not support "tf.contrib.layers.flattern()
+        # c5_layer_out_reshape = tf.contrib.layers.flatten(self.c5_layer_out)
+
         self.f6_layer_out         = self.f6_layer.make_fclayer(layer_input = c5_layer_out_reshape)
         self.out_layer_out        = self.out_layer.make_fclayer(layer_input = self.f6_layer_out)
 
