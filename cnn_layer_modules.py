@@ -195,6 +195,7 @@ class Conv2dLayer(object):
 
             self.layer_logit_name   = self.variable_scope_name + '_logit'
             self.layer_logit = tf.nn.bias_add(conv, self.layer_bias,name=self.layer_logit_name)
+
             self.layer_out   = self.activation()
         print ('[%s] Making conv2d layer  ' % self.variable_scope_name)
         print ('[%s] (In chs, Out_chs, filter_size, stride,activation_type)=(%s,%s,%s,%s,%s)' %
@@ -307,7 +308,7 @@ class FcLayer(object):
 
 
 
-    def make_fclayer(self,layer_input):
+    def make_fclayer(self,layer_input,is_dropout=False):
 
         with tf.name_scope(self.variable_scope_name):
             logit_before_dropout    =   tf.matmul(a=layer_input,
@@ -315,10 +316,13 @@ class FcLayer(object):
 
             self.layer_logit_name   = self.variable_scope_name + '_logit'
 
-            self.layer_logit        = tf.nn.dropout(x=logit_before_dropout,
-                                                    keep_prob=self.dropout_keep_prob,
-                                                    seed=SEED,
-                                                    name=self.variable_scope_name + '_dropout')
+            if is_dropout:
+                self.layer_logit        = tf.nn.dropout(x=logit_before_dropout,
+                                                        keep_prob=self.dropout_keep_prob,
+                                                        seed=SEED,
+                                                        name=self.variable_scope_name + '_dropout')
+            else:
+                self.layer_logit        = logit_before_dropout
 
             self.layer_out = self.activation()
         print ('[%s] Making fc layer  ' % self.variable_scope_name)
