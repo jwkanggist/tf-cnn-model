@@ -50,15 +50,14 @@ def get_inception_v2_module(ch_in,
     '''
 
     if stride < 2:
-        print ('[Inceptionv2] Grid reduction is default setting')
-        return False
+        ValueError('[Inceptionv2] Grid reduction is default setting')
     else:
         print ('[Inceptionv2] Grid reduction with stride = %s' %stride)
 
     net1    = ch_in
     net2    = ch_in
     net3    = ch_in
-
+    scope = scope + '_inceptionv2'
     with tf.variable_scope(name_or_scope=scope,default_name='inceptionv2_module',values=[ch_in]):
 
         with slim.arg_scope([slim.conv2d],
@@ -178,6 +177,7 @@ def get_separable_conv2d_module(ch_in,
 
 
     net = ch_in
+    scope = scope + '_separable_conv2d'
 
     with tf.variable_scope(name_or_scope=scope,default_name='separable_conv2d',values=[ch_in]):
 
@@ -252,7 +252,7 @@ def get_linear_bottleneck_module(ch_in,
         print ('[linear_bottleneck] Grid reduction with stride = %s' %stride)
 
     net = ch_in
-
+    scope = scope + '_linear_bottleneck'
     with tf.variable_scope(name_or_scope=scope,default_name='linear_bottleneck',values=[ch_in]):
 
         with slim.arg_scope([slim.conv2d],
@@ -316,7 +316,7 @@ def get_linear_bottleneck_module(ch_in,
     return net
 
 
-def get_inverted_bottleck_module(ch_in,
+def get_inverted_bottleneck_module(ch_in,
                                 ch_out_num,
                                 expand_ch_num,
                                 model_config,
@@ -339,7 +339,7 @@ def get_inverted_bottleck_module(ch_in,
         print ('[inverted_bottleneck] Grid reduction with stride = %s' %stride)
 
     net = ch_in
-
+    scope = scope + '_inverted_bottleneck'
     with tf.variable_scope(name_or_scope=scope,default_name='inverted_bottleneck',values=[ch_in]):
 
         with slim.arg_scope([slim.conv2d],
@@ -444,7 +444,8 @@ def get_residual_module(ch_in,
         print ('[Residual] Grid reduction with stride = %s' %stride)
 
     net = ch_in
-    with tf.variable_scope(name_or_scope=scope, default_name='residual_module',values=[ch_in]):
+    scope = scope + '_residual'
+    with tf.variable_scope(name_or_scope=scope, default_name='residual',values=[ch_in]):
 
 
         with slim.arg_scope([slim.conv2d],
