@@ -17,7 +17,36 @@ from cnn_layer_modules import Conv2dLayer
 from cnn_layer_modules import PoolingLayer
 from cnn_layer_modules import FcLayer
 
+from os import getcwd
+from os import path
+from subprocess import check_output
+from datetime import datetime
 
+class ModelSavePath(object):
+
+    def __init__(self):
+        self.save_dir        = getcwd() + '/pb_and_ckpt/lenet5/'
+
+        self.filename_pbtxt  = 'tf_graph_def_lenet5.pbtxt'
+        self.filename_pb     = 'tf_graph_def_lenet5.pb'
+        self.filename_ckpt   = 'lenet5_model_variable.ckpt'
+        self.datetime_now = datetime.utcnow().strftime("%Y%m%d%H%M%S")
+        self.set_model_export_dir()
+
+
+    def set_model_export_dir(self):
+        pathname = self.save_dir
+
+        if not path.exists(pathname):
+            check_output('mkdir ' + pathname,shell=True)
+
+        pathname = pathname + '/' + 'runtrain-' + self.datetime_now + '/'
+
+        if not path.exists(pathname):
+            check_output('mkdir ' + pathname,shell=True)
+
+        self.save_dir   = pathname
+        print('> model save pathname = %s' % self.save_dir)
 
 
 class Lenet5(object):
@@ -34,7 +63,7 @@ class Lenet5(object):
                                num_filters=6,
                                filter_stride=1,
                                filter_padding="SAME",
-                               activation_type='tanh',
+                               activation_type='relu',
                                dtype=self.dtype)
 
         self.s2_layer = PoolingLayer(layer_index=2,
@@ -50,7 +79,7 @@ class Lenet5(object):
                                    num_filters=16,
                                    filter_stride=1,
                                    filter_padding="VALID",
-                                   activation_type='tanh',
+                                   activation_type='relu',
                                    dtype=self.dtype)
 
         self.s4_layer = PoolingLayer(layer_index=4,
@@ -66,21 +95,21 @@ class Lenet5(object):
                                    num_filters=120,
                                    filter_stride=1,
                                    filter_padding="VALID",
-                                   activation_type='tanh',
+                                   activation_type='relu',
                                    dtype=self.dtype)
 
         self.f6_layer = FcLayer(layer_index=6,
                                   num_input_nodes=self.c5_layer.num_output_channels,
                                   num_output_nodes= 84,
                                   dropout_keep_prob =self.dropout_keeprate_for_fc,
-                                  activation_type='tanh',
+                                  activation_type='relu',
                                    dtype= self.dtype)
 
         self.out_layer = FcLayer(layer_index=7,
                                 num_input_nodes = self.f6_layer.num_output_nodes,
                                 num_output_nodes = 10,
                                 dropout_keep_prob = self.dropout_keeprate_for_fc,
-                                activation_type = 'none',
+                                activation_type = 'linear',
                                 dtype=self.dtype)
 
         # layer outputs
@@ -97,9 +126,44 @@ class Lenet5(object):
         self.tf_optimizer   = None
 
 
+        # tf model saver
+        self.tf_model_saver = None
+        self.model_savepath_worker = ModelSavePath()
 
 
 
+    def set_model_saver(self):
+
+        self.tf_model_saver = tf.train.Saver(tf.global_variables())
+        return self.tf_model_saver
+
+
+    def save_tfgraph_pb(self,sess_graph_def):
+        tf.train.write_graph(graph_or_graph_def=sess_graph_def,
+                             logdir=self.model_savepath_worker.save_dir,
+                             name=self.model_savepath_worker.filename_pbtxt)
+
+        tf.train.write_graph(graph_or_graph_def=sess_graph_def,
+                             logdir=self.model_savepath_worker.save_dir,
+                             name=self.model_savepath_worker.filename_pb,
+                             as_text=False)
+
+        model_save_path_pb = self.model_savepath_worker.save_dir + \
+                             self.model_savepath_worker.filename_pb
+
+        model_save_path_pbtxt = self.model_savepath_worker.save_dir + \
+                                self.model_savepath_worker.filename_pbtxt
+
+        print ("TF graph_def is saved in txt at %s." % model_save_path_pbtxt)
+        print ("TF graph_def is saved in binary at %s." % model_save_path_pb)
+
+    def save_ckpt(self,sess,epoch=None):
+        save_path = self.tf_model_saver.save(sess=sess,
+                                             save_path=self.model_savepath_worker.save_dir +\
+                                                       self.model_savepath_worker.filename_ckpt,
+                                             global_step=epoch)
+
+        print("epoch - %s: tf ckpt saved: %s" % (epoch, save_path))
 
 
     def get_tf_model(self,input_nodes):
@@ -113,18 +177,24 @@ class Lenet5(object):
         self.c5_layer_out    = self.c5_layer.make_conv2dlayer( layer_input =self.s4_layer_out)
 
         c5_layer_out_shape = self.c5_layer_out.get_shape().as_list()
+        # print ('[conv_c5] layer_out_shape = %s' % c5_layer_out_shape)
 
         # data Tensor reshaping for conv_layer to fc_layer pipeline
         #
         # [batchsize, height, width, channelnum]  ==> [batchsize, height * width * channelnum]
         #  in lenet5, which is [ batchsize, 1*1*120]
-        # c5_layer_out_reshape = tf.reshape(tensor=self.c5_layer_out,
-        #                                   shape =tf.TensorShape([c5_layer_out_shape[0],
-        #                                           c5_layer_out_shape[1]*c5_layer_out_shape[2]*c5_layer_out_shape[3]]))
+        c5_layer_out_reshape = tf.reshape(tensor=self.c5_layer_out,
+                                          shape =[-1,c5_layer_out_shape[1]*c5_layer_out_shape[2]*c5_layer_out_shape[3]])
 
-        c5_layer_out_reshape = tf.contrib.layers.flatten(self.c5_layer_out)
+        # print ('[conv_c5] c5_layer_out_reshape = %s' % c5_layer_out_reshape.get_shape().as_list())
+
+        # Tflite ops does not support "tf.contrib.layers.flattern()
+        # c5_layer_out_reshape = tf.contrib.layers.flatten(self.c5_layer_out)
+
         self.f6_layer_out         = self.f6_layer.make_fclayer(layer_input = c5_layer_out_reshape)
         self.out_layer_out        = self.out_layer.make_fclayer(layer_input = self.f6_layer_out)
+
+        print ('[Lenet5] output_node_name = %s' % self.out_layer.layer_out_nodename)
 
         return self.out_layer_out
 
@@ -152,7 +222,9 @@ class Lenet5(object):
 
 
 
+    def get_output_node_name(self):
 
+        return self.out_layer.layer_out_nodename
 
 
 

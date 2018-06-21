@@ -29,6 +29,7 @@ class PoolingLayer(object):
 
         self.layer_index        = layer_index
         self.layer_name         = pooling_type + '_pool_' + str(layer_index)
+        self.layer_out_nodename = self.layer_name
 
         self.num_input_channels   = num_input_channels
         self.num_output_channels  = num_input_channels
@@ -94,6 +95,7 @@ class Conv2dLayer(object):
 
         self.layer_index        = layer_index
         self.variable_scope_name=  'conv_' + activation_type + '_' + str(self.layer_index)
+        self.layer_out_nodename = str()
 
         # conv layer config
         self.num_input_channels = num_input_channels
@@ -137,6 +139,15 @@ class Conv2dLayer(object):
                                                   initializer=tf.random_normal_initializer(mean=0.0,
                                                                                            stddev=0.1,
                                                                                            seed=SEED))
+            # the same code by tf.Variable()
+            # ---------------------------------
+            # self.filter_weight  = tf.Variable(initial_value=tf.random_normal(self.filter_shape),
+            #                                   dtype= self.dtype,
+            #                                   name = "weights")
+            # self.layer_bias     = tf.Variable(initial_value=tf.random_normal(self.bias_shape),
+            #                                   dtype= self.dtype,
+            #                                   name = "bias")
+            #-----------------------------------
 
         # print('[%s] filter shape = %s, bias shape = %s' % (self.variable_scope_name,self.filter_shape,self.bias_shape))
         # print ('[%s] Input channel num = %s'   %  (self.variable_scope_name,self.num_input_channels ))
@@ -153,20 +164,24 @@ class Conv2dLayer(object):
     def activation(self):
 
         if self.activation_type == 'relu':
+            self.layer_out_nodename = self.variable_scope_name + '_relu_out'
             self.layer_out = tf.nn.relu(features=self.layer_logit,
-                                        name=self.variable_scope_name + '_actfunc')
+                                        name=self.layer_out_nodename)
             # print('[%s] Activation function = %s ' % (self.variable_scope_name,self.activation_type))
 
         elif self.activation_type == 'softmax':
+            self.layer_out_nodename = self.variable_scope_name + '_softmax_out'
             self.layer_out  = tf.nn.softmax(logits=self.layer_logit,
-                                            name=self.variable_scope_name + '_actfunc')
+                                            name=self.layer_out_nodename)
             # print('[%s] Activation function = %s ' % (self.variable_scope_name,self.activation_type))
 
         elif self.activation_type == 'tanh':
+            self.layer_out_nodename = self.variable_scope_name + '_tanh_out'
             self.layer_out  = tf.nn.tanh(x=self.layer_logit,
-                                         name=self.variable_scope_name + '_actfunc')
+                                         name=self.layer_out_nodename)
             # print('[%s] Activation function = %s ' % (self.variable_scope_name,self.activation_type))
-        elif self.activation_type == 'none':
+        elif self.activation_type == 'linear':
+            self.layer_out_nodename = self.layer_logit_name
             self.layer_out  = self.layer_logit
             # print('[%s] Configure to no activation' % self.variable_scope_name)
 
@@ -187,7 +202,9 @@ class Conv2dLayer(object):
                                 strides=self.filter_stride_shape,
                                 padding=self.filter_padding)
 
-            self.layer_logit = tf.nn.bias_add(conv, self.layer_bias)
+            self.layer_logit_name   = self.variable_scope_name + '_logit'
+            self.layer_logit = tf.nn.bias_add(conv, self.layer_bias,name=self.layer_logit_name)
+
             self.layer_out   = self.activation()
         print ('[%s] Making conv2d layer  ' % self.variable_scope_name)
         print ('[%s] (In chs, Out_chs, filter_size, stride,activation_type)=(%s,%s,%s,%s,%s)' %
@@ -218,6 +235,7 @@ class FcLayer(object):
 
         self.layer_index        = layer_index
         self.variable_scope_name=  'fc_' + activation_type+ '_' + str(self.layer_index)
+        self.layer_out_nodename = str()
 
         # conv layer config
         self.num_input_nodes     = num_input_nodes
@@ -234,6 +252,8 @@ class FcLayer(object):
         self.layer_out          = None
         self.dtype              = dtype
         self.get_fclayer_tfvariables()
+
+
 
 
 
@@ -267,21 +287,26 @@ class FcLayer(object):
     def activation(self):
 
         if self.activation_type == 'relu':
+            self.layer_out_nodename = self.variable_scope_name + '_relu_out'
             self.layer_out = tf.nn.relu(features=self.layer_logit,
-                                        name=self.variable_scope_name + '_actfunc')
+                                        name= self.layer_out_nodename)
             # print('[%s] Activation function = %s ' % (self.variable_scope_name,self.activation_type))
 
-        # elif self.activation_type == 'softmax':
+        elif self.activation_type == 'softmax':
+            self.layer_out_nodename = self.variable_scope_name + '_softmax_out'
             self.layer_out  = tf.nn.softmax(logits=self.layer_logit,
-                                            name=self.variable_scope_name + '_actfunc')
+                                            name=self.layer_out_nodename)
             # print('[%s] Activation function = %s ' % (self.variable_scope_name,self.activation_type))
 
         elif self.activation_type == 'tanh':
+            self.layer_out_nodename = self.variable_scope_name + '_tanh_out'
             self.layer_out  = tf.nn.tanh(x=self.layer_logit,
-                                         name=self.variable_scope_name + '_actfunc')
+                                         name=self.layer_out_nodename)
             # print('[%s] Activation function = %s ' % (self.variable_scope_name,self.activation_type))
-        elif self.activation_type == 'none':
+        elif self.activation_type == 'linear':
+            self.layer_out_nodename = self.layer_logit_name
             self.layer_out = self.layer_logit
+
             # print ('[%s] Configure to no activation' % self.variable_scope_name)
 
         else:
@@ -292,15 +317,22 @@ class FcLayer(object):
 
 
 
-    def make_fclayer(self,layer_input):
+    def make_fclayer(self,layer_input,is_dropout=False):
 
         with tf.name_scope(self.variable_scope_name):
             logit_before_dropout    =   tf.matmul(a=layer_input,
                                                   b=self.layer_weight) + self.layer_bias
 
-            self.layer_logit        = tf.nn.dropout(x=logit_before_dropout,
-                                                    keep_prob=self.dropout_keep_prob,
-                                                    name=self.variable_scope_name + '_dropout')
+            self.layer_logit_name   = self.variable_scope_name + '_logit'
+
+            if is_dropout:
+                self.layer_logit        = tf.nn.dropout(x=logit_before_dropout,
+                                                        keep_prob=self.dropout_keep_prob,
+                                                        seed=SEED,
+                                                        name=self.variable_scope_name + '_dropout')
+            else:
+                self.layer_logit        = logit_before_dropout
+
             self.layer_out = self.activation()
         print ('[%s] Making fc layer  ' % self.variable_scope_name)
         print ('[%s] (In chs, Out_chs, activation_type)=(%s,%s,%s)' %
