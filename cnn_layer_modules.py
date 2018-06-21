@@ -139,6 +139,15 @@ class Conv2dLayer(object):
                                                   initializer=tf.random_normal_initializer(mean=0.0,
                                                                                            stddev=0.1,
                                                                                            seed=SEED))
+            # the same code by tf.Variable()
+            # ---------------------------------
+            # self.filter_weight  = tf.Variable(initial_value=tf.random_normal(self.filter_shape),
+            #                                   dtype= self.dtype,
+            #                                   name = "weights")
+            # self.layer_bias     = tf.Variable(initial_value=tf.random_normal(self.bias_shape),
+            #                                   dtype= self.dtype,
+            #                                   name = "bias")
+            #-----------------------------------
 
         # print('[%s] filter shape = %s, bias shape = %s' % (self.variable_scope_name,self.filter_shape,self.bias_shape))
         # print ('[%s] Input channel num = %s'   %  (self.variable_scope_name,self.num_input_channels ))
