@@ -296,7 +296,7 @@ class XceptionNetworkTest(tf.test.TestCase):
 
     """
         A test function that check 
-        the "name" and "shape" of the end point of each layer in the xception module".
+        the "name"  of the end point of each layer in the xception module".
     """
     def testEndpointNames(self):
         global_pool = True
@@ -485,15 +485,17 @@ class XceptionNetworkTest(tf.test.TestCase):
         global_pool = True
         num_classes = 10
         inputs = create_test_input(None, height, width, 3)
+
         with slim.arg_scope(xception.xception_arg_scope()):
-          logits, _ = self._xception_small(
-              inputs,
-              num_classes,
-              global_pool=global_pool,
-              scope='xception')
+            logits, _ = self._xception_small(inputs,
+                                              num_classes,
+                                              global_pool=global_pool,
+                                              scope='xception')
+
+        # does the model have the name 'xception/logits'?
         self.assertTrue(logits.op.name.startswith('xception/logits'))
-        self.assertListEqual(logits.get_shape().as_list(),
-                             [None, 1, 1, num_classes])
+        self.assertListEqual(logits.get_shape().as_list(),[None, 1, 1, num_classes])
+
         images = create_test_input(batch, height, width, 3)
 
         with self.test_session() as sess:
