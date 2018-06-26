@@ -16,10 +16,14 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from os import getcwd
+
 import numpy as np
 import six
 from datetime import datetime
+from os import getcwd
+import sys
+sys.path.insert(0,getcwd())
+
 
 import tensorflow as tf
 import tensorflow.contrib.slim as slim

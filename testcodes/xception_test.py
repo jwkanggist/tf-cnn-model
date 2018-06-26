@@ -17,9 +17,6 @@
 """Tests for xception.py.
 core reference: https://github.com/tensorflow/models/blob/master/research/deeplab/core/xception_test.py
 """
-from os import getcwd
-import sys
-sys.path.insert(0,getcwd()+'/xception_unit_test_example/')
 
 import numpy as np
 import six
