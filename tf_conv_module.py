@@ -16,12 +16,14 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import collections
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
-from tensorflow.contrib.slim.nets import resnet_utils
 
 # where we adopt the NHWC format.
+
+'''
+ /* convolutional layer modules */
+'''
 
 def get_inception_v2_module(ch_in,
                            inception_conv_chout_num,
@@ -597,6 +599,5 @@ def get_residual_module(ch_in,
         end_points[sc.name + '_out'] = net
 
     return net,end_points
-
 
 

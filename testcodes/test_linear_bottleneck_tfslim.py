@@ -20,18 +20,27 @@ from os import getcwd
 import numpy as np
 import six
 from datetime import datetime
+from os import getcwd
+import sys
+sys.path.insert(0,getcwd())
+sys.path.insert(0,getcwd()+'/testcodes')
 
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
 
 # module import
-from tfslim_module import get_inception_v2_module
-from tfslim_module import get_separable_conv2d_module
-from tfslim_module import get_linear_bottleneck_module
-from tfslim_module import get_inverted_bottleneck_module
-from tfslim_module import get_residual_module
+from tf_conv_module import get_inception_v2_module
+from tf_conv_module import get_separable_conv2d_module
+from tf_conv_module import get_linear_bottleneck_module
+from tf_conv_module import get_inverted_bottleneck_module
+from tf_conv_module import get_residual_module
 
-TEST_MODULE_NAME =  'residual'
+from test_util  import create_test_input
+
+
+TEST_MODULE_NAME =  'linear_bottleneck'
+
+
 
 
 '''
@@ -46,25 +55,6 @@ class inception_conv_chout_num(object):
         self.net1 = [96, 96, 32]
         self.net2 = [96, 128]
         self.net3 = [96]
-
-
-def create_test_input(batchsize,heightsize,widthsize,channelnum):
-
-    '''Create test input tensor by tf.placeholder
-        input : the size of 4d tensor
-        return:
-    '''
-
-    if None in [batchsize, heightsize,widthsize,channelnum]:
-        return tf.placeholder(tf.float32, [batchsize,heightsize,widthsize,channelnum])
-    else:
-        return tf.to_float(
-            np.tile(
-                np.reshape(
-                    np.reshape(np.arange(heightsize),[heightsize,1]) +
-                    np.reshape(np.arange(widthsize), [1,widthsize]),
-                    [1, heightsize,widthsize,1]),
-                    [batchsize,1,1,channelnum]))
 
 
 # class CheckModuleOps(tf.test.TestCase):
@@ -99,17 +89,16 @@ class ModuleEndpointName(object):
                                 self.name_list[7]:output_shape,
                                 self.name_list[8]:output_shape,
                                 }
-
         elif conv_type == 'separable_conv2d':
             self.name_list = ['unittest0_separable_conv2d/separable_conv2d_dwise_conv',
                               'unittest0_separable_conv2d/separable_conv2d_pwise_conv',
                               'unittest0_separable_conv2d_out']
 
             self.shape_dict = {
-                                self.name_list[0]:input_shape,
-                                self.name_list[1]:output_shape,
-                                self.name_list[2]:output_shape,
-                                }
+                self.name_list[0]: input_shape,
+                self.name_list[1]: output_shape,
+                self.name_list[2]: output_shape,
+            }
         elif conv_type == 'residual':
             self.name_list = ['unittest0_residual/residual_front_conv1x1',
                               'unittest0_residual/residual_mid_conv3x3',
@@ -117,13 +106,25 @@ class ModuleEndpointName(object):
                               'unittest0_residual/residual_shortcut_conv1x1',
                               'unittest0_residual/unittest0_residual/residual_shortcut_maxpool',
                               'unittest0_residual_out']
-            self.shape_dict= {
-                                self.name_list[0]: [input_shape[0],  input_shape[1], input_shape[2],    output_shape[3]/2.0],
-                                self.name_list[1]: [output_shape[0], output_shape[1],output_shape[2],   output_shape[3]/2.0],
+            self.shape_dict = {
+                                self.name_list[0]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3] / 2.0],
+                                self.name_list[1]: [output_shape[0], output_shape[1], output_shape[2], output_shape[3] / 2.0],
                                 self.name_list[2]: output_shape,
-                                self.name_list[3]: [input_shape[0],  input_shape[1], input_shape[2],    output_shape[3]],
+                                self.name_list[3]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3]],
                                 self.name_list[4]: output_shape,
                                 self.name_list[5]: output_shape,
+                                }
+        elif conv_type == 'linear_bottleneck':
+            self.name_list = ['unittest0_linear_bottleneck/linear_bottleneck_dwise_conv',
+                              'unittest0_linear_bottleneck/linear_bottleneck_pwise_conv',
+                              'unittest0_linear_bottleneck/linear_bottleneck_bottleneck',
+                              'unittest0_linear_bottleneck_out']
+
+            self.name_dict = {
+                                self.name_list[0]: [input_shape[0], output_shape[1], output_shape[2], input_shape[3]],
+                                self.name_list[1]: [input_shape[0], output_shape[1], output_shape[2], input_shape[3]],
+                                self.name_list[2]: output_shape,
+                                self.name_list[3]: output_shape,
                                 }
 
 
