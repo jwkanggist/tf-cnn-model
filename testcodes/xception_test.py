@@ -17,9 +17,6 @@
 """Tests for xception.py.
 core reference: https://github.com/tensorflow/models/blob/master/research/deeplab/core/xception_test.py
 """
-from os import getcwd
-import sys
-sys.path.insert(0,getcwd()+'/xception_unit_test_example/')
 
 import numpy as np
 import six
@@ -71,18 +68,18 @@ class UtilityFunctionTest(tf.test.TestCase):
         # Input image.
         x = create_test_input(1, n, n, 1)
 
-        # Convolution kernel.
+        # Convolution kernel =======================================
         dw = create_test_input(1, 3, 3, 1)
         dw = tf.reshape(dw, [3, 3, 1, 1])
 
-        #  pre-declaration of tf variables used in slim.separable_conv2d()
+        # tf variables for kernel in slim.separable_conv2d()
+        # enable reuse of tf variables in slim.separable_conv2d()
         tf.get_variable('Conv/depthwise_weights', initializer=dw)
         tf.get_variable('Conv/pointwise_weights',
                         initializer=tf.ones([1, 1, 1, 1]))
         tf.get_variable('Conv/biases', initializer=tf.zeros([1]))
-
-        # enable reuse of tf variables in slim.separable_conv2d()
         tf.get_variable_scope().reuse_variables()
+
         #-------------------------------------------------------
         # test 1: separable conv 2d of 4x4 input
         y1 = slim.separable_conv2d(x, 1, [3, 3], depth_multiplier=1,
