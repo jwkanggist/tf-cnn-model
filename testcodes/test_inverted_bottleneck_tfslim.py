@@ -20,16 +20,22 @@ from os import getcwd
 import numpy as np
 import six
 from datetime import datetime
+from os import getcwd
+import sys
+sys.path.insert(0,getcwd())
+sys.path.insert(0,getcwd()+'/testcodes')
 
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
 
 # module import
-from tfslim_module import get_inception_v2_module
-from tfslim_module import get_separable_conv2d_module
-from tfslim_module import get_linear_bottleneck_module
-from tfslim_module import get_inverted_bottleneck_module
-from tfslim_module import get_residual_module
+from tf_conv_module import get_inception_v2_module
+from tf_conv_module import get_separable_conv2d_module
+from tf_conv_module import get_linear_bottleneck_module
+from tf_conv_module import get_inverted_bottleneck_module
+from tf_conv_module import get_residual_module
+
+from test_util  import create_test_input
 
 
 TEST_MODULE_NAME =  'inverted_bottleneck'
@@ -49,25 +55,6 @@ class inception_conv_chout_num(object):
         self.net1 = [96, 96, 32]
         self.net2 = [96, 128]
         self.net3 = [96]
-
-
-def create_test_input(batchsize,heightsize,widthsize,channelnum):
-
-    '''Create test input tensor by tf.placeholder
-        input : the size of 4d tensor
-        return:
-    '''
-
-    if None in [batchsize, heightsize,widthsize,channelnum]:
-        return tf.placeholder(tf.float32, [batchsize,heightsize,widthsize,channelnum])
-    else:
-        return tf.to_float(
-            np.tile(
-                np.reshape(
-                    np.reshape(np.arange(heightsize),[heightsize,1]) +
-                    np.reshape(np.arange(widthsize), [1,widthsize]),
-                    [1, heightsize,widthsize,1]),
-                    [batchsize,1,1,channelnum]))
 
 
 # class CheckModuleOps(tf.test.TestCase):
