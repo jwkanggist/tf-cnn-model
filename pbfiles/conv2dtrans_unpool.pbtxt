@@ -28,13 +28,13 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/shape"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
@@ -60,13 +60,13 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/min"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
@@ -89,13 +89,13 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/max"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
@@ -118,9 +118,9 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/RandomUniform"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/shape"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -131,7 +131,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
@@ -155,10 +155,10 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/sub"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/max"
-  input: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/min"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/max"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -169,16 +169,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/mul"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/RandomUniform"
-  input: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/sub"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/RandomUniform"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -189,16 +189,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/mul"
-  input: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform/min"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/mul"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -209,19 +209,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/weights"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
@@ -264,10 +264,10 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/weights/Assign"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Assign"
   op: "Assign"
-  input: "unitest0/conv2dtrans_unpool/weights"
-  input: "unitest0/conv2dtrans_unpool/weights/Initializer/random_uniform"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -278,7 +278,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
@@ -296,9 +296,9 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/weights/read"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/read"
   op: "Identity"
-  input: "unitest0/conv2dtrans_unpool/weights"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
   attr {
     key: "T"
     value {
@@ -309,19 +309,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/kernel/Regularizer/l2_regularizer/scale"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
@@ -344,9 +344,9 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unitest0/conv2dtrans_unpool/weights/read"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/read"
   attr {
     key: "T"
     value {
@@ -357,16 +357,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/kernel/Regularizer/l2_regularizer"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unitest0/unitest0/conv2dtrans_unpool/kernel/Regularizer/l2_regularizer/scale"
-  input: "unitest0/unitest0/conv2dtrans_unpool/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/kernel/Regularizer/l2_regularizer/scale"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -377,13 +377,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/weights"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights"
       }
     }
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/Shape"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/Shape"
   op: "Shape"
   input: "Placeholder"
   attr {
@@ -400,7 +400,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice/stack"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice/stack"
   op: "Const"
   attr {
     key: "dtype"
@@ -424,7 +424,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice/stack_1"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice/stack_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -448,7 +448,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice/stack_2"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice/stack_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -472,12 +472,12 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice"
   op: "StridedSlice"
-  input: "unitest0/unitest0/conv2dtrans_unpool/Shape"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice/stack"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice/stack_1"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice/stack_2"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/Shape"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice/stack"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice/stack_1"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice/stack_2"
   attr {
     key: "Index"
     value {
@@ -522,7 +522,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_1/stack"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_1/stack"
   op: "Const"
   attr {
     key: "dtype"
@@ -546,7 +546,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_1/stack_1"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_1/stack_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -570,7 +570,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_1/stack_2"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_1/stack_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -594,12 +594,12 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_1"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_1"
   op: "StridedSlice"
-  input: "unitest0/unitest0/conv2dtrans_unpool/Shape"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_1/stack"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_1/stack_1"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_1/stack_2"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/Shape"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_1/stack"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_1/stack_1"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_1/stack_2"
   attr {
     key: "Index"
     value {
@@ -644,7 +644,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_2/stack"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_2/stack"
   op: "Const"
   attr {
     key: "dtype"
@@ -668,7 +668,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_2/stack_1"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_2/stack_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -692,7 +692,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_2/stack_2"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_2/stack_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -716,12 +716,12 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_2"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_2"
   op: "StridedSlice"
-  input: "unitest0/unitest0/conv2dtrans_unpool/Shape"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_2/stack"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_2/stack_1"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_2/stack_2"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/Shape"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_2/stack"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_2/stack_1"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_2/stack_2"
   attr {
     key: "Index"
     value {
@@ -766,7 +766,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/mul/y"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/mul/y"
   op: "Const"
   attr {
     key: "dtype"
@@ -787,10 +787,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/mul"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/mul"
   op: "Mul"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_1"
-  input: "unitest0/unitest0/conv2dtrans_unpool/mul/y"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_1"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/mul/y"
   attr {
     key: "T"
     value {
@@ -799,7 +799,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/add/y"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/add/y"
   op: "Const"
   attr {
     key: "dtype"
@@ -820,10 +820,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/add"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/add"
   op: "Add"
-  input: "unitest0/unitest0/conv2dtrans_unpool/mul"
-  input: "unitest0/unitest0/conv2dtrans_unpool/add/y"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/mul"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/add/y"
   attr {
     key: "T"
     value {
@@ -832,7 +832,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/mul_1/y"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/mul_1/y"
   op: "Const"
   attr {
     key: "dtype"
@@ -853,10 +853,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/mul_1"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/mul_1"
   op: "Mul"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice_2"
-  input: "unitest0/unitest0/conv2dtrans_unpool/mul_1/y"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice_2"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/mul_1/y"
   attr {
     key: "T"
     value {
@@ -865,7 +865,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/add_1/y"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/add_1/y"
   op: "Const"
   attr {
     key: "dtype"
@@ -886,10 +886,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/add_1"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/add_1"
   op: "Add"
-  input: "unitest0/unitest0/conv2dtrans_unpool/mul_1"
-  input: "unitest0/unitest0/conv2dtrans_unpool/add_1/y"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/mul_1"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/add_1/y"
   attr {
     key: "T"
     value {
@@ -898,7 +898,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/stack/3"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/stack/3"
   op: "Const"
   attr {
     key: "dtype"
@@ -919,12 +919,12 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/stack"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/stack"
   op: "Pack"
-  input: "unitest0/unitest0/conv2dtrans_unpool/strided_slice"
-  input: "unitest0/unitest0/conv2dtrans_unpool/add"
-  input: "unitest0/unitest0/conv2dtrans_unpool/add_1"
-  input: "unitest0/unitest0/conv2dtrans_unpool/stack/3"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/strided_slice"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/add"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/add_1"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/stack/3"
   attr {
     key: "N"
     value {
@@ -945,10 +945,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/conv2d_transpose"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/conv2d_transpose"
   op: "Conv2DBackpropInput"
-  input: "unitest0/unitest0/conv2dtrans_unpool/stack"
-  input: "unitest0/conv2dtrans_unpool/weights/read"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/stack"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/read"
   input: "Placeholder"
   attr {
     key: "T"
@@ -998,7 +998,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/Const"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -1022,13 +1022,13 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/beta/Initializer/zeros"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/beta"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta"
       }
     }
   }
@@ -1054,13 +1054,13 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/beta"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/beta"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta"
       }
     }
   }
@@ -1094,10 +1094,10 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/beta/Assign"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/beta"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/beta/Initializer/zeros"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -1108,7 +1108,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/beta"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta"
       }
     }
   }
@@ -1126,9 +1126,9 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/beta/read"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta/read"
   op: "Identity"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/beta"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -1139,19 +1139,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/beta"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/moving_mean"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean"
       }
     }
   }
@@ -1177,13 +1177,13 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/moving_mean"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/moving_mean"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean"
       }
     }
   }
@@ -1217,10 +1217,10 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/moving_mean/Assign"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/moving_mean"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -1231,7 +1231,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/moving_mean"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean"
       }
     }
   }
@@ -1249,9 +1249,9 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/moving_mean/read"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/moving_mean"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -1262,19 +1262,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/moving_mean"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/moving_variance/Initializer/ones"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/moving_variance"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance"
       }
     }
   }
@@ -1300,13 +1300,13 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/moving_variance"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/moving_variance"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance"
       }
     }
   }
@@ -1340,10 +1340,10 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/moving_variance/Assign"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/moving_variance"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/moving_variance/Initializer/ones"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -1354,7 +1354,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/moving_variance"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance"
       }
     }
   }
@@ -1372,9 +1372,9 @@ node {
   }
 }
 node {
-  name: "unitest0/conv2dtrans_unpool/BatchNorm/moving_variance/read"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/moving_variance"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -1385,13 +1385,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/moving_variance"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/Const_1"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -1413,7 +1413,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/Const_2"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -1435,13 +1435,13 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/FusedBatchNorm"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unitest0/unitest0/conv2dtrans_unpool/conv2d_transpose"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/Const"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/beta/read"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/Const_1"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/Const_2"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/conv2d_transpose"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/Const"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta/read"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/Const_1"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -1468,7 +1468,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/Const_3"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -1489,7 +1489,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -1510,10 +1510,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/Const_3"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -1522,10 +1522,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/moving_mean/read"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/FusedBatchNorm:1"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean/read"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -1534,10 +1534,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/mul"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -1546,10 +1546,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/moving_mean"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/mul"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -1560,7 +1560,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/moving_mean"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean"
       }
     }
   }
@@ -1572,7 +1572,7 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -1593,10 +1593,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/Const_3"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -1605,10 +1605,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/moving_variance/read"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/FusedBatchNorm:2"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance/read"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -1617,10 +1617,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -1629,10 +1629,10 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unitest0/conv2dtrans_unpool/BatchNorm/moving_variance"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -1643,7 +1643,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unitest0/conv2dtrans_unpool/BatchNorm/moving_variance"
+        s: "loc:@unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance"
       }
     }
   }
@@ -1655,9 +1655,9 @@ node {
   }
 }
 node {
-  name: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/Relu6"
+  name: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/Relu6"
   op: "Relu6"
-  input: "unitest0/unitest0/conv2dtrans_unpool/BatchNorm/FusedBatchNorm"
+  input: "unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/FusedBatchNorm"
   attr {
     key: "T"
     value {
@@ -1718,10 +1718,10 @@ node {
 node {
   name: "init"
   op: "NoOp"
-  input: "^unitest0/conv2dtrans_unpool/BatchNorm/beta/Assign"
-  input: "^unitest0/conv2dtrans_unpool/BatchNorm/moving_mean/Assign"
-  input: "^unitest0/conv2dtrans_unpool/BatchNorm/moving_variance/Assign"
-  input: "^unitest0/conv2dtrans_unpool/weights/Assign"
+  input: "^unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/beta/Assign"
+  input: "^unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_mean/Assign"
+  input: "^unitest0/conv2dtrans_unpool/conv2dtrans_unpool/BatchNorm/moving_variance/Assign"
+  input: "^unitest0/conv2dtrans_unpool/conv2dtrans_unpool/weights/Assign"
   device: "/device:CPU:0"
 }
 versions {

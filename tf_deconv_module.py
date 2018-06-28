@@ -30,8 +30,8 @@ import numpy as np
 '''
 
 def get_nearest_neighbor_unpool2d_module(inputs,
-                                       unpool_rate,
-                                       scope):
+                                         unpool_rate,
+                                         scope = None):
     '''
         the neareset neighbor unpooling implementation via
         tf.reshape and tf.concat
@@ -45,11 +45,11 @@ def get_nearest_neighbor_unpool2d_module(inputs,
 
     unpool_rate_sqr         = unpool_rate * unpool_rate
     shape_for_reshape       = [batch_size, unpool_rate, unpool_rate, channelnum]
+    end_points              = {}
 
     with tf.variable_scope(name_or_scope=scope,
-                           default_name='nn_unpool',
-                           values=[inputs]):
-        scope = 'nn_unpool'
+                           default_name='nearest_neighbor_unpool',
+                           values=[inputs]) as sc:
 
         inputs_reshaped     = tf.reshape(tensor=inputs,
                                          shape=[batch_size,height*width,1,channelnum])
@@ -88,17 +88,18 @@ def get_nearest_neighbor_unpool2d_module(inputs,
             output  = tf.concat(values= [output,block_row_mat],
                                 axis=1,
                                 name=scope + '_out')
+            end_points[sc.name + '_out'] = output
 
-    return output
-
-
-
+    return output,end_points
 
 
-def get_transconv_unpool_module(inputs,
+
+
+
+def get_transconv_unpool2d_module(inputs,
                                 unpool_rate,
                                 model_config,
-                                scope):
+                                scope = None):
 
     '''
         Learnable unpooling implemented by slim.conv2d_transpose()
@@ -125,7 +126,6 @@ def get_transconv_unpool_module(inputs,
     with tf.variable_scope(name_or_scope=scope,
                            default_name='conv2dtrans_unpool',
                            values=[inputs]) as sc:
-        scope = 'conv2dtrans_unpool'
 
         endpoint_collection = sc.original_name_scope + '_end_points'
 
@@ -159,7 +159,6 @@ def get_transconv_unpool_module(inputs,
             endpoint_collection, clear_collection=True)
 
         end_points[scope + '_out'] = net
-
 
     return net, end_points
 

@@ -27,155 +27,21 @@ sys.path.insert(0,getcwd()+'/testcodes')
 
 
 import tensorflow as tf
-import tensorflow.contrib.slim as slim
-
-# module import
-from tf_conv_module import get_inception_v2_module
-from tf_conv_module import get_separable_conv2d_module
-from tf_conv_module import get_linear_bottleneck_module
-from tf_conv_module import get_inverted_bottleneck_module
-from tf_conv_module import get_residual_module
 
 from test_util  import create_test_input
-
+from test_util  import get_module
+from test_util  import ModuleEndpointName
+from test_util  import ModelTestConfig
 TEST_MODULE_NAME =  'inceptionv2'
 
 
 '''
     code reference: https://github.com/tensorflow/models/blob/master/research/deeplab/core/xception_test.py
 '''
-
 # where we adopt the NHWC format.
-class inception_conv_chout_num(object):
-
-    def __init__(self):
-
-        self.net1 = [96, 96, 32]
-        self.net2 = [96, 128]
-        self.net3 = [96]
-
-
-
-# class CheckModuleOps(tf.test.TestCase):
-    # TBU
-
-class ModuleEndpointName(object):
-
-    def __init__(self,conv_type,input_shape,output_shape):
-
-        input_shape     = input_shape
-        output_shape    = output_shape
-        if conv_type == 'inceptionv2':
-            chnum_list = inception_conv_chout_num()
-            self.name_list = ['unittest0_inceptionv2/inceptionv2_net1_conv1x1',
-                            'unittest0_inceptionv2/inceptionv2_net1_conv3x3_1',
-                            'unittest0_inceptionv2/inceptionv2_net1_conv3x3_2',
-                             'unittest0_inceptionv2/inceptionv2_net2_conv1x1',
-                             'unittest0_inceptionv2/inceptionv2_net2_conv3x3',
-                             'unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_maxpool3x3',
-                             'unittest0_inceptionv2/inceptionv2_net3_conv1x1',
-                             'unittest0_inceptionv2/inceptionv2_concat',
-                             'unittest0_inceptionv2_out']
-
-            self.shape_dict = {
-                                self.name_list[0]:[input_shape[0],  input_shape[1], input_shape[2],     chnum_list.net1[0]],
-                                self.name_list[1]:[input_shape[0],  input_shape[1], input_shape[2],     chnum_list.net1[1]],
-                                self.name_list[2]:[output_shape[0], output_shape[1],output_shape[2],    chnum_list.net1[2]],
-                                self.name_list[3]:[input_shape[0],  input_shape[1], input_shape[2],     chnum_list.net2[0]],
-                                self.name_list[4]:[output_shape[0], output_shape[1],output_shape[2],    chnum_list.net2[1]],
-                                self.name_list[5]:[output_shape[0], output_shape[1],output_shape[2],    input_shape[3]],
-                                self.name_list[6]:[output_shape[0], output_shape[1],output_shape[2],    chnum_list.net3[0]],
-                                self.name_list[7]:output_shape,
-                                self.name_list[8]:output_shape,
-                                }
-
-
-
-
-class ModelTestConfig(object):
-
-    def __init__(self):
-
-        self.is_trainable       = True
-        self.weights_initializer = tf.contrib.layers.xavier_initializer()
-        self.weights_regularizer = tf.contrib.layers.l2_regularizer(4E-5)
-        self.biases_initializer  = slim.init_ops.zeros_initializer()
-        self.normalizer_fn      = slim.batch_norm
-
-        self.activation_fn      = tf.nn.relu6
-        self.dtype              = tf.float32
-
-        # batch_norm
-        self.batch_norm_decay   = 0.999
-        self.batch_norm_fused   = True
-
-
-        # meta parameter
-        self.depth_multiplier   = 1.0
-        self.resol_multiplier   = 1.0
-
-
 
 
 class ModuleTest(tf.test.TestCase):
-
-    def _get_module(self,ch_in,
-                         ch_out_num,
-                         model_config,
-                         layer_index=0,
-                         kernel_size=3,
-                         stride=1,
-                         conv_type=TEST_MODULE_NAME,
-                         scope=None):
-
-        scope = scope + str(layer_index) + '_' + TEST_MODULE_NAME
-        net = ch_in
-
-        inception_chout_num_list = inception_conv_chout_num()
-        with tf.name_scope(name=scope, default_name='test_module', values=[ch_in]):
-
-            if conv_type == 'residual':
-                net = get_residual_module(ch_in=net,
-                                          ch_out_num=ch_out_num,
-                                          model_config=model_config,
-                                          kernel_size=kernel_size,
-                                          stride=stride,
-                                          scope=scope)
-
-            elif conv_type == 'inceptionv2':
-
-                net = get_inception_v2_module(ch_in=net,
-                                              inception_conv_chout_num=inception_chout_num_list,
-                                              model_config=model_config,
-                                              stride=stride,
-                                              scope=scope)
-
-            elif conv_type == 'separable_conv2d':
-
-                net = get_separable_conv2d_module(ch_in=net,
-                                                  ch_out_num=ch_out_num,
-                                                  model_config=model_config,
-                                                  kernel_size=kernel_size,
-                                                  stride=stride,
-                                                  scope=scope)
-            elif conv_type == 'linear_bottleneck':
-
-                net = get_linear_bottleneck_module(ch_in=net,
-                                                   ch_out_num=ch_out_num,
-                                                   model_config=model_config,
-                                                   kernel_size=kernel_size,
-                                                   stride=stride,
-                                                   scope=scope)
-            elif conv_type == 'inverted_bottleneck':
-
-                net = get_inverted_bottleneck_module(ch_in=net,
-                                                     ch_out_num=ch_out_num,
-                                                     expand_ch_num=tf.floor(ch_in * 1.2),
-                                                     model_config=model_config,
-                                                     kernel_size=kernel_size,
-                                                     stride=stride,
-                                                     scope=scope)
-        return net
 
 
     def test_endpoint_name_shape(self):
@@ -204,15 +70,15 @@ class ModuleTest(tf.test.TestCase):
                                                 widthsize=input_shape[2],
                                                 channelnum=input_shape[3])
 
-            module_output,end_points    = self._get_module(ch_in=inputs,
-                                                          ch_out_num=ch_out_num,
-                                                          model_config=model_config,
-                                                          stride=stride,
-                                                          kernel_size=kernel_size,
-                                                          conv_type=TEST_MODULE_NAME,
-                                                          scope=scope)
+            module_output,end_points    = get_module(ch_in=inputs,
+                                                      ch_out_num=ch_out_num,
+                                                      model_config=model_config,
+                                                      stride=stride,
+                                                      kernel_size=kernel_size,
+                                                      conv_type=TEST_MODULE_NAME,
+                                                      scope=scope)
 
-        expected_output_name = 'unittest0_'+TEST_MODULE_NAME+'_out'
+        expected_output_name = 'unittest0/'+TEST_MODULE_NAME+'_out'
 
         print('------------------------------------------------')
         print ('[tfTest] run test_endpoint_name_shape()')
@@ -293,13 +159,13 @@ class ModuleTest(tf.test.TestCase):
                                    widthsize=input_shape[2],
                                    channelnum=input_shape[3])
 
-        module_output, mid_points = self._get_module(ch_in=inputs,
-                                                    ch_out_num=ch_out_num,
-                                                    model_config=model_config,
-                                                    stride=stride,
-                                                    kernel_size=kernel_size,
-                                                    conv_type=TEST_MODULE_NAME,
-                                                    scope=scope)
+        module_output, mid_points = get_module(ch_in=inputs,
+                                                ch_out_num=ch_out_num,
+                                                model_config=model_config,
+                                                stride=stride,
+                                                kernel_size=kernel_size,
+                                                conv_type=TEST_MODULE_NAME,
+                                                scope=scope)
 
 
         expected_midpoint = ModuleEndpointName(conv_type=TEST_MODULE_NAME,
@@ -347,20 +213,20 @@ class ModuleTest(tf.test.TestCase):
                                    widthsize=input_shape[2],
                                    channelnum=input_shape[3])
 
-        module_output, mid_points = self._get_module(ch_in=inputs,
-                                                    ch_out_num=ch_out_num,
-                                                    model_config=model_config,
-                                                    stride=stride,
-                                                    kernel_size=kernel_size,
-                                                    conv_type=TEST_MODULE_NAME,
-                                                    scope=scope)
+        module_output, mid_points = get_module(ch_in=inputs,
+                                                ch_out_num=ch_out_num,
+                                                model_config=model_config,
+                                                stride=stride,
+                                                kernel_size=kernel_size,
+                                                conv_type=TEST_MODULE_NAME,
+                                                scope=scope)
 
         input_shape[0] = batch_size
         expected_output_shape = [input_shape[0], expected_output_height, expected_output_width, ch_out_num]
 
 
 
-        expected_prefix = 'unittest0_'+TEST_MODULE_NAME
+        expected_prefix = 'unittest0/'+TEST_MODULE_NAME
         self.assertTrue(module_output.op.name.startswith(expected_prefix))
 
         self.assertListEqual(module_output.get_shape().as_list(),

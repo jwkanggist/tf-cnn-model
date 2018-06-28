@@ -61,9 +61,10 @@ def get_inception_v2_module(ch_in,
     net2    = ch_in
     net3    = ch_in
 
+
+
     orig_scope = scope
-    with tf.variable_scope(name_or_scope=scope,default_name='inceptionv2_module',values=[ch_in]) as sc:
-        scope = 'inceptionv2'
+    with tf.variable_scope(name_or_scope=scope,default_name='inceptionv2',values=[ch_in]) as sc:
 
         endpoint_collection = sc.original_name_scope + '_end_points'
         with slim.arg_scope([slim.conv2d,slim.max_pool2d],
@@ -201,8 +202,6 @@ def get_separable_conv2d_module(ch_in,
 
     with tf.variable_scope(name_or_scope=scope,default_name='separable_conv2d',values=[ch_in]) as sc:
 
-        scope = 'separable_conv2d'
-
         endpoint_collection = sc.original_name_scope + '_end_points'
 
         with slim.arg_scope([slim.conv2d,
@@ -286,8 +285,6 @@ def get_linear_bottleneck_module(ch_in,
 
     net = ch_in
     with tf.variable_scope(name_or_scope=scope,default_name='linear_bottleneck',values=[ch_in]) as sc:
-
-        scope = 'linear_bottleneck'
 
         endpoint_collection = sc.original_name_scope + '_end_points'
         with slim.arg_scope([slim.conv2d,
@@ -387,8 +384,6 @@ def get_inverted_bottleneck_module(ch_in,
 
     net = ch_in
     with tf.variable_scope(name_or_scope=scope,default_name='inverted_bottleneck',values=[ch_in]) as sc:
-
-        scope = 'inverted_bottleneck'
 
         endpoint_collection = sc.original_name_scope + '_end_points'
         with slim.arg_scope([slim.conv2d,
@@ -516,8 +511,6 @@ def get_residual_module(ch_in,
     net = ch_in
     with tf.variable_scope(name_or_scope=scope, default_name='residual',values=[ch_in]) as sc:
         endpoint_collection = sc.original_name_scope + '_end_points'
-
-        scope = 'residual'
 
         with slim.arg_scope([slim.conv2d,
                              slim.separable_convolution2d,

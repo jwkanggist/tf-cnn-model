@@ -28,13 +28,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/shape"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
@@ -60,13 +60,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/min"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
@@ -89,13 +89,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/max"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
@@ -118,9 +118,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/shape"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -131,7 +131,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
@@ -155,10 +155,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/sub"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/max"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/min"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/max"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -169,16 +169,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/mul"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/sub"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -189,16 +189,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/mul"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/min"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/mul"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -209,19 +209,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
@@ -264,10 +264,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Assign"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -278,7 +278,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
@@ -296,9 +296,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/read"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
   attr {
     key: "T"
     value {
@@ -309,19 +309,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Regularizer/l2_regularizer/scale"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
@@ -344,9 +344,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/read"
   attr {
     key: "T"
     value {
@@ -357,16 +357,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Regularizer/l2_regularizer"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Regularizer/l2_regularizer/scale"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Regularizer/l2_regularizer/scale"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -377,13 +377,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise/Shape"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise/Shape"
   op: "Const"
   attr {
     key: "dtype"
@@ -407,7 +407,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise/dilation_rate"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -431,10 +431,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise"
   op: "DepthwiseConv2dNative"
   input: "Placeholder"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise_weights/read"
   attr {
     key: "T"
     value {
@@ -477,7 +477,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -501,13 +501,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta/Initializer/zeros"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
       }
     }
   }
@@ -533,13 +533,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
       }
     }
   }
@@ -573,10 +573,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta/Assign"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta/Initializer/zeros"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -587,7 +587,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
       }
     }
   }
@@ -605,9 +605,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta/read"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -618,19 +618,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
       }
     }
   }
@@ -656,13 +656,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
       }
     }
   }
@@ -696,10 +696,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean/Assign"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -710,7 +710,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
       }
     }
   }
@@ -728,9 +728,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean/read"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -741,19 +741,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance/Initializer/ones"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
       }
     }
   }
@@ -779,13 +779,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
       }
     }
   }
@@ -819,10 +819,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance/Assign"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance/Initializer/ones"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -833,7 +833,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
       }
     }
   }
@@ -851,9 +851,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance/read"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -864,13 +864,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_1"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -892,7 +892,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_2"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -914,13 +914,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/FusedBatchNorm"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/depthwise"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta/read"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_1"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_2"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/depthwise"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/beta/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_1"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -947,7 +947,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_3"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -968,7 +968,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -989,10 +989,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_3"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -1001,10 +1001,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean/read"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/FusedBatchNorm:1"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -1013,10 +1013,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/mul"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -1025,10 +1025,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/mul"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -1039,7 +1039,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_mean"
       }
     }
   }
@@ -1051,7 +1051,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -1072,10 +1072,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_3"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -1084,10 +1084,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance/read"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/FusedBatchNorm:2"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -1096,10 +1096,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -1108,10 +1108,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -1122,7 +1122,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/moving_variance"
       }
     }
   }
@@ -1134,9 +1134,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Relu6"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Relu6"
   op: "Relu6"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/FusedBatchNorm"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/FusedBatchNorm"
   attr {
     key: "T"
     value {
@@ -1145,13 +1145,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/shape"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
       }
     }
   }
@@ -1177,13 +1177,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/min"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
       }
     }
   }
@@ -1206,13 +1206,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/max"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
       }
     }
   }
@@ -1235,9 +1235,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/shape"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -1248,7 +1248,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
       }
     }
   }
@@ -1272,10 +1272,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/sub"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/max"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/min"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/max"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -1286,16 +1286,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/mul"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/sub"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -1306,16 +1306,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/mul"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/min"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/mul"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -1326,19 +1326,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
       }
     }
   }
@@ -1381,10 +1381,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Assign"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -1395,7 +1395,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
       }
     }
   }
@@ -1413,9 +1413,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/read"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
   attr {
     key: "T"
     value {
@@ -1426,13 +1426,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/dilation_rate"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -1456,10 +1456,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/Conv2D"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/Conv2D"
   op: "Conv2D"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Relu6"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/weights/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_dwise_conv/BatchNorm/Relu6"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/weights/read"
   attr {
     key: "T"
     value {
@@ -1508,7 +1508,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -1532,13 +1532,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta/Initializer/zeros"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
       }
     }
   }
@@ -1564,13 +1564,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
       }
     }
   }
@@ -1604,10 +1604,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta/Assign"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta/Initializer/zeros"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -1618,7 +1618,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
       }
     }
   }
@@ -1636,9 +1636,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta/read"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -1649,19 +1649,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
       }
     }
   }
@@ -1687,13 +1687,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
       }
     }
   }
@@ -1727,10 +1727,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean/Assign"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -1741,7 +1741,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
       }
     }
   }
@@ -1759,9 +1759,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean/read"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -1772,19 +1772,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance/Initializer/ones"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
       }
     }
   }
@@ -1810,13 +1810,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
       }
     }
   }
@@ -1850,10 +1850,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance/Assign"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance/Initializer/ones"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -1864,7 +1864,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
       }
     }
   }
@@ -1882,9 +1882,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance/read"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -1895,13 +1895,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_1"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -1923,7 +1923,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_2"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -1945,13 +1945,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/FusedBatchNorm"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/Conv2D"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta/read"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_1"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_2"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/Conv2D"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/beta/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_1"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -1978,7 +1978,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_3"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -1999,7 +1999,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -2020,10 +2020,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_3"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -2032,10 +2032,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean/read"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/FusedBatchNorm:1"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -2044,10 +2044,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/mul"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -2056,10 +2056,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/mul"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -2070,7 +2070,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_mean"
       }
     }
   }
@@ -2082,7 +2082,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -2103,10 +2103,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_3"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -2115,10 +2115,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance/read"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/FusedBatchNorm:2"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -2127,10 +2127,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -2139,10 +2139,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -2153,7 +2153,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/moving_variance"
       }
     }
   }
@@ -2165,9 +2165,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Relu6"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Relu6"
   op: "Relu6"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/FusedBatchNorm"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/FusedBatchNorm"
   attr {
     key: "T"
     value {
@@ -2176,13 +2176,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/shape"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
       }
     }
   }
@@ -2208,13 +2208,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/min"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
       }
     }
   }
@@ -2237,13 +2237,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/max"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
       }
     }
   }
@@ -2266,9 +2266,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/shape"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -2279,7 +2279,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
       }
     }
   }
@@ -2303,10 +2303,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/sub"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/max"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/min"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/max"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -2317,16 +2317,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/mul"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/sub"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -2337,16 +2337,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/mul"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/min"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/mul"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -2357,19 +2357,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
       }
     }
   }
@@ -2412,10 +2412,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Assign"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -2426,7 +2426,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
       }
     }
   }
@@ -2444,9 +2444,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/read"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
   attr {
     key: "T"
     value {
@@ -2457,19 +2457,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases/Initializer/zeros"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases"
       }
     }
   }
@@ -2495,13 +2495,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases"
       }
     }
   }
@@ -2535,10 +2535,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases/Assign"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases/Initializer/zeros"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -2549,7 +2549,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases"
       }
     }
   }
@@ -2567,9 +2567,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases/read"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases"
   attr {
     key: "T"
     value {
@@ -2580,13 +2580,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases"
+        s: "loc:@unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_bottleneck/dilation_rate"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -2610,10 +2610,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_bottleneck/Conv2D"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/Conv2D"
   op: "Conv2D"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Relu6"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/weights/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_pwise_conv/BatchNorm/Relu6"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/weights/read"
   attr {
     key: "T"
     value {
@@ -2662,10 +2662,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_bottleneck/BiasAdd"
+  name: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/BiasAdd"
   op: "BiasAdd"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_bottleneck/Conv2D"
-  input: "unittest0_linear_bottleneck/linear_bottleneck_bottleneck/biases/read"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/Conv2D"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/biases/read"
   attr {
     key: "T"
     value {
@@ -2680,7 +2680,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/Const"
+  name: "unittest0/linear_bottleneck/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -2704,13 +2704,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/beta/Initializer/zeros"
+  name: "unittest0/linear_bottleneck/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/beta"
       }
     }
   }
@@ -2736,13 +2736,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/beta"
+  name: "unittest0/linear_bottleneck/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/beta"
       }
     }
   }
@@ -2776,10 +2776,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/beta/Assign"
+  name: "unittest0/linear_bottleneck/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/BatchNorm/beta"
-  input: "unittest0_linear_bottleneck/BatchNorm/beta/Initializer/zeros"
+  input: "unittest0/linear_bottleneck/BatchNorm/beta"
+  input: "unittest0/linear_bottleneck/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -2790,7 +2790,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/beta"
       }
     }
   }
@@ -2808,9 +2808,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/beta/read"
+  name: "unittest0/linear_bottleneck/BatchNorm/beta/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/BatchNorm/beta"
+  input: "unittest0/linear_bottleneck/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -2821,19 +2821,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/beta"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unittest0/linear_bottleneck/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/moving_mean"
       }
     }
   }
@@ -2859,13 +2859,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/moving_mean"
+  name: "unittest0/linear_bottleneck/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/moving_mean"
       }
     }
   }
@@ -2899,10 +2899,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/moving_mean/Assign"
+  name: "unittest0/linear_bottleneck/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/BatchNorm/moving_mean"
-  input: "unittest0_linear_bottleneck/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unittest0/linear_bottleneck/BatchNorm/moving_mean"
+  input: "unittest0/linear_bottleneck/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -2913,7 +2913,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/moving_mean"
       }
     }
   }
@@ -2931,9 +2931,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/moving_mean/read"
+  name: "unittest0/linear_bottleneck/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/BatchNorm/moving_mean"
+  input: "unittest0/linear_bottleneck/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -2944,19 +2944,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/moving_variance/Initializer/ones"
+  name: "unittest0/linear_bottleneck/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/moving_variance"
       }
     }
   }
@@ -2982,13 +2982,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/moving_variance"
+  name: "unittest0/linear_bottleneck/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/moving_variance"
       }
     }
   }
@@ -3022,10 +3022,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/moving_variance/Assign"
+  name: "unittest0/linear_bottleneck/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_linear_bottleneck/BatchNorm/moving_variance"
-  input: "unittest0_linear_bottleneck/BatchNorm/moving_variance/Initializer/ones"
+  input: "unittest0/linear_bottleneck/BatchNorm/moving_variance"
+  input: "unittest0/linear_bottleneck/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -3036,7 +3036,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/moving_variance"
       }
     }
   }
@@ -3054,9 +3054,9 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/BatchNorm/moving_variance/read"
+  name: "unittest0/linear_bottleneck/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unittest0_linear_bottleneck/BatchNorm/moving_variance"
+  input: "unittest0/linear_bottleneck/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -3067,13 +3067,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/Const_1"
+  name: "unittest0/linear_bottleneck/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -3095,7 +3095,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/Const_2"
+  name: "unittest0/linear_bottleneck/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -3117,13 +3117,13 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/FusedBatchNorm"
+  name: "unittest0/linear_bottleneck/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/linear_bottleneck_bottleneck/BiasAdd"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/Const"
-  input: "unittest0_linear_bottleneck/BatchNorm/beta/read"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/Const_1"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/Const_2"
+  input: "unittest0/linear_bottleneck/linear_bottleneck_bottleneck/BiasAdd"
+  input: "unittest0/linear_bottleneck/BatchNorm/Const"
+  input: "unittest0/linear_bottleneck/BatchNorm/beta/read"
+  input: "unittest0/linear_bottleneck/BatchNorm/Const_1"
+  input: "unittest0/linear_bottleneck/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -3150,7 +3150,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/Const_3"
+  name: "unittest0/linear_bottleneck/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -3171,7 +3171,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -3192,10 +3192,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg/sub"
+  name: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/Const_3"
+  input: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unittest0/linear_bottleneck/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -3204,10 +3204,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/BatchNorm/moving_mean/read"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/FusedBatchNorm:1"
+  input: "unittest0/linear_bottleneck/BatchNorm/moving_mean/read"
+  input: "unittest0/linear_bottleneck/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -3216,10 +3216,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg/mul"
+  name: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg/sub"
+  input: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -3228,10 +3228,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg"
+  name: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_linear_bottleneck/BatchNorm/moving_mean"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg/mul"
+  input: "unittest0/linear_bottleneck/BatchNorm/moving_mean"
+  input: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -3242,7 +3242,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/moving_mean"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/moving_mean"
       }
     }
   }
@@ -3254,7 +3254,7 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -3275,10 +3275,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/Const_3"
+  input: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unittest0/linear_bottleneck/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -3287,10 +3287,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_linear_bottleneck/BatchNorm/moving_variance/read"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/FusedBatchNorm:2"
+  input: "unittest0/linear_bottleneck/BatchNorm/moving_variance/read"
+  input: "unittest0/linear_bottleneck/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -3299,10 +3299,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -3311,10 +3311,10 @@ node {
   }
 }
 node {
-  name: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg_1"
+  name: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_linear_bottleneck/BatchNorm/moving_variance"
-  input: "unittest0_linear_bottleneck/unittest0_linear_bottleneck/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unittest0/linear_bottleneck/BatchNorm/moving_variance"
+  input: "unittest0/linear_bottleneck/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -3325,7 +3325,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_linear_bottleneck/BatchNorm/moving_variance"
+        s: "loc:@unittest0/linear_bottleneck/BatchNorm/moving_variance"
       }
     }
   }
