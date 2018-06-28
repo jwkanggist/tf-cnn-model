@@ -28,13 +28,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/shape"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
@@ -60,13 +60,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/min"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
@@ -89,13 +89,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/max"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
@@ -118,9 +118,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/shape"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -131,7 +131,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
@@ -155,10 +155,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/max"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/max"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -169,16 +169,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -189,16 +189,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/mul"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -209,19 +209,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
@@ -264,10 +264,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -278,7 +278,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
@@ -296,9 +296,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/read"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
   attr {
     key: "T"
     value {
@@ -309,19 +309,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
@@ -344,9 +344,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -357,16 +357,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv1x1/kernel/Regularizer/l2_regularizer"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv1x1/kernel/Regularizer/l2_regularizer/scale"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -377,19 +377,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases/Initializer/zeros"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases"
       }
     }
   }
@@ -415,13 +415,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases"
       }
     }
   }
@@ -455,10 +455,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases/Initializer/zeros"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -469,7 +469,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases"
       }
     }
   }
@@ -487,9 +487,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases/read"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases"
   attr {
     key: "T"
     value {
@@ -500,13 +500,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv1x1/dilation_rate"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -530,10 +530,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv1x1/Conv2D"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/Conv2D"
   op: "Conv2D"
   input: "Placeholder"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -582,10 +582,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv1x1/BiasAdd"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/BiasAdd"
   op: "BiasAdd"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv1x1/Conv2D"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv1x1/biases/read"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/Conv2D"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/biases/read"
   attr {
     key: "T"
     value {
@@ -600,7 +600,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/Const"
+  name: "unittest0/inceptionv2/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -624,13 +624,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/beta/Initializer/zeros"
+  name: "unittest0/inceptionv2/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/beta"
       }
     }
   }
@@ -656,13 +656,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/beta"
+  name: "unittest0/inceptionv2/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/beta"
       }
     }
   }
@@ -696,10 +696,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/beta/Assign"
+  name: "unittest0/inceptionv2/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/BatchNorm/beta"
-  input: "unittest0_inceptionv2/BatchNorm/beta/Initializer/zeros"
+  input: "unittest0/inceptionv2/BatchNorm/beta"
+  input: "unittest0/inceptionv2/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -710,7 +710,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/beta"
       }
     }
   }
@@ -728,9 +728,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/beta/read"
+  name: "unittest0/inceptionv2/BatchNorm/beta/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/BatchNorm/beta"
+  input: "unittest0/inceptionv2/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -741,19 +741,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unittest0/inceptionv2/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/moving_mean"
       }
     }
   }
@@ -779,13 +779,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/moving_mean"
+  name: "unittest0/inceptionv2/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/moving_mean"
       }
     }
   }
@@ -819,10 +819,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/moving_mean/Assign"
+  name: "unittest0/inceptionv2/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/BatchNorm/moving_mean"
-  input: "unittest0_inceptionv2/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unittest0/inceptionv2/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -833,7 +833,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/moving_mean"
       }
     }
   }
@@ -851,9 +851,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/moving_mean/read"
+  name: "unittest0/inceptionv2/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -864,19 +864,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/moving_variance/Initializer/ones"
+  name: "unittest0/inceptionv2/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/moving_variance"
       }
     }
   }
@@ -902,13 +902,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/moving_variance"
+  name: "unittest0/inceptionv2/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/moving_variance"
       }
     }
   }
@@ -942,10 +942,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/moving_variance/Assign"
+  name: "unittest0/inceptionv2/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/BatchNorm/moving_variance"
-  input: "unittest0_inceptionv2/BatchNorm/moving_variance/Initializer/ones"
+  input: "unittest0/inceptionv2/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -956,7 +956,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/moving_variance"
       }
     }
   }
@@ -974,9 +974,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm/moving_variance/read"
+  name: "unittest0/inceptionv2/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -987,13 +987,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/Const_1"
+  name: "unittest0/inceptionv2/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -1015,7 +1015,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/Const_2"
+  name: "unittest0/inceptionv2/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -1037,13 +1037,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/FusedBatchNorm"
+  name: "unittest0/inceptionv2/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv1x1/BiasAdd"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/Const"
-  input: "unittest0_inceptionv2/BatchNorm/beta/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/Const_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/Const_2"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv1x1/BiasAdd"
+  input: "unittest0/inceptionv2/BatchNorm/Const"
+  input: "unittest0/inceptionv2/BatchNorm/beta/read"
+  input: "unittest0/inceptionv2/BatchNorm/Const_1"
+  input: "unittest0/inceptionv2/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -1070,7 +1070,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/Const_3"
+  name: "unittest0/inceptionv2/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -1091,7 +1091,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -1112,10 +1112,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg/sub"
+  name: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/Const_3"
+  input: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unittest0/inceptionv2/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -1124,10 +1124,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_inceptionv2/BatchNorm/moving_mean/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/FusedBatchNorm:1"
+  input: "unittest0/inceptionv2/BatchNorm/moving_mean/read"
+  input: "unittest0/inceptionv2/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -1136,10 +1136,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg/mul"
+  name: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg/sub"
+  input: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -1148,10 +1148,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg"
+  name: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_inceptionv2/BatchNorm/moving_mean"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg/mul"
+  input: "unittest0/inceptionv2/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -1162,7 +1162,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/moving_mean"
       }
     }
   }
@@ -1174,7 +1174,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -1195,10 +1195,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/Const_3"
+  input: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unittest0/inceptionv2/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -1207,10 +1207,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_inceptionv2/BatchNorm/moving_variance/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/FusedBatchNorm:2"
+  input: "unittest0/inceptionv2/BatchNorm/moving_variance/read"
+  input: "unittest0/inceptionv2/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -1219,10 +1219,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -1231,10 +1231,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg_1"
+  name: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_inceptionv2/BatchNorm/moving_variance"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unittest0/inceptionv2/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -1245,7 +1245,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/BatchNorm/moving_variance"
       }
     }
   }
@@ -1257,13 +1257,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/shape"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
@@ -1289,13 +1289,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/min"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
@@ -1318,13 +1318,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/max"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
@@ -1347,9 +1347,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/shape"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -1360,7 +1360,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
@@ -1384,10 +1384,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/max"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/max"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -1398,16 +1398,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -1418,16 +1418,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/mul"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -1438,19 +1438,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
@@ -1493,10 +1493,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -1507,7 +1507,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
@@ -1525,9 +1525,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/read"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
   attr {
     key: "T"
     value {
@@ -1538,19 +1538,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/kernel/Regularizer/l2_regularizer/scale"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
@@ -1573,9 +1573,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/read"
   attr {
     key: "T"
     value {
@@ -1586,16 +1586,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/kernel/Regularizer/l2_regularizer"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/kernel/Regularizer/l2_regularizer/scale"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/kernel/Regularizer/l2_regularizer/scale"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -1606,19 +1606,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases/Initializer/zeros"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases"
       }
     }
   }
@@ -1644,13 +1644,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases"
       }
     }
   }
@@ -1684,10 +1684,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases/Initializer/zeros"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -1698,7 +1698,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases"
       }
     }
   }
@@ -1716,9 +1716,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases/read"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases"
   attr {
     key: "T"
     value {
@@ -1729,13 +1729,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/dilation_rate"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -1759,10 +1759,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/Conv2D"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/Conv2D"
   op: "Conv2D"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm/FusedBatchNorm"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/weights/read"
+  input: "unittest0/inceptionv2/BatchNorm/FusedBatchNorm"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/weights/read"
   attr {
     key: "T"
     value {
@@ -1811,10 +1811,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/BiasAdd"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/BiasAdd"
   op: "BiasAdd"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/Conv2D"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/biases/read"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/Conv2D"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/biases/read"
   attr {
     key: "T"
     value {
@@ -1829,13 +1829,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/shape"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
@@ -1861,13 +1861,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/min"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
@@ -1890,13 +1890,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/max"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
@@ -1919,9 +1919,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/shape"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -1932,7 +1932,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
@@ -1956,10 +1956,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/max"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/max"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -1970,16 +1970,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -1990,16 +1990,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/mul"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -2010,19 +2010,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
@@ -2065,10 +2065,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -2079,7 +2079,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
@@ -2097,9 +2097,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/read"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
   attr {
     key: "T"
     value {
@@ -2110,19 +2110,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/kernel/Regularizer/l2_regularizer/scale"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
@@ -2145,9 +2145,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/read"
   attr {
     key: "T"
     value {
@@ -2158,16 +2158,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/kernel/Regularizer/l2_regularizer"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/kernel/Regularizer/l2_regularizer/scale"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/kernel/Regularizer/l2_regularizer/scale"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -2178,19 +2178,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases/Initializer/zeros"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases"
       }
     }
   }
@@ -2216,13 +2216,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases"
       }
     }
   }
@@ -2256,10 +2256,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases/Initializer/zeros"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -2270,7 +2270,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases"
       }
     }
   }
@@ -2288,9 +2288,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases/read"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases"
   attr {
     key: "T"
     value {
@@ -2301,13 +2301,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/dilation_rate"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -2331,10 +2331,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/Conv2D"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/Conv2D"
   op: "Conv2D"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_1/BiasAdd"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_1/BiasAdd"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/weights/read"
   attr {
     key: "T"
     value {
@@ -2383,10 +2383,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/BiasAdd"
+  name: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/BiasAdd"
   op: "BiasAdd"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/Conv2D"
-  input: "unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/biases/read"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/Conv2D"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/biases/read"
   attr {
     key: "T"
     value {
@@ -2401,7 +2401,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/Const"
+  name: "unittest0/inceptionv2/BatchNorm_1/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -2425,13 +2425,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/beta/Initializer/zeros"
+  name: "unittest0/inceptionv2/BatchNorm_1/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/beta"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/beta"
       }
     }
   }
@@ -2457,13 +2457,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/beta"
+  name: "unittest0/inceptionv2/BatchNorm_1/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/beta"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/beta"
       }
     }
   }
@@ -2497,10 +2497,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/beta/Assign"
+  name: "unittest0/inceptionv2/BatchNorm_1/beta/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/BatchNorm_1/beta"
-  input: "unittest0_inceptionv2/BatchNorm_1/beta/Initializer/zeros"
+  input: "unittest0/inceptionv2/BatchNorm_1/beta"
+  input: "unittest0/inceptionv2/BatchNorm_1/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -2511,7 +2511,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/beta"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/beta"
       }
     }
   }
@@ -2529,9 +2529,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/beta/read"
+  name: "unittest0/inceptionv2/BatchNorm_1/beta/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/BatchNorm_1/beta"
+  input: "unittest0/inceptionv2/BatchNorm_1/beta"
   attr {
     key: "T"
     value {
@@ -2542,19 +2542,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/beta"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/moving_mean/Initializer/zeros"
+  name: "unittest0/inceptionv2/BatchNorm_1/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/moving_mean"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/moving_mean"
       }
     }
   }
@@ -2580,13 +2580,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/moving_mean"
+  name: "unittest0/inceptionv2/BatchNorm_1/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/moving_mean"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/moving_mean"
       }
     }
   }
@@ -2620,10 +2620,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/moving_mean/Assign"
+  name: "unittest0/inceptionv2/BatchNorm_1/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/BatchNorm_1/moving_mean"
-  input: "unittest0_inceptionv2/BatchNorm_1/moving_mean/Initializer/zeros"
+  input: "unittest0/inceptionv2/BatchNorm_1/moving_mean"
+  input: "unittest0/inceptionv2/BatchNorm_1/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -2634,7 +2634,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/moving_mean"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/moving_mean"
       }
     }
   }
@@ -2652,9 +2652,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/moving_mean/read"
+  name: "unittest0/inceptionv2/BatchNorm_1/moving_mean/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/BatchNorm_1/moving_mean"
+  input: "unittest0/inceptionv2/BatchNorm_1/moving_mean"
   attr {
     key: "T"
     value {
@@ -2665,19 +2665,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/moving_mean"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/moving_variance/Initializer/ones"
+  name: "unittest0/inceptionv2/BatchNorm_1/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/moving_variance"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/moving_variance"
       }
     }
   }
@@ -2703,13 +2703,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/moving_variance"
+  name: "unittest0/inceptionv2/BatchNorm_1/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/moving_variance"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/moving_variance"
       }
     }
   }
@@ -2743,10 +2743,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/moving_variance/Assign"
+  name: "unittest0/inceptionv2/BatchNorm_1/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/BatchNorm_1/moving_variance"
-  input: "unittest0_inceptionv2/BatchNorm_1/moving_variance/Initializer/ones"
+  input: "unittest0/inceptionv2/BatchNorm_1/moving_variance"
+  input: "unittest0/inceptionv2/BatchNorm_1/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -2757,7 +2757,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/moving_variance"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/moving_variance"
       }
     }
   }
@@ -2775,9 +2775,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/BatchNorm_1/moving_variance/read"
+  name: "unittest0/inceptionv2/BatchNorm_1/moving_variance/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/BatchNorm_1/moving_variance"
+  input: "unittest0/inceptionv2/BatchNorm_1/moving_variance"
   attr {
     key: "T"
     value {
@@ -2788,13 +2788,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/moving_variance"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/Const_1"
+  name: "unittest0/inceptionv2/BatchNorm_1/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -2816,7 +2816,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/Const_2"
+  name: "unittest0/inceptionv2/BatchNorm_1/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -2838,13 +2838,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/FusedBatchNorm"
+  name: "unittest0/inceptionv2/BatchNorm_1/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net1_conv3x3_2/BiasAdd"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/Const"
-  input: "unittest0_inceptionv2/BatchNorm_1/beta/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/Const_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/Const_2"
+  input: "unittest0/inceptionv2/inceptionv2_net1_conv3x3_2/BiasAdd"
+  input: "unittest0/inceptionv2/BatchNorm_1/Const"
+  input: "unittest0/inceptionv2/BatchNorm_1/beta/read"
+  input: "unittest0/inceptionv2/BatchNorm_1/Const_1"
+  input: "unittest0/inceptionv2/BatchNorm_1/Const_2"
   attr {
     key: "T"
     value {
@@ -2871,7 +2871,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/Const_3"
+  name: "unittest0/inceptionv2/BatchNorm_1/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -2892,7 +2892,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg/sub/x"
+  name: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -2913,10 +2913,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg/sub"
+  name: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg/sub/x"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/Const_3"
+  input: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg/sub/x"
+  input: "unittest0/inceptionv2/BatchNorm_1/Const_3"
   attr {
     key: "T"
     value {
@@ -2925,10 +2925,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg/sub_1"
+  name: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_inceptionv2/BatchNorm_1/moving_mean/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/FusedBatchNorm:1"
+  input: "unittest0/inceptionv2/BatchNorm_1/moving_mean/read"
+  input: "unittest0/inceptionv2/BatchNorm_1/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -2937,10 +2937,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg/mul"
+  name: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg/sub_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg/sub"
+  input: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg/sub_1"
+  input: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -2949,10 +2949,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg"
+  name: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_inceptionv2/BatchNorm_1/moving_mean"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg/mul"
+  input: "unittest0/inceptionv2/BatchNorm_1/moving_mean"
+  input: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -2963,7 +2963,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/moving_mean"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/moving_mean"
       }
     }
   }
@@ -2975,7 +2975,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub/x"
+  name: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -2996,10 +2996,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub"
+  name: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub/x"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/Const_3"
+  input: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub/x"
+  input: "unittest0/inceptionv2/BatchNorm_1/Const_3"
   attr {
     key: "T"
     value {
@@ -3008,10 +3008,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub_1"
+  name: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_inceptionv2/BatchNorm_1/moving_variance/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/FusedBatchNorm:2"
+  input: "unittest0/inceptionv2/BatchNorm_1/moving_variance/read"
+  input: "unittest0/inceptionv2/BatchNorm_1/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -3020,10 +3020,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg_1/mul"
+  name: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub"
+  input: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub_1"
+  input: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -3032,10 +3032,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg_1"
+  name: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_inceptionv2/BatchNorm_1/moving_variance"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/AssignMovingAvg_1/mul"
+  input: "unittest0/inceptionv2/BatchNorm_1/moving_variance"
+  input: "unittest0/inceptionv2/BatchNorm_1/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -3046,7 +3046,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/BatchNorm_1/moving_variance"
+        s: "loc:@unittest0/inceptionv2/BatchNorm_1/moving_variance"
       }
     }
   }
@@ -3058,13 +3058,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/shape"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
@@ -3090,13 +3090,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/min"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
@@ -3119,13 +3119,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/max"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
@@ -3148,9 +3148,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/shape"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -3161,7 +3161,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
@@ -3185,10 +3185,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/max"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/max"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -3199,16 +3199,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -3219,16 +3219,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/mul"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -3239,19 +3239,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
@@ -3294,10 +3294,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -3308,7 +3308,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
@@ -3326,9 +3326,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/read"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
   attr {
     key: "T"
     value {
@@ -3339,19 +3339,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
@@ -3374,9 +3374,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -3387,16 +3387,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/kernel/Regularizer/l2_regularizer"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/kernel/Regularizer/l2_regularizer/scale"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -3407,13 +3407,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/dilation_rate"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -3437,10 +3437,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/Conv2D"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/Conv2D"
   op: "Conv2D"
   input: "Placeholder"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -3489,7 +3489,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -3513,13 +3513,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta/Initializer/zeros"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
       }
     }
   }
@@ -3545,13 +3545,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
       }
     }
   }
@@ -3585,10 +3585,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta/Initializer/zeros"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -3599,7 +3599,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
       }
     }
   }
@@ -3617,9 +3617,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta/read"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -3630,19 +3630,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -3668,13 +3668,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -3708,10 +3708,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -3722,7 +3722,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -3740,9 +3740,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean/read"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -3753,19 +3753,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance/Initializer/ones"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -3791,13 +3791,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -3831,10 +3831,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance/Initializer/ones"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -3845,7 +3845,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -3863,9 +3863,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance/read"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -3876,13 +3876,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_1"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -3904,7 +3904,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_2"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -3926,13 +3926,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/FusedBatchNorm"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/Conv2D"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_2"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/Conv2D"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/beta/read"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_1"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -3959,7 +3959,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_3"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -3980,7 +3980,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -4001,10 +4001,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_3"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -4013,10 +4013,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/FusedBatchNorm:1"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean/read"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -4025,10 +4025,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -4037,10 +4037,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -4051,7 +4051,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -4063,7 +4063,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -4084,10 +4084,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_3"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -4096,10 +4096,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/FusedBatchNorm:2"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance/read"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -4108,10 +4108,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -4120,10 +4120,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -4134,7 +4134,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -4146,13 +4146,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/shape"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
@@ -4178,13 +4178,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/min"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
@@ -4207,13 +4207,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/max"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
@@ -4236,9 +4236,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/shape"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -4249,7 +4249,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
@@ -4273,10 +4273,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/max"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/max"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -4287,16 +4287,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -4307,16 +4307,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/mul"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -4327,19 +4327,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
@@ -4382,10 +4382,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -4396,7 +4396,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
@@ -4414,9 +4414,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/read"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
   attr {
     key: "T"
     value {
@@ -4427,19 +4427,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/kernel/Regularizer/l2_regularizer/scale"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
@@ -4462,9 +4462,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/read"
   attr {
     key: "T"
     value {
@@ -4475,16 +4475,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/kernel/Regularizer/l2_regularizer"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/kernel/Regularizer/l2_regularizer/scale"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/kernel/Regularizer/l2_regularizer/scale"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -4495,13 +4495,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/dilation_rate"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -4525,10 +4525,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/Conv2D"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/Conv2D"
   op: "Conv2D"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/FusedBatchNorm"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv1x1/BatchNorm/FusedBatchNorm"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/weights/read"
   attr {
     key: "T"
     value {
@@ -4577,7 +4577,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -4601,13 +4601,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta/Initializer/zeros"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
       }
     }
   }
@@ -4633,13 +4633,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
       }
     }
   }
@@ -4673,10 +4673,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta/Initializer/zeros"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -4687,7 +4687,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
       }
     }
   }
@@ -4705,9 +4705,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta/read"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -4718,19 +4718,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
       }
     }
   }
@@ -4756,13 +4756,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
       }
     }
   }
@@ -4796,10 +4796,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -4810,7 +4810,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
       }
     }
   }
@@ -4828,9 +4828,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean/read"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -4841,19 +4841,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance/Initializer/ones"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
       }
     }
   }
@@ -4879,13 +4879,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
       }
     }
   }
@@ -4919,10 +4919,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance/Initializer/ones"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -4933,7 +4933,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
       }
     }
   }
@@ -4951,9 +4951,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance/read"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -4964,13 +4964,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_1"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -4992,7 +4992,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_2"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -5014,13 +5014,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/FusedBatchNorm"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/Conv2D"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_2"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/Conv2D"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/beta/read"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_1"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -5047,7 +5047,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_3"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -5068,7 +5068,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -5089,10 +5089,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_3"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -5101,10 +5101,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/FusedBatchNorm:1"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean/read"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -5113,10 +5113,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -5125,10 +5125,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -5139,7 +5139,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_mean"
       }
     }
   }
@@ -5151,7 +5151,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -5172,10 +5172,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_3"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -5184,10 +5184,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/FusedBatchNorm:2"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance/read"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -5196,10 +5196,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -5208,10 +5208,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1"
+  name: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -5222,7 +5222,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/moving_variance"
       }
     }
   }
@@ -5234,7 +5234,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_maxpool3x3/MaxPool"
+  name: "unittest0/inceptionv2/inceptionv2_net3_maxpool3x3/MaxPool"
   op: "MaxPool"
   input: "Placeholder"
   attr {
@@ -5279,13 +5279,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/shape"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
@@ -5311,13 +5311,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/min"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
@@ -5340,13 +5340,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/max"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
@@ -5369,9 +5369,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/shape"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -5382,7 +5382,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
@@ -5406,10 +5406,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/max"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/max"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -5420,16 +5420,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -5440,16 +5440,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/mul"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -5460,19 +5460,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
@@ -5515,10 +5515,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -5529,7 +5529,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
@@ -5547,9 +5547,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/read"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
   attr {
     key: "T"
     value {
@@ -5560,19 +5560,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
@@ -5595,9 +5595,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -5608,16 +5608,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/kernel/Regularizer/l2_regularizer"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/kernel/Regularizer/l2_regularizer/scale"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -5628,13 +5628,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/dilation_rate"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -5658,10 +5658,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/Conv2D"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/Conv2D"
   op: "Conv2D"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_maxpool3x3/MaxPool"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/weights/read"
+  input: "unittest0/inceptionv2/inceptionv2_net3_maxpool3x3/MaxPool"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -5710,7 +5710,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -5734,13 +5734,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta/Initializer/zeros"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
       }
     }
   }
@@ -5766,13 +5766,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
       }
     }
   }
@@ -5806,10 +5806,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta/Initializer/zeros"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -5820,7 +5820,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
       }
     }
   }
@@ -5838,9 +5838,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta/read"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -5851,19 +5851,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -5889,13 +5889,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -5929,10 +5929,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -5943,7 +5943,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -5961,9 +5961,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean/read"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -5974,19 +5974,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance/Initializer/ones"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -6012,13 +6012,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -6052,10 +6052,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance/Assign"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance/Initializer/ones"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -6066,7 +6066,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -6084,9 +6084,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance/read"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -6097,13 +6097,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_1"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -6125,7 +6125,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_2"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -6147,13 +6147,13 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/FusedBatchNorm"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/Conv2D"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_2"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/Conv2D"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/beta/read"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_1"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -6180,7 +6180,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_3"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -6201,7 +6201,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -6222,10 +6222,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_3"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -6234,10 +6234,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/FusedBatchNorm:1"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean/read"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -6246,10 +6246,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -6258,10 +6258,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -6272,7 +6272,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -6284,7 +6284,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -6305,10 +6305,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_3"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -6317,10 +6317,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance/read"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/FusedBatchNorm:2"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance/read"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -6329,10 +6329,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -6341,10 +6341,10 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1"
+  name: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -6355,7 +6355,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -6367,7 +6367,7 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_concat/axis"
+  name: "unittest0/inceptionv2/inceptionv2/inceptionv2_concat/axis"
   op: "Const"
   attr {
     key: "dtype"
@@ -6388,12 +6388,12 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_concat"
+  name: "unittest0/inceptionv2/inceptionv2/inceptionv2_concat"
   op: "ConcatV2"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/BatchNorm_1/FusedBatchNorm"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/FusedBatchNorm"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/FusedBatchNorm"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_concat/axis"
+  input: "unittest0/inceptionv2/BatchNorm_1/FusedBatchNorm"
+  input: "unittest0/inceptionv2/inceptionv2_net2_conv3x3/BatchNorm/FusedBatchNorm"
+  input: "unittest0/inceptionv2/inceptionv2_net3_conv1x1/BatchNorm/FusedBatchNorm"
+  input: "unittest0/inceptionv2/inceptionv2/inceptionv2_concat/axis"
   attr {
     key: "N"
     value {
@@ -6414,9 +6414,9 @@ node {
   }
 }
 node {
-  name: "unittest0_inceptionv2/unittest0_inceptionv2/unittest0_inceptionv2_out"
+  name: "unittest0/inceptionv2/unittest0/inceptionv2_out"
   op: "Relu6"
-  input: "unittest0_inceptionv2/unittest0_inceptionv2/unittest0_inceptionv2/inceptionv2_concat"
+  input: "unittest0/inceptionv2/inceptionv2/inceptionv2_concat"
   attr {
     key: "T"
     value {

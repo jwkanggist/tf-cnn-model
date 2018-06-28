@@ -26,78 +26,23 @@ sys.path.insert(0,getcwd())
 sys.path.insert(0,getcwd()+'/testcodes')
 
 import tensorflow as tf
-import tensorflow.contrib.slim as slim
-from test_util import create_test_input
 
 # module import
-from tf_deconv_module import get_nearest_neighbor_unpool2d_module
-from tf_deconv_module import get_transconv_unpool_module
-
-
-class ModuleEndpointName(object):
-
-    def __init__(self,deconv_type,input_shape,output_shape,layer_index=0):
-
-        input_shape     = input_shape,
-        output_shape    = output_shape
-        if deconv_type == 'conv2dtrans_unpool':
-            self.name_list = ['unitest'+ str(layer_index) + '/conv2dtrans_unpool', 'conv2dtrans_unpool_out']
-
-            self.shape_dict = {self.name_list[0]:output_shape}
-
-
-
-
-class ModelTestConfig(object):
-
-    def __init__(self):
-
-        self.is_trainable       = True
-        self.unpool_weights_initializer = tf.contrib.layers.xavier_initializer()
-        self.unpool_weights_regularizer = tf.contrib.layers.l2_regularizer(4E-5)
-        self.unpool_biases_initializer  = slim.init_ops.zeros_initializer()
-        self.unpool_normalizer_fn      = slim.batch_norm
-        self.unpool_activation_fn      = tf.nn.relu6
-
-        # batch_norm
-        self.unpool_batch_norm_decay   = 0.999
-        self.unpool_batch_norm_fused   = True
+from test_util  import create_test_input
+from test_util  import get_deconv_module
+from test_util  import ModuleEndpointName
+from test_util  import ModelTestConfig
 
 
 
 class ModuleTest(tf.test.TestCase):
 
-    def _get_deconv_module(self,inputs,
-                            unpool_rate,
-                            module_type,
-                            layer_index=0,
-                            scope=None,
-                            model_config=None):
-
-        scope = scope + str(layer_index)
-        net = inputs
-
-        with tf.name_scope(name=scope,default_name='test_module',values=[inputs]):
-
-            if module_type == 'nearest_neighbor_unpool':
-                net = get_nearest_neighbor_unpool2d_module(inputs=net,
-                                                           unpool_rate=unpool_rate,
-                                                           scope =scope)
-            elif module_type == 'conv2dtrans_unpool':
-                net = get_transconv_unpool_module(inputs=net,
-                                                  unpool_rate=unpool_rate,
-                                                  model_config=model_config,
-                                                  scope=scope)
-        return net
-
-
-
-
 
     def test_nearest_neighbor_unpool(self):
 
+        scope               = 'unittest'
         TEST_MODULE_NAME    = 'nearest_neighbor_unpool'
-        scope = 'unitest'
+
 
         input_width     = 2
         input_height    = 2
@@ -127,17 +72,18 @@ class ModuleTest(tf.test.TestCase):
         y_unpool3_test1_expected  = tf.reshape(y_unpool3_test1_expected,
                                                shape=[1,input_height*3,input_width*3,1])
 
-        y_unpool2_test1  =  self._get_deconv_module(inputs=x,
-                                                    unpool_rate=2,
-                                                    module_type=TEST_MODULE_NAME,
-                                                    layer_index=0,
-                                                    scope=scope)
 
-        y_unpool3_test1 = self._get_deconv_module(inputs=x,
-                                                  unpool_rate=3,
-                                                  module_type=TEST_MODULE_NAME,
-                                                  layer_index=1,
-                                                  scope=scope)
+        y_unpool2_test1,end_point_test1  =  get_deconv_module(inputs=x,
+                                                                unpool_rate=2,
+                                                                module_type=TEST_MODULE_NAME,
+                                                                layer_index=0,
+                                                                scope=scope)
+
+        y_unpool3_test1,end_point_test1 = get_deconv_module(inputs=x,
+                                                              unpool_rate=3,
+                                                              module_type=TEST_MODULE_NAME,
+                                                              layer_index=1,
+                                                              scope=scope)
 
         with self.test_session() as sess:
             print('--------------------------------------------')
@@ -183,13 +129,13 @@ class ModuleTest(tf.test.TestCase):
                                        channelnum= input_shape[3])
 
 
-            y_unpool2, midpoint=  self._get_deconv_module(inputs=inputs,
-                                                          unpool_rate=unpool_rate,
-                                                          module_type=TEST_MODULE_NAME,
-                                                          model_config=model_config,
-                                                          scope=scope)
+            y_unpool2, midpoint=  get_deconv_module(inputs=inputs,
+                                                      unpool_rate=unpool_rate,
+                                                      module_type=TEST_MODULE_NAME,
+                                                      model_config=model_config,
+                                                      scope=scope)
 
-            expected_midpoint = ModuleEndpointName(deconv_type=TEST_MODULE_NAME,
+            expected_midpoint = ModuleEndpointName(conv_type=TEST_MODULE_NAME,
                                                    input_shape=input_shape,
                                                    output_shape=expected_output_shape)
 
@@ -232,11 +178,11 @@ class ModuleTest(tf.test.TestCase):
                                        widthsize =input_shape[2],
                                        channelnum= input_shape[3])
 
-            module_output, midpoint=   self._get_deconv_module(inputs=inputs,
-                                                               unpool_rate=unpool_rate,
-                                                               module_type=TEST_MODULE_NAME,
-                                                               model_config=model_config,
-                                                               scope=scope)
+            module_output, midpoint=   get_deconv_module(inputs=inputs,
+                                                           unpool_rate=unpool_rate,
+                                                           module_type=TEST_MODULE_NAME,
+                                                           model_config=model_config,
+                                                           scope=scope)
 
             expected_prefix = scope
             self.assertTrue(module_output.op.name.startswith(expected_prefix))
