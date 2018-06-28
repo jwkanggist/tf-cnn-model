@@ -26,8 +26,6 @@ sys.path.insert(0,getcwd())
 sys.path.insert(0,getcwd()+'/testcodes')
 
 import tensorflow as tf
-import tensorflow.contrib.slim as slim
-from test_util import create_test_input
 
 # module import
 from test_util  import create_test_input
