@@ -28,13 +28,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/shape"
+  name: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
@@ -60,13 +60,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/min"
+  name: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
@@ -89,13 +89,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/max"
+  name: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
@@ -118,9 +118,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/shape"
+  input: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -131,7 +131,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
@@ -155,10 +155,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/sub"
+  name: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/max"
-  input: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/max"
+  input: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -169,16 +169,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/mul"
+  name: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/sub"
+  input: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -189,16 +189,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform"
+  name: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/mul"
-  input: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/mul"
+  input: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -209,19 +209,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/weights"
+  name: "unittest0/residual/residual_front_conv1x1/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
@@ -264,10 +264,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/weights/Assign"
+  name: "unittest0/residual/residual_front_conv1x1/weights/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_front_conv1x1/weights"
-  input: "unittest0_residual/residual_front_conv1x1/weights/Initializer/random_uniform"
+  input: "unittest0/residual/residual_front_conv1x1/weights"
+  input: "unittest0/residual/residual_front_conv1x1/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -278,7 +278,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
@@ -296,9 +296,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/weights/read"
+  name: "unittest0/residual/residual_front_conv1x1/weights/read"
   op: "Identity"
-  input: "unittest0_residual/residual_front_conv1x1/weights"
+  input: "unittest0/residual/residual_front_conv1x1/weights"
   attr {
     key: "T"
     value {
@@ -309,19 +309,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  name: "unittest0/residual/residual_front_conv1x1/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
@@ -344,9 +344,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/residual/residual_front_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_residual/residual_front_conv1x1/weights/read"
+  input: "unittest0/residual/residual_front_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -357,16 +357,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/kernel/Regularizer/l2_regularizer"
+  name: "unittest0/residual/residual_front_conv1x1/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/kernel/Regularizer/l2_regularizer/scale"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/residual/residual_front_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  input: "unittest0/residual/residual_front_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -377,13 +377,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/dilation_rate"
+  name: "unittest0/residual/residual_front_conv1x1/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -407,10 +407,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/Conv2D"
+  name: "unittest0/residual/residual_front_conv1x1/Conv2D"
   op: "Conv2D"
   input: "Placeholder"
-  input: "unittest0_residual/residual_front_conv1x1/weights/read"
+  input: "unittest0/residual/residual_front_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -459,7 +459,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Const"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -483,13 +483,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/beta/Initializer/zeros"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/beta"
       }
     }
   }
@@ -515,13 +515,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/beta"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/beta"
       }
     }
   }
@@ -555,10 +555,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/beta/Assign"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/beta"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/beta/Initializer/zeros"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/beta"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -569,7 +569,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/beta"
       }
     }
   }
@@ -587,9 +587,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/beta/read"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/beta/read"
   op: "Identity"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/beta"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -600,19 +600,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/beta"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -638,13 +638,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -678,10 +678,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean/Assign"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -692,7 +692,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -710,9 +710,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean/read"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -723,19 +723,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance/Initializer/ones"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -761,13 +761,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -801,10 +801,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance/Assign"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance/Initializer/ones"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -815,7 +815,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -833,9 +833,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance/read"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -846,13 +846,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Const_1"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -874,7 +874,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Const_2"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -896,13 +896,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/FusedBatchNorm"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/Conv2D"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Const"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/beta/read"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Const_1"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Const_2"
+  input: "unittest0/residual/residual_front_conv1x1/Conv2D"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/Const"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/beta/read"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/Const_1"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -929,7 +929,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Const_3"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -950,7 +950,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -971,10 +971,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Const_3"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -983,10 +983,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean/read"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/FusedBatchNorm:1"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean/read"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -995,10 +995,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/mul"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -1007,10 +1007,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/mul"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -1021,7 +1021,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/moving_mean"
       }
     }
   }
@@ -1033,7 +1033,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -1054,10 +1054,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Const_3"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -1066,10 +1066,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance/read"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/FusedBatchNorm:2"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance/read"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -1078,10 +1078,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -1090,10 +1090,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -1104,7 +1104,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_front_conv1x1/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/residual_front_conv1x1/BatchNorm/moving_variance"
       }
     }
   }
@@ -1116,9 +1116,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Relu6"
+  name: "unittest0/residual/residual_front_conv1x1/BatchNorm/Relu6"
   op: "Relu6"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/FusedBatchNorm"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/FusedBatchNorm"
   attr {
     key: "T"
     value {
@@ -1127,13 +1127,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/shape"
+  name: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
@@ -1159,13 +1159,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/min"
+  name: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
@@ -1188,13 +1188,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/max"
+  name: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
@@ -1217,9 +1217,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/shape"
+  input: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -1230,7 +1230,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
@@ -1254,10 +1254,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/sub"
+  name: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/max"
-  input: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/min"
+  input: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/max"
+  input: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -1268,16 +1268,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/mul"
+  name: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/sub"
+  input: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -1288,16 +1288,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform"
+  name: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/mul"
-  input: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform/min"
+  input: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/mul"
+  input: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -1308,19 +1308,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/weights"
+  name: "unittest0/residual/residual_mid_conv3x3/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
@@ -1363,10 +1363,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/weights/Assign"
+  name: "unittest0/residual/residual_mid_conv3x3/weights/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_mid_conv3x3/weights"
-  input: "unittest0_residual/residual_mid_conv3x3/weights/Initializer/random_uniform"
+  input: "unittest0/residual/residual_mid_conv3x3/weights"
+  input: "unittest0/residual/residual_mid_conv3x3/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -1377,7 +1377,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
@@ -1395,9 +1395,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/weights/read"
+  name: "unittest0/residual/residual_mid_conv3x3/weights/read"
   op: "Identity"
-  input: "unittest0_residual/residual_mid_conv3x3/weights"
+  input: "unittest0/residual/residual_mid_conv3x3/weights"
   attr {
     key: "T"
     value {
@@ -1408,19 +1408,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/kernel/Regularizer/l2_regularizer/scale"
+  name: "unittest0/residual/residual_mid_conv3x3/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
@@ -1443,9 +1443,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/residual/residual_mid_conv3x3/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_residual/residual_mid_conv3x3/weights/read"
+  input: "unittest0/residual/residual_mid_conv3x3/weights/read"
   attr {
     key: "T"
     value {
@@ -1456,16 +1456,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/kernel/Regularizer/l2_regularizer"
+  name: "unittest0/residual/residual_mid_conv3x3/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/kernel/Regularizer/l2_regularizer/scale"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/residual/residual_mid_conv3x3/kernel/Regularizer/l2_regularizer/scale"
+  input: "unittest0/residual/residual_mid_conv3x3/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -1476,13 +1476,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/weights"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/dilation_rate"
+  name: "unittest0/residual/residual_mid_conv3x3/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -1506,10 +1506,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/Conv2D"
+  name: "unittest0/residual/residual_mid_conv3x3/Conv2D"
   op: "Conv2D"
-  input: "unittest0_residual/unittest0_residual/residual_front_conv1x1/BatchNorm/Relu6"
-  input: "unittest0_residual/residual_mid_conv3x3/weights/read"
+  input: "unittest0/residual/residual_front_conv1x1/BatchNorm/Relu6"
+  input: "unittest0/residual/residual_mid_conv3x3/weights/read"
   attr {
     key: "T"
     value {
@@ -1558,7 +1558,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Const"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -1582,13 +1582,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/beta/Initializer/zeros"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/beta"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/beta"
       }
     }
   }
@@ -1614,13 +1614,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/beta"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/beta"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/beta"
       }
     }
   }
@@ -1654,10 +1654,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/beta/Assign"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/beta"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/beta/Initializer/zeros"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/beta"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -1668,7 +1668,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/beta"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/beta"
       }
     }
   }
@@ -1686,9 +1686,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/beta/read"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/beta/read"
   op: "Identity"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/beta"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -1699,19 +1699,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/beta"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean"
       }
     }
   }
@@ -1737,13 +1737,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean"
       }
     }
   }
@@ -1777,10 +1777,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean/Assign"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -1791,7 +1791,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean"
       }
     }
   }
@@ -1809,9 +1809,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean/read"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -1822,19 +1822,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance/Initializer/ones"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance"
       }
     }
   }
@@ -1860,13 +1860,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance"
       }
     }
   }
@@ -1900,10 +1900,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance/Assign"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance/Initializer/ones"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -1914,7 +1914,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance"
       }
     }
   }
@@ -1932,9 +1932,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance/read"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -1945,13 +1945,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Const_1"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -1973,7 +1973,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Const_2"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -1995,13 +1995,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/FusedBatchNorm"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/Conv2D"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Const"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/beta/read"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Const_1"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Const_2"
+  input: "unittest0/residual/residual_mid_conv3x3/Conv2D"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Const"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/beta/read"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Const_1"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -2028,7 +2028,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Const_3"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -2049,7 +2049,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -2070,10 +2070,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Const_3"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -2082,10 +2082,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean/read"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/FusedBatchNorm:1"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean/read"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -2094,10 +2094,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/mul"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -2106,10 +2106,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/mul"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -2120,7 +2120,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_mean"
       }
     }
   }
@@ -2132,7 +2132,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -2153,10 +2153,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Const_3"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -2165,10 +2165,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance/read"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/FusedBatchNorm:2"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance/read"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -2177,10 +2177,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -2189,10 +2189,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -2203,7 +2203,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_mid_conv3x3/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/residual_mid_conv3x3/BatchNorm/moving_variance"
       }
     }
   }
@@ -2215,9 +2215,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Relu6"
+  name: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Relu6"
   op: "Relu6"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/FusedBatchNorm"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/FusedBatchNorm"
   attr {
     key: "T"
     value {
@@ -2226,13 +2226,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/shape"
+  name: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
@@ -2258,13 +2258,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/min"
+  name: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
@@ -2287,13 +2287,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/max"
+  name: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
@@ -2316,9 +2316,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/shape"
+  input: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -2329,7 +2329,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
@@ -2353,10 +2353,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/sub"
+  name: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/max"
-  input: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/max"
+  input: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -2367,16 +2367,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/mul"
+  name: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/sub"
+  input: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -2387,16 +2387,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform"
+  name: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/mul"
-  input: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/mul"
+  input: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -2407,19 +2407,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/weights"
+  name: "unittest0/residual/residual_rear_conv1x1/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
@@ -2462,10 +2462,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/weights/Assign"
+  name: "unittest0/residual/residual_rear_conv1x1/weights/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_rear_conv1x1/weights"
-  input: "unittest0_residual/residual_rear_conv1x1/weights/Initializer/random_uniform"
+  input: "unittest0/residual/residual_rear_conv1x1/weights"
+  input: "unittest0/residual/residual_rear_conv1x1/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -2476,7 +2476,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
@@ -2494,9 +2494,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/weights/read"
+  name: "unittest0/residual/residual_rear_conv1x1/weights/read"
   op: "Identity"
-  input: "unittest0_residual/residual_rear_conv1x1/weights"
+  input: "unittest0/residual/residual_rear_conv1x1/weights"
   attr {
     key: "T"
     value {
@@ -2507,19 +2507,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_rear_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  name: "unittest0/residual/residual_rear_conv1x1/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
@@ -2542,9 +2542,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_rear_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/residual/residual_rear_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_residual/residual_rear_conv1x1/weights/read"
+  input: "unittest0/residual/residual_rear_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -2555,16 +2555,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_rear_conv1x1/kernel/Regularizer/l2_regularizer"
+  name: "unittest0/residual/residual_rear_conv1x1/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_residual/unittest0_residual/residual_rear_conv1x1/kernel/Regularizer/l2_regularizer/scale"
-  input: "unittest0_residual/unittest0_residual/residual_rear_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/residual/residual_rear_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  input: "unittest0/residual/residual_rear_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -2575,19 +2575,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/biases/Initializer/zeros"
+  name: "unittest0/residual/residual_rear_conv1x1/biases/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/biases"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/biases"
       }
     }
   }
@@ -2613,13 +2613,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/biases"
+  name: "unittest0/residual/residual_rear_conv1x1/biases"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/biases"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/biases"
       }
     }
   }
@@ -2653,10 +2653,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/biases/Assign"
+  name: "unittest0/residual/residual_rear_conv1x1/biases/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_rear_conv1x1/biases"
-  input: "unittest0_residual/residual_rear_conv1x1/biases/Initializer/zeros"
+  input: "unittest0/residual/residual_rear_conv1x1/biases"
+  input: "unittest0/residual/residual_rear_conv1x1/biases/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -2667,7 +2667,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/biases"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/biases"
       }
     }
   }
@@ -2685,9 +2685,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_rear_conv1x1/biases/read"
+  name: "unittest0/residual/residual_rear_conv1x1/biases/read"
   op: "Identity"
-  input: "unittest0_residual/residual_rear_conv1x1/biases"
+  input: "unittest0/residual/residual_rear_conv1x1/biases"
   attr {
     key: "T"
     value {
@@ -2698,13 +2698,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_rear_conv1x1/biases"
+        s: "loc:@unittest0/residual/residual_rear_conv1x1/biases"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_rear_conv1x1/dilation_rate"
+  name: "unittest0/residual/residual_rear_conv1x1/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -2728,10 +2728,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_rear_conv1x1/Conv2D"
+  name: "unittest0/residual/residual_rear_conv1x1/Conv2D"
   op: "Conv2D"
-  input: "unittest0_residual/unittest0_residual/residual_mid_conv3x3/BatchNorm/Relu6"
-  input: "unittest0_residual/residual_rear_conv1x1/weights/read"
+  input: "unittest0/residual/residual_mid_conv3x3/BatchNorm/Relu6"
+  input: "unittest0/residual/residual_rear_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -2780,10 +2780,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_rear_conv1x1/BiasAdd"
+  name: "unittest0/residual/residual_rear_conv1x1/BiasAdd"
   op: "BiasAdd"
-  input: "unittest0_residual/unittest0_residual/residual_rear_conv1x1/Conv2D"
-  input: "unittest0_residual/residual_rear_conv1x1/biases/read"
+  input: "unittest0/residual/residual_rear_conv1x1/Conv2D"
+  input: "unittest0/residual/residual_rear_conv1x1/biases/read"
   attr {
     key: "T"
     value {
@@ -2798,7 +2798,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/Const"
+  name: "unittest0/residual/BatchNorm/Const"
   op: "Const"
   attr {
     key: "dtype"
@@ -2822,13 +2822,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/beta/Initializer/zeros"
+  name: "unittest0/residual/BatchNorm/beta/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/beta"
+        s: "loc:@unittest0/residual/BatchNorm/beta"
       }
     }
   }
@@ -2854,13 +2854,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/beta"
+  name: "unittest0/residual/BatchNorm/beta"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/beta"
+        s: "loc:@unittest0/residual/BatchNorm/beta"
       }
     }
   }
@@ -2894,10 +2894,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/beta/Assign"
+  name: "unittest0/residual/BatchNorm/beta/Assign"
   op: "Assign"
-  input: "unittest0_residual/BatchNorm/beta"
-  input: "unittest0_residual/BatchNorm/beta/Initializer/zeros"
+  input: "unittest0/residual/BatchNorm/beta"
+  input: "unittest0/residual/BatchNorm/beta/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -2908,7 +2908,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/beta"
+        s: "loc:@unittest0/residual/BatchNorm/beta"
       }
     }
   }
@@ -2926,9 +2926,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/beta/read"
+  name: "unittest0/residual/BatchNorm/beta/read"
   op: "Identity"
-  input: "unittest0_residual/BatchNorm/beta"
+  input: "unittest0/residual/BatchNorm/beta"
   attr {
     key: "T"
     value {
@@ -2939,19 +2939,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/beta"
+        s: "loc:@unittest0/residual/BatchNorm/beta"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/moving_mean/Initializer/zeros"
+  name: "unittest0/residual/BatchNorm/moving_mean/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/BatchNorm/moving_mean"
       }
     }
   }
@@ -2977,13 +2977,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/moving_mean"
+  name: "unittest0/residual/BatchNorm/moving_mean"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/BatchNorm/moving_mean"
       }
     }
   }
@@ -3017,10 +3017,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/moving_mean/Assign"
+  name: "unittest0/residual/BatchNorm/moving_mean/Assign"
   op: "Assign"
-  input: "unittest0_residual/BatchNorm/moving_mean"
-  input: "unittest0_residual/BatchNorm/moving_mean/Initializer/zeros"
+  input: "unittest0/residual/BatchNorm/moving_mean"
+  input: "unittest0/residual/BatchNorm/moving_mean/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -3031,7 +3031,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/BatchNorm/moving_mean"
       }
     }
   }
@@ -3049,9 +3049,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/moving_mean/read"
+  name: "unittest0/residual/BatchNorm/moving_mean/read"
   op: "Identity"
-  input: "unittest0_residual/BatchNorm/moving_mean"
+  input: "unittest0/residual/BatchNorm/moving_mean"
   attr {
     key: "T"
     value {
@@ -3062,19 +3062,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/BatchNorm/moving_mean"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/moving_variance/Initializer/ones"
+  name: "unittest0/residual/BatchNorm/moving_variance/Initializer/ones"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/BatchNorm/moving_variance"
       }
     }
   }
@@ -3100,13 +3100,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/moving_variance"
+  name: "unittest0/residual/BatchNorm/moving_variance"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/BatchNorm/moving_variance"
       }
     }
   }
@@ -3140,10 +3140,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/moving_variance/Assign"
+  name: "unittest0/residual/BatchNorm/moving_variance/Assign"
   op: "Assign"
-  input: "unittest0_residual/BatchNorm/moving_variance"
-  input: "unittest0_residual/BatchNorm/moving_variance/Initializer/ones"
+  input: "unittest0/residual/BatchNorm/moving_variance"
+  input: "unittest0/residual/BatchNorm/moving_variance/Initializer/ones"
   attr {
     key: "T"
     value {
@@ -3154,7 +3154,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/BatchNorm/moving_variance"
       }
     }
   }
@@ -3172,9 +3172,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/BatchNorm/moving_variance/read"
+  name: "unittest0/residual/BatchNorm/moving_variance/read"
   op: "Identity"
-  input: "unittest0_residual/BatchNorm/moving_variance"
+  input: "unittest0/residual/BatchNorm/moving_variance"
   attr {
     key: "T"
     value {
@@ -3185,13 +3185,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/BatchNorm/moving_variance"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/Const_1"
+  name: "unittest0/residual/BatchNorm/Const_1"
   op: "Const"
   attr {
     key: "dtype"
@@ -3213,7 +3213,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/Const_2"
+  name: "unittest0/residual/BatchNorm/Const_2"
   op: "Const"
   attr {
     key: "dtype"
@@ -3235,13 +3235,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/FusedBatchNorm"
+  name: "unittest0/residual/BatchNorm/FusedBatchNorm"
   op: "FusedBatchNorm"
-  input: "unittest0_residual/unittest0_residual/residual_rear_conv1x1/BiasAdd"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/Const"
-  input: "unittest0_residual/BatchNorm/beta/read"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/Const_1"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/Const_2"
+  input: "unittest0/residual/residual_rear_conv1x1/BiasAdd"
+  input: "unittest0/residual/BatchNorm/Const"
+  input: "unittest0/residual/BatchNorm/beta/read"
+  input: "unittest0/residual/BatchNorm/Const_1"
+  input: "unittest0/residual/BatchNorm/Const_2"
   attr {
     key: "T"
     value {
@@ -3268,7 +3268,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/Const_3"
+  name: "unittest0/residual/BatchNorm/Const_3"
   op: "Const"
   attr {
     key: "dtype"
@@ -3289,7 +3289,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg/sub/x"
+  name: "unittest0/residual/BatchNorm/AssignMovingAvg/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -3310,10 +3310,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg/sub"
+  name: "unittest0/residual/BatchNorm/AssignMovingAvg/sub"
   op: "Sub"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg/sub/x"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/Const_3"
+  input: "unittest0/residual/BatchNorm/AssignMovingAvg/sub/x"
+  input: "unittest0/residual/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -3322,10 +3322,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg/sub_1"
+  name: "unittest0/residual/BatchNorm/AssignMovingAvg/sub_1"
   op: "Sub"
-  input: "unittest0_residual/BatchNorm/moving_mean/read"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/FusedBatchNorm:1"
+  input: "unittest0/residual/BatchNorm/moving_mean/read"
+  input: "unittest0/residual/BatchNorm/FusedBatchNorm:1"
   attr {
     key: "T"
     value {
@@ -3334,10 +3334,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg/mul"
+  name: "unittest0/residual/BatchNorm/AssignMovingAvg/mul"
   op: "Mul"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg/sub_1"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg/sub"
+  input: "unittest0/residual/BatchNorm/AssignMovingAvg/sub_1"
+  input: "unittest0/residual/BatchNorm/AssignMovingAvg/sub"
   attr {
     key: "T"
     value {
@@ -3346,10 +3346,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg"
+  name: "unittest0/residual/BatchNorm/AssignMovingAvg"
   op: "AssignSub"
-  input: "unittest0_residual/BatchNorm/moving_mean"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg/mul"
+  input: "unittest0/residual/BatchNorm/moving_mean"
+  input: "unittest0/residual/BatchNorm/AssignMovingAvg/mul"
   attr {
     key: "T"
     value {
@@ -3360,7 +3360,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/moving_mean"
+        s: "loc:@unittest0/residual/BatchNorm/moving_mean"
       }
     }
   }
@@ -3372,7 +3372,7 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg_1/sub/x"
+  name: "unittest0/residual/BatchNorm/AssignMovingAvg_1/sub/x"
   op: "Const"
   attr {
     key: "dtype"
@@ -3393,10 +3393,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg_1/sub"
+  name: "unittest0/residual/BatchNorm/AssignMovingAvg_1/sub"
   op: "Sub"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg_1/sub/x"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/Const_3"
+  input: "unittest0/residual/BatchNorm/AssignMovingAvg_1/sub/x"
+  input: "unittest0/residual/BatchNorm/Const_3"
   attr {
     key: "T"
     value {
@@ -3405,10 +3405,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg_1/sub_1"
+  name: "unittest0/residual/BatchNorm/AssignMovingAvg_1/sub_1"
   op: "Sub"
-  input: "unittest0_residual/BatchNorm/moving_variance/read"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/FusedBatchNorm:2"
+  input: "unittest0/residual/BatchNorm/moving_variance/read"
+  input: "unittest0/residual/BatchNorm/FusedBatchNorm:2"
   attr {
     key: "T"
     value {
@@ -3417,10 +3417,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg_1/mul"
+  name: "unittest0/residual/BatchNorm/AssignMovingAvg_1/mul"
   op: "Mul"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg_1/sub_1"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg_1/sub"
+  input: "unittest0/residual/BatchNorm/AssignMovingAvg_1/sub_1"
+  input: "unittest0/residual/BatchNorm/AssignMovingAvg_1/sub"
   attr {
     key: "T"
     value {
@@ -3429,10 +3429,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg_1"
+  name: "unittest0/residual/BatchNorm/AssignMovingAvg_1"
   op: "AssignSub"
-  input: "unittest0_residual/BatchNorm/moving_variance"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/AssignMovingAvg_1/mul"
+  input: "unittest0/residual/BatchNorm/moving_variance"
+  input: "unittest0/residual/BatchNorm/AssignMovingAvg_1/mul"
   attr {
     key: "T"
     value {
@@ -3443,7 +3443,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/BatchNorm/moving_variance"
+        s: "loc:@unittest0/residual/BatchNorm/moving_variance"
       }
     }
   }
@@ -3455,13 +3455,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/shape"
+  name: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
@@ -3487,13 +3487,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/min"
+  name: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
@@ -3516,13 +3516,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/max"
+  name: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
@@ -3545,9 +3545,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  name: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/shape"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -3558,7 +3558,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
@@ -3582,10 +3582,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/sub"
+  name: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/max"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/max"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -3596,16 +3596,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/mul"
+  name: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/RandomUniform"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/sub"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/RandomUniform"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -3616,16 +3616,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform"
+  name: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform"
   op: "Add"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/mul"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/min"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/mul"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -3636,19 +3636,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/weights"
+  name: "unittest0/residual/residual_shortcut_conv1x1/weights"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
@@ -3691,10 +3691,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/weights/Assign"
+  name: "unittest0/residual/residual_shortcut_conv1x1/weights/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights/Initializer/random_uniform"
   attr {
     key: "T"
     value {
@@ -3705,7 +3705,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
@@ -3723,9 +3723,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/weights/read"
+  name: "unittest0/residual/residual_shortcut_conv1x1/weights/read"
   op: "Identity"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights"
   attr {
     key: "T"
     value {
@@ -3736,19 +3736,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_shortcut_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  name: "unittest0/residual/residual_shortcut_conv1x1/kernel/Regularizer/l2_regularizer/scale"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
@@ -3771,9 +3771,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_shortcut_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  name: "unittest0/residual/residual_shortcut_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   op: "L2Loss"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights/read"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -3784,16 +3784,16 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_shortcut_conv1x1/kernel/Regularizer/l2_regularizer"
+  name: "unittest0/residual/residual_shortcut_conv1x1/kernel/Regularizer/l2_regularizer"
   op: "Mul"
-  input: "unittest0_residual/unittest0_residual/residual_shortcut_conv1x1/kernel/Regularizer/l2_regularizer/scale"
-  input: "unittest0_residual/unittest0_residual/residual_shortcut_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
+  input: "unittest0/residual/residual_shortcut_conv1x1/kernel/Regularizer/l2_regularizer/scale"
+  input: "unittest0/residual/residual_shortcut_conv1x1/kernel/Regularizer/l2_regularizer/L2Loss"
   attr {
     key: "T"
     value {
@@ -3804,19 +3804,19 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/weights"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/weights"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/biases/Initializer/zeros"
+  name: "unittest0/residual/residual_shortcut_conv1x1/biases/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/biases"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/biases"
       }
     }
   }
@@ -3842,13 +3842,13 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/biases"
+  name: "unittest0/residual/residual_shortcut_conv1x1/biases"
   op: "VariableV2"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/biases"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/biases"
       }
     }
   }
@@ -3882,10 +3882,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/biases/Assign"
+  name: "unittest0/residual/residual_shortcut_conv1x1/biases/Assign"
   op: "Assign"
-  input: "unittest0_residual/residual_shortcut_conv1x1/biases"
-  input: "unittest0_residual/residual_shortcut_conv1x1/biases/Initializer/zeros"
+  input: "unittest0/residual/residual_shortcut_conv1x1/biases"
+  input: "unittest0/residual/residual_shortcut_conv1x1/biases/Initializer/zeros"
   attr {
     key: "T"
     value {
@@ -3896,7 +3896,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/biases"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/biases"
       }
     }
   }
@@ -3914,9 +3914,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/residual_shortcut_conv1x1/biases/read"
+  name: "unittest0/residual/residual_shortcut_conv1x1/biases/read"
   op: "Identity"
-  input: "unittest0_residual/residual_shortcut_conv1x1/biases"
+  input: "unittest0/residual/residual_shortcut_conv1x1/biases"
   attr {
     key: "T"
     value {
@@ -3927,13 +3927,13 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@unittest0_residual/residual_shortcut_conv1x1/biases"
+        s: "loc:@unittest0/residual/residual_shortcut_conv1x1/biases"
       }
     }
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_shortcut_conv1x1/dilation_rate"
+  name: "unittest0/residual/residual_shortcut_conv1x1/dilation_rate"
   op: "Const"
   attr {
     key: "dtype"
@@ -3957,10 +3957,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_shortcut_conv1x1/Conv2D"
+  name: "unittest0/residual/residual_shortcut_conv1x1/Conv2D"
   op: "Conv2D"
   input: "Placeholder"
-  input: "unittest0_residual/residual_shortcut_conv1x1/weights/read"
+  input: "unittest0/residual/residual_shortcut_conv1x1/weights/read"
   attr {
     key: "T"
     value {
@@ -4009,10 +4009,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_shortcut_conv1x1/BiasAdd"
+  name: "unittest0/residual/residual_shortcut_conv1x1/BiasAdd"
   op: "BiasAdd"
-  input: "unittest0_residual/unittest0_residual/residual_shortcut_conv1x1/Conv2D"
-  input: "unittest0_residual/residual_shortcut_conv1x1/biases/read"
+  input: "unittest0/residual/residual_shortcut_conv1x1/Conv2D"
+  input: "unittest0/residual/residual_shortcut_conv1x1/biases/read"
   attr {
     key: "T"
     value {
@@ -4027,9 +4027,9 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_shortcut_maxpool/MaxPool"
+  name: "unittest0/residual/residual_shortcut_maxpool/MaxPool"
   op: "MaxPool"
-  input: "unittest0_residual/unittest0_residual/residual_shortcut_conv1x1/BiasAdd"
+  input: "unittest0/residual/residual_shortcut_conv1x1/BiasAdd"
   attr {
     key: "T"
     value {
@@ -4072,10 +4072,10 @@ node {
   }
 }
 node {
-  name: "unittest0_residual/unittest0_residual/residual_shortcut_sum"
+  name: "unittest0/residual/residual_shortcut_sum"
   op: "Add"
-  input: "unittest0_residual/unittest0_residual/residual_shortcut_maxpool/MaxPool"
-  input: "unittest0_residual/unittest0_residual/BatchNorm/FusedBatchNorm"
+  input: "unittest0/residual/residual_shortcut_maxpool/MaxPool"
+  input: "unittest0/residual/BatchNorm/FusedBatchNorm"
   attr {
     key: "T"
     value {
