@@ -31,7 +31,7 @@ from test_util import create_test_input
 
 # module import
 from tf_deconv_module import get_nearest_neighbor_unpool2d_module
-from tf_deconv_module import get_transconv_unpool_module
+from tf_deconv_module import get_transconv_unpool2d_module
 
 
 class ModuleEndpointName(object):
@@ -79,12 +79,12 @@ class ModuleTest(tf.test.TestCase):
 
         with tf.name_scope(name=scope,default_name='test_module',values=[inputs]):
 
-            if module_type == 'nearest_neighbor_unpool':
+            if module_type is 'nearest_neighbor_unpool':
                 net = get_nearest_neighbor_unpool2d_module(inputs=net,
                                                            unpool_rate=unpool_rate,
                                                            scope =scope)
-            elif module_type == 'conv2dtrans_unpool':
-                net = get_transconv_unpool_module(inputs=net,
+            elif module_type is 'conv2dtrans_unpool':
+                net = get_transconv_unpool2d_module(inputs=net,
                                                   unpool_rate=unpool_rate,
                                                   model_config=model_config,
                                                   scope=scope)
