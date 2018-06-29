@@ -23,7 +23,7 @@ from datetime import datetime
 from os import getcwd
 import sys
 sys.path.insert(0,getcwd())
-sys.path.insert(0,getcwd()+'/testcodes')
+print ('getcwd() = %s' % getcwd())
 
 import tensorflow as tf
 

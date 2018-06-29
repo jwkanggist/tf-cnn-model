@@ -16,6 +16,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+# from os import getcwd
+# import sys
+# sys.path.insert(0,getcwd())
+# print ('getcwd() at test_util.py = %s' % getcwd())
 
 import numpy as np
 import tensorflow as tf
