@@ -164,7 +164,8 @@ class ModuleEndpointName(object):
         output_shape    = output_shape
         if conv_type == 'inceptionv2':
             chnum_list = inception_conv_chout_num()
-            self.name_list = ['unittest0/inceptionv2/inceptionv2_net1_conv1x1',
+            self.name_list = ['unittest0/inceptionv2_in',
+                             'unittest0/inceptionv2/inceptionv2_net1_conv1x1',
                              'unittest0/inceptionv2/inceptionv2_net1_conv3x3_1',
                              'unittest0/inceptionv2/inceptionv2_net1_conv3x3_2',
                              'unittest0/inceptionv2/inceptionv2_net2_conv1x1',
@@ -175,76 +176,92 @@ class ModuleEndpointName(object):
                              'unittest0/inceptionv2_out']
 
             self.shape_dict = {
-                                self.name_list[0]:[input_shape[0],  input_shape[1], input_shape[2],     chnum_list.net1[0]],
-                                self.name_list[1]:[input_shape[0],  input_shape[1], input_shape[2],     chnum_list.net1[1]],
-                                self.name_list[2]:[output_shape[0], output_shape[1],output_shape[2],    chnum_list.net1[2]],
-                                self.name_list[3]:[input_shape[0],  input_shape[1], input_shape[2],     chnum_list.net2[0]],
-                                self.name_list[4]:[output_shape[0], output_shape[1],output_shape[2],    chnum_list.net2[1]],
-                                self.name_list[5]:[output_shape[0], output_shape[1],output_shape[2],    input_shape[3]],
-                                self.name_list[6]:[output_shape[0], output_shape[1],output_shape[2],    chnum_list.net3[0]],
-                                self.name_list[7]:output_shape,
+                                self.name_list[0]:input_shape,
+                                self.name_list[1]:[input_shape[0],  input_shape[1], input_shape[2],     chnum_list.net1[0]],
+                                self.name_list[2]:[input_shape[0],  input_shape[1], input_shape[2],     chnum_list.net1[1]],
+                                self.name_list[3]:[output_shape[0], output_shape[1],output_shape[2],    chnum_list.net1[2]],
+                                self.name_list[4]:[input_shape[0],  input_shape[1], input_shape[2],     chnum_list.net2[0]],
+                                self.name_list[5]:[output_shape[0], output_shape[1],output_shape[2],    chnum_list.net2[1]],
+                                self.name_list[6]:[output_shape[0], output_shape[1],output_shape[2],    input_shape[3]],
+                                self.name_list[7]:[output_shape[0], output_shape[1],output_shape[2],    chnum_list.net3[0]],
                                 self.name_list[8]:output_shape,
+                                self.name_list[9]:output_shape,
                                 }
 
         elif conv_type == 'separable_conv2d':
-            self.name_list = ['unittest0/separable_conv2d/separable_conv2d_dwise_conv',
+            self.name_list = ['unittest0/separable_conv2d_in',
+                             'unittest0/separable_conv2d/separable_conv2d_dwise_conv',
                              'unittest0/separable_conv2d/separable_conv2d_pwise_conv',
                              'unittest0/separable_conv2d_out']
 
             self.shape_dict = {
-                                self.name_list[0]: [input_shape[0], output_shape[1], output_shape[2], input_shape[3]],
-                                self.name_list[1]: output_shape,
+                                self.name_list[0]: input_shape,
+                                self.name_list[1]: [input_shape[0], output_shape[1], output_shape[2], input_shape[3]],
                                 self.name_list[2]: output_shape,
+                                self.name_list[3]: output_shape,
                                 }
 
         elif conv_type == 'residual':
-            self.name_list = ['unittest0/residual/residual_front_conv1x1',
+            self.name_list = [ 'unittest0/residual_in',
+                                'unittest0/residual/residual_front_conv1x1',
                                 'unittest0/residual/residual_mid_conv3x3',
                                 'unittest0/residual/residual_rear_conv1x1',
                                 'unittest0/residual/residual_shortcut_conv1x1',
                                 'unittest0/residual/residual_shortcut_maxpool',
                                 'unittest0/residual_out']
             self.shape_dict = {
-                                self.name_list[0]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3] / 2.0],
-                                self.name_list[1]: [output_shape[0], output_shape[1], output_shape[2], output_shape[3] / 2.0],
-                                self.name_list[2]: output_shape,
-                                self.name_list[3]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3]],
-                                self.name_list[4]: output_shape,
+                                self.name_list[0]: input_shape,
+                                self.name_list[1]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3] / 2.0],
+                                self.name_list[2]: [output_shape[0], output_shape[1], output_shape[2], output_shape[3] / 2.0],
+                                self.name_list[3]: output_shape,
+                                self.name_list[4]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3]],
                                 self.name_list[5]: output_shape,
+                                self.name_list[6]: output_shape,
                                 }
 
         elif conv_type == 'inverted_bottleneck':
-            self.name_list = ['unittest0/inverted_bottleneck/inverted_bottleneck_bottleneck',
+            self.name_list = ['unittest0/inverted_bottleneck_in',
+                                'unittest0/inverted_bottleneck/inverted_bottleneck_bottleneck',
                                 'unittest0/inverted_bottleneck/inverted_bottleneck_dwise_conv',
                                 'unittest0/inverted_bottleneck/inverted_bottleneck_pwise_conv',
                                 'unittest0/inverted_bottleneck/inverted_bottleneck_shortcut_conv1x1',
                                 'unittest0/inverted_bottleneck/inverted_bottleneck_shortcut_maxpool',
                                 'unittest0/inverted_bottleneck_out']
             self.shape_dict ={
-                                self.name_list[0]: [input_shape[0], input_shape[1], input_shape[2], input_shape[3] * 2.0],
-                                self.name_list[1]: [output_shape[0], output_shape[1], output_shape[2], input_shape[3] * 2.0],
-                                self.name_list[2]: output_shape,
-                                self.name_list[3]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3]],
-                                self.name_list[4]: output_shape,
+                                self.name_list[0]: input_shape,
+                                self.name_list[1]: [input_shape[0], input_shape[1], input_shape[2], input_shape[3] * 2.0],
+                                self.name_list[2]: [output_shape[0], output_shape[1], output_shape[2], input_shape[3] * 2.0],
+                                self.name_list[3]: output_shape,
+                                self.name_list[4]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3]],
                                 self.name_list[5]: output_shape,
+                                self.name_list[6]: output_shape,
                                 }
 
         elif conv_type == 'linear_bottleneck':
-            self.name_list = ['unittest0/linear_bottleneck/linear_bottleneck_dwise_conv',
+            self.name_list = ['unittest0/linear_bottleneck_in',
+                             'unittest0/linear_bottleneck/linear_bottleneck_dwise_conv',
                              'unittest0/linear_bottleneck/linear_bottleneck_pwise_conv',
                              'unittest0/linear_bottleneck/linear_bottleneck_bottleneck',
                              'unittest0/linear_bottleneck_out']
 
             self.shape_dict = {
-                                self.name_list[0]: [input_shape[0], output_shape[1], output_shape[2], input_shape[3]],
+                                self.name_list[0]: input_shape,
                                 self.name_list[1]: [input_shape[0], output_shape[1], output_shape[2], input_shape[3]],
-                                self.name_list[2]: output_shape,
+                                self.name_list[2]: [input_shape[0], output_shape[1], output_shape[2], input_shape[3]],
                                 self.name_list[3]: output_shape,
+                                self.name_list[4]: output_shape,
                                 }
-        elif conv_type == 'conv2dtrans_unpool':
-            self.name_list = ['unitest0/conv2dtrans_unpool/conv2dtrans_unpool', 'conv2dtrans_unpool_out']
 
-            self.shape_dict = {self.name_list[0]:output_shape}
+        elif conv_type == 'conv2dtrans_unpool':
+            self.name_list = ['conv2dtrans_unpool_in',
+                              'unitest0/conv2dtrans_unpool/conv2dtrans_unpool',
+                              'conv2dtrans_unpool_out']
+
+            self.shape_dict = {
+                                self.name_list[0]: input_shape,
+                                self.name_list[1]:output_shape,
+                                self.name_list[2]: output_shape,
+                                }
 
 
 
