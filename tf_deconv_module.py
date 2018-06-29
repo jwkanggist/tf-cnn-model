@@ -89,6 +89,7 @@ def get_nearest_neighbor_unpool2d_module(inputs,
                                 axis=1,
                                 name=scope + '_out')
             end_points[sc.name + '_out'] = output
+            end_points[sc.name + '_in'] = inputs
 
     return output,end_points
 
@@ -159,6 +160,7 @@ def get_transconv_unpool2d_module(inputs,
             endpoint_collection, clear_collection=True)
 
         end_points[scope + '_out'] = net
+        end_points[scope + '_in'] = inputs
 
     return net, end_points
 
