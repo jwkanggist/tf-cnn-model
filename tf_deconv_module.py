@@ -44,7 +44,7 @@ def get_nearest_neighbor_unpool2d_module(inputs,
     channelnum  = input_shape[3]
 
     unpool_rate_sqr         = unpool_rate * unpool_rate
-    shape_for_reshape       = [batch_size, unpool_rate, unpool_rate, channelnum]
+    shape_for_reshape       = [-1, unpool_rate, unpool_rate, channelnum]
     end_points              = {}
 
     with tf.variable_scope(name_or_scope=scope,
@@ -52,7 +52,7 @@ def get_nearest_neighbor_unpool2d_module(inputs,
                            values=[inputs]) as sc:
 
         inputs_reshaped     = tf.reshape(tensor=inputs,
-                                         shape=[batch_size,height*width,1,channelnum])
+                                         shape=[-1,height*width,1,channelnum])
 
         # tf tile is not supported for tflite (180627)
         input_broadcasted   = tf.tile(input=inputs_reshaped,
