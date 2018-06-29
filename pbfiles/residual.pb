@@ -1536,7 +1536,7 @@ node {
   attr {
     key: "padding"
     value {
-      s: "VALID"
+      s: "SAME"
     }
   }
   attr {
@@ -4056,7 +4056,7 @@ node {
   attr {
     key: "padding"
     value {
-      s: "VALID"
+      s: "SAME"
     }
   }
   attr {

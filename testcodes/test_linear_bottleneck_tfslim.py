@@ -23,7 +23,7 @@ from datetime import datetime
 from os import getcwd
 import sys
 sys.path.insert(0,getcwd())
-sys.path.insert(0,getcwd()+'/testcodes')
+print ('getcwd() = %s' % getcwd())
 
 import tensorflow as tf
 
@@ -61,8 +61,9 @@ class ModuleTest(tf.test.TestCase):
         input_shape     = [None,64,64,ch_in_num]
 
         # expected output shape
-        expected_output_height  = np.floor( int(input_shape[1]-kernel_size)/stride) + 1
-        expected_output_width   = np.floor( int(input_shape[2]-kernel_size)/stride) + 1
+        expected_output_height  = input_shape[1]/stride
+        expected_output_width   = input_shape[2]/stride
+
         expected_output_shape   = [input_shape[0],expected_output_height,expected_output_width,ch_out_num]
 
         module_graph = tf.Graph()
@@ -152,8 +153,9 @@ class ModuleTest(tf.test.TestCase):
         input_shape = [None, 64, 64, ch_in_num]
 
         # expected output shape
-        expected_output_height = np.floor(int(input_shape[1] - kernel_size) / stride) + 1
-        expected_output_width = np.floor(int(input_shape[2] - kernel_size) / stride) + 1
+        expected_output_height  = input_shape[1]/stride
+        expected_output_width   = input_shape[2]/stride
+
         expected_output_shape = [input_shape[0], expected_output_height, expected_output_width, ch_out_num]
 
         inputs = create_test_input(batchsize=input_shape[0],
@@ -206,8 +208,8 @@ class ModuleTest(tf.test.TestCase):
         batch_size = 1
 
         # expected output shape
-        expected_output_height = np.floor(int(input_shape[1] - kernel_size) / stride) + 1
-        expected_output_width = np.floor(int(input_shape[2] - kernel_size) / stride) + 1
+        expected_output_height  = input_shape[1]/stride
+        expected_output_width   = input_shape[2]/stride
 
         # which generate a tf.placeholder
         inputs = create_test_input(None,

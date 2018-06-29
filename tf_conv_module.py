@@ -61,8 +61,6 @@ def get_inception_v2_module(ch_in,
     net2    = ch_in
     net3    = ch_in
 
-
-
     orig_scope = scope
     with tf.variable_scope(name_or_scope=scope,default_name='inceptionv2',values=[ch_in]) as sc:
 
@@ -107,7 +105,7 @@ def get_inception_v2_module(ch_in,
                                           num_outputs=  inception_conv_chout_num.net1[2],
                                           kernel_size=  [3,3],
                                           stride=       stride,
-                                          padding=      'VALID',
+                                          padding=      'SAME',
                                           normalizer_fn= None,
                                           scope=         scope +'_net1_conv3x3_2')
 
@@ -129,7 +127,7 @@ def get_inception_v2_module(ch_in,
                                           num_outputs=          inception_conv_chout_num.net2[1],
                                           kernel_size=          [3,3],
                                           stride=               stride,
-                                          padding=              'VALID',
+                                          padding=              'SAME',
                                           normalizer_fn=        model_config.normalizer_fn,
                                           biases_initializer=   None,
                                           scope=                scope + '_net2_conv3x3')
@@ -146,7 +144,7 @@ def get_inception_v2_module(ch_in,
                     net3    = slim.max_pool2d(inputs= net3,
                                               kernel_size=[3,3],
                                               stride=       stride,
-                                              padding=      'VALID',
+                                              padding=      'SAME',
                                               scope= scope + '_net3_maxpool3x3')
                     # conv 1x1 w/ batch norm
                     net3    = slim.conv2d(inputs=               net3,
@@ -190,14 +188,7 @@ def get_separable_conv2d_module(ch_in,
     ch_out
     '''
 
-    if stride == 1:
-        conv2d_padding = 'SAME'
-        print ('[separable_conv2d] No grid reduction with stride = %s' % stride)
-    else:
-        conv2d_padding = 'VALID'
-        print ('[separable_conv2d] Grid reduction with stride = %s' %stride)
-
-
+    conv2d_padding = 'SAME'
     net = ch_in
 
     with tf.variable_scope(name_or_scope=scope,default_name='separable_conv2d',values=[ch_in]) as sc:
@@ -276,13 +267,7 @@ def get_linear_bottleneck_module(ch_in,
         ch_out
     '''
 
-    if stride == 1:
-        conv2d_padding = 'SAME'
-        print ('[linear_bottleneck] No grid reduction with stride = %s' % stride)
-    else:
-        conv2d_padding = 'VALID'
-        print ('[linear_bottleneck] Grid reduction with stride = %s' %stride)
-
+    conv2d_padding = 'SAME'
     net = ch_in
     with tf.variable_scope(name_or_scope=scope,default_name='linear_bottleneck',values=[ch_in]) as sc:
 
@@ -375,13 +360,7 @@ def get_inverted_bottleneck_module(ch_in,
         pointwise_conv 1x1xch_out_num/1 --> batch_norm -->
         ch_out
     '''
-    if stride == 1:
-        conv2d_padding = 'SAME'
-        print ('[inverted_bottleneck] No grid reduction with stride = %s' % stride)
-    else:
-        conv2d_padding = 'VALID'
-        print ('[inverted_bottleneck] Grid reduction with stride = %s' %stride)
-
+    conv2d_padding = 'SAME'
     net = ch_in
     with tf.variable_scope(name_or_scope=scope,default_name='inverted_bottleneck',values=[ch_in]) as sc:
 
@@ -501,13 +480,7 @@ def get_residual_module(ch_in,
     chout
 
     '''
-    if stride == 1:
-        conv2d_padding = 'SAME'
-        print ('[Residual] No grid reduction with stride = %s' % stride)
-    else:
-        conv2d_padding = 'VALID'
-        print ('[Residual] Grid reduction with stride = %s' %stride)
-
+    conv2d_padding = 'SAME'
     net = ch_in
     with tf.variable_scope(name_or_scope=scope, default_name='residual',values=[ch_in]) as sc:
         endpoint_collection = sc.original_name_scope + '_end_points'
