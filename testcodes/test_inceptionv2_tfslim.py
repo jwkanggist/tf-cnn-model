@@ -56,7 +56,7 @@ class ModuleTest(tf.test.TestCase):
         kernel_size     = 3
 
         # test input shape
-        input_shape     = [None,64,64,ch_in_num]
+        input_shape     = [1,64,64,ch_in_num]
 
         # expected output shape
         expected_output_height = input_shape[1] / stride
@@ -123,8 +123,14 @@ class ModuleTest(tf.test.TestCase):
         if not tf.gfile.Exists(savedir):
             tf.gfile.MakeDirs(savedir)
 
-        pbfilename = TEST_MODULE_NAME + '.pb'
-        pbtxtfilename = TEST_MODULE_NAME + '.pbtxt'
+        tflitedir = getcwd() + '/tflitefiles'
+        if not tf.gfile.Exists(tflitedir):
+            tf.gfile.MakeDirs(tflitedir)
+
+
+        pbfilename      = TEST_MODULE_NAME + '.pb'
+        pbtxtfilename   = TEST_MODULE_NAME + '.pbtxt'
+        tflitefilename  = TEST_MODULE_NAME  +'.tflite'
 
         graph = tf.get_default_graph()
 
@@ -137,6 +143,19 @@ class ModuleTest(tf.test.TestCase):
                                  logdir=savedir,
                                  name=pbtxtfilename,as_text=True)
 
+            # check tflite compatability 
+            print("Tflite compatability check")
+            toco = tf.contrib.lite.toco_convert(input_data=sess.graph_def,
+                                                input_tensors = [inputs],
+                                                output_tensors= [module_output])
+
+
+            # from tensorflow 1.9 ----------------------------------
+            # toco = tf.contrib.lite.TocoConverter.from_session(sess=sess,
+            #                                                   input_tensors=[inputs],
+            #                                                   output_tensors=[module_output])
+            # tflite_model    = toco.convert()
+            # open(tflitedir + '/' + tflitefilename,'wb').write(tflite_model)
 
 
     def test_midpoint_name_shape(self):
