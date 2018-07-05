@@ -24,7 +24,7 @@ from os import getcwd
 import sys
 sys.path.insert(0,getcwd())
 sys.path.insert(0,getcwd()+'/..')
-sys.path.insert(0,getcwd()+'/tflite-convertor/')
+sys.path.insert(0,getcwd()+'/tflite_convertor/')
 
 print ('getcwd() = %s' % getcwd())
 
