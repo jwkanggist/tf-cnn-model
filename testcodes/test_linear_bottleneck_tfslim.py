@@ -23,6 +23,9 @@ from datetime import datetime
 from os import getcwd
 import sys
 sys.path.insert(0,getcwd())
+sys.path.insert(0,getcwd()+'/..')
+sys.path.insert(0,getcwd()+'/tflite-convertor/')
+
 print ('getcwd() = %s' % getcwd())
 
 import tensorflow as tf

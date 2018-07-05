@@ -23,6 +23,8 @@ from datetime import datetime
 from os import getcwd
 import sys
 sys.path.insert(0,getcwd())
+sys.path.insert(0,getcwd()+'/tflite-convertor/')
+
 print ('getcwd() = %s' % getcwd())
 
 
@@ -32,6 +34,7 @@ from test_util  import create_test_input
 from test_util  import get_module
 from test_util  import ModuleEndpointName
 from test_util  import ModelTestConfig
+from
 TEST_MODULE_NAME =  'inceptionv2'
 
 
@@ -97,13 +100,12 @@ class ModuleTest(tf.test.TestCase):
         # check shape of the module output
         self.assertListEqual(module_output.get_shape().as_list(),expected_output_shape)
 
-        print('------------------------------------------------')
-        print ('[tfTest] write pbfile')
-
         self.assertTrue(expected_output_name in end_points)
 
 
         # tensorboard graph summary =============
+        print('------------------------------------------------')
+        print ('[tfTest] Get tensorfboard summary')
         now = datetime.utcnow().strftime("%Y%m%d%H%M%S")
         tb_logdir_path = getcwd() + '/tf_logs'
         tb_logdir = "{}/run-{}/".format(tb_logdir_path, now)
@@ -118,19 +120,15 @@ class ModuleTest(tf.test.TestCase):
         tb_summary_writer.close()
 
 
-        # write pbfile of graph_def
+        # write pbfile of graph_def ===================
+        print('------------------------------------------------')
+        print ('[tfTest] write pbfile')
         savedir = getcwd() + '/pbfiles'
         if not tf.gfile.Exists(savedir):
             tf.gfile.MakeDirs(savedir)
 
-        tflitedir = getcwd() + '/tflitefiles'
-        if not tf.gfile.Exists(tflitedir):
-            tf.gfile.MakeDirs(tflitedir)
-
-
         pbfilename      = TEST_MODULE_NAME + '.pb'
         pbtxtfilename   = TEST_MODULE_NAME + '.pbtxt'
-        tflitefilename  = TEST_MODULE_NAME  +'.tflite'
 
         graph = tf.get_default_graph()
 
@@ -143,12 +141,22 @@ class ModuleTest(tf.test.TestCase):
                                  logdir=savedir,
                                  name=pbtxtfilename,as_text=True)
 
-            # check tflite compatability 
-            print("Tflite compatability check")
-            toco = tf.contrib.lite.toco_convert(input_data=sess.graph_def,
-                                                input_tensors = [inputs],
-                                                output_tensors= [module_output])
+        # check tflite compatability
+        print('------------------------------------------------')
+        print ('[tfTest] tflite compatability check')
+        tflitedir = getcwd() + '/tflitefiles'
+        if not tf.gfile.Exists(tflitedir):
+            tf.gfile.MakeDirs(tflitedir)
+        tflitefilename = TEST_MODULE_NAME + '.tflite'
 
+
+
+            # # check tflite compatability
+            # print("Tflite compatability check")
+            # toco = tf.contrib.lite.toco_convert(input_data=sess.graph_def,
+            #                                     input_tensors = [inputs],
+            #                                     output_tensors= [module_output])
+            #
 
             # from tensorflow 1.9 ----------------------------------
             # toco = tf.contrib.lite.TocoConverter.from_session(sess=sess,
