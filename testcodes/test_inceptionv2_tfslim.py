@@ -23,7 +23,8 @@ from datetime import datetime
 from os import getcwd
 import sys
 sys.path.insert(0,getcwd())
-sys.path.insert(0,getcwd()+'/tflite-convertor/')
+sys.path.insert(0,getcwd()+'/..')
+sys.path.insert(0,getcwd()+'/tflite_convertor/')
 
 print ('getcwd() = %s' % getcwd())
 
@@ -34,7 +35,10 @@ from test_util  import create_test_input
 from test_util  import get_module
 from test_util  import ModuleEndpointName
 from test_util  import ModelTestConfig
-from
+from test_util  import save_pb_ckpt
+from test_util  import convert_to_tflite
+
+
 TEST_MODULE_NAME =  'inceptionv2'
 
 
@@ -82,6 +86,9 @@ class ModuleTest(tf.test.TestCase):
                                                       conv_type=TEST_MODULE_NAME,
                                                       scope=scope)
 
+            init    = tf.global_variables_initializer()
+            ckpt_saver = tf.train.Saver(tf.global_variables())
+
         expected_output_name = 'unittest0/'+TEST_MODULE_NAME+'_out'
 
         print('------------------------------------------------')
@@ -120,43 +127,30 @@ class ModuleTest(tf.test.TestCase):
         tb_summary_writer.close()
 
 
-        # write pbfile of graph_def ===================
-        print('------------------------------------------------')
-        print ('[tfTest] write pbfile')
-        savedir = getcwd() + '/pbfiles'
-        if not tf.gfile.Exists(savedir):
-            tf.gfile.MakeDirs(savedir)
-
-        pbfilename      = TEST_MODULE_NAME + '.pb'
-        pbtxtfilename   = TEST_MODULE_NAME + '.pbtxt'
-
-        graph = tf.get_default_graph()
-
         with self.test_session(graph=module_graph) as sess:
-            print("TF graph_def is saved in pb at %s." % savedir + pbfilename)
-            tf.train.write_graph(graph_or_graph_def=sess.graph_def,
-                                 logdir=savedir,
-                                 name=pbfilename)
-            tf.train.write_graph(graph_or_graph_def=sess.graph_def,
-                                 logdir=savedir,
-                                 name=pbtxtfilename,as_text=True)
 
-        # check tflite compatability
-        print('------------------------------------------------')
-        print ('[tfTest] tflite compatability check')
-        tflitedir = getcwd() + '/tflitefiles'
-        if not tf.gfile.Exists(tflitedir):
-            tf.gfile.MakeDirs(tflitedir)
-        tflitefilename = TEST_MODULE_NAME + '.tflite'
+            output_node_name = 'unittest0/' + TEST_MODULE_NAME + '/' + expected_output_name
+
+            pbsavedir, pbfilename, ckptfilename= \
+                save_pb_ckpt(module_name=TEST_MODULE_NAME,
+                             init=init,
+                             sess=sess,
+                             ckpt_saver=ckpt_saver)
+
+            convert_to_tflite(module_name=TEST_MODULE_NAME,
+                              pbsavedir=pbsavedir,
+                              pbfilename=pbfilename,
+                              ckptfilename=ckptfilename,
+                              output_node_name=output_node_name,
+                              input_shape=input_shape)
 
 
-
-            # # check tflite compatability
-            # print("Tflite compatability check")
+            # # check tflite compatibility
+            # print('------------------------------------------------')
+            # print ('[tfTest] tflite compatibility check')
             # toco = tf.contrib.lite.toco_convert(input_data=sess.graph_def,
             #                                     input_tensors = [inputs],
             #                                     output_tensors= [module_output])
-            #
 
             # from tensorflow 1.9 ----------------------------------
             # toco = tf.contrib.lite.TocoConverter.from_session(sess=sess,
@@ -164,6 +158,8 @@ class ModuleTest(tf.test.TestCase):
             #                                                   output_tensors=[module_output])
             # tflite_model    = toco.convert()
             # open(tflitedir + '/' + tflitefilename,'wb').write(tflite_model)
+
+
 
 
     def test_midpoint_name_shape(self):

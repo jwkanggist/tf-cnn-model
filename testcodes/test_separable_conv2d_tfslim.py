@@ -16,7 +16,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from os import getcwd
+
 import numpy as np
 import six
 from datetime import datetime
@@ -24,10 +24,9 @@ from os import getcwd
 import sys
 sys.path.insert(0,getcwd())
 sys.path.insert(0,getcwd()+'/..')
-sys.path.insert(0,getcwd()+'/tflite-convertor/')
+sys.path.insert(0,getcwd()+'/tflite_convertor/')
 
 print ('getcwd() = %s' % getcwd())
-
 
 import tensorflow as tf
 
@@ -35,7 +34,8 @@ from test_util  import create_test_input
 from test_util  import get_module
 from test_util  import ModuleEndpointName
 from test_util  import ModelTestConfig
-
+from test_util  import save_pb_ckpt
+from test_util  import convert_to_tflite
 
 TEST_MODULE_NAME =  'separable_conv2d'
 
@@ -57,7 +57,7 @@ class ModuleTest(tf.test.TestCase):
         kernel_size     = 3
 
         # test input shape
-        input_shape     = [None,64,64,ch_in_num]
+        input_shape     = [1,64,64,ch_in_num]
 
         # expected output shape
         expected_output_height  = input_shape[1]/stride
@@ -80,7 +80,12 @@ class ModuleTest(tf.test.TestCase):
                                                       conv_type=TEST_MODULE_NAME,
                                                       scope=scope)
 
+            module_output= tf.nn.relu6(module_output,name='unittest0/'+TEST_MODULE_NAME+'_out')
+            init    = tf.global_variables_initializer()
+            ckpt_saver = tf.train.Saver(tf.global_variables())
+
         expected_output_name = 'unittest0/'+TEST_MODULE_NAME+'_out'
+
 
         print('------------------------------------------------')
         print ('[tfTest] run test_endpoint_name_shape()')
@@ -97,14 +102,11 @@ class ModuleTest(tf.test.TestCase):
 
         # check shape of the module output
         self.assertListEqual(module_output.get_shape().as_list(),expected_output_shape)
-
-        print('------------------------------------------------')
-        print ('[tfTest] write pbfile')
-
         self.assertTrue(expected_output_name in end_points)
 
-
         # tensorboard graph summary =============
+        print('------------------------------------------------')
+        print ('[tfTest] Get tensorfboard summary')
         now = datetime.utcnow().strftime("%Y%m%d%H%M%S")
         tb_logdir_path = getcwd() + '/tf_logs'
         tb_logdir = "{}/run-{}/".format(tb_logdir_path, now)
@@ -119,25 +121,35 @@ class ModuleTest(tf.test.TestCase):
         tb_summary_writer.close()
 
 
-        # write pbfile of graph_def
-        savedir = getcwd() + '/pbfiles'
-        if not tf.gfile.Exists(savedir):
-            tf.gfile.MakeDirs(savedir)
-
-        pbfilename = TEST_MODULE_NAME + '.pb'
-        pbtxtfilename = TEST_MODULE_NAME + '.pbtxt'
-
-        graph = tf.get_default_graph()
-
         with self.test_session(graph=module_graph) as sess:
-            print("TF graph_def is saved in pb at %s." % savedir + pbfilename)
-            tf.train.write_graph(graph_or_graph_def=sess.graph_def,
-                                 logdir=savedir,
-                                 name=pbfilename)
-            tf.train.write_graph(graph_or_graph_def=sess.graph_def,
-                                 logdir=savedir,
-                                 name=pbtxtfilename,as_text=True)
+            output_node_name =  expected_output_name
 
+            pbsavedir, pbfilename, ckptfilename = \
+                save_pb_ckpt(module_name=TEST_MODULE_NAME,
+                             init=init,
+                             sess=sess,
+                             ckpt_saver=ckpt_saver)
+
+            convert_to_tflite(module_name=TEST_MODULE_NAME,
+                              pbsavedir=pbsavedir,
+                              pbfilename=pbfilename,
+                              ckptfilename=ckptfilename,
+                              output_node_name=output_node_name,
+                              input_shape=input_shape)
+
+            # # check tflite compatibility
+            # print('------------------------------------------------')
+            # print ('[tfTest] tflite compatibility check')
+            # toco = tf.contrib.lite.toco_convert(input_data=sess.graph_def,
+            #                                     input_tensors = [inputs],
+            #                                     output_tensors= [module_output])
+
+            # from tensorflow 1.9 ----------------------------------
+            # toco = tf.contrib.lite.TocoConverter.from_session(sess=sess,
+            #                                                   input_tensors=[inputs],
+            #                                                   output_tensors=[module_output])
+            # tflite_model    = toco.convert()
+            # open(tflitedir + '/' + tflitefilename,'wb').write(tflite_model)
 
 
     def test_midpoint_name_shape(self):
