@@ -23,6 +23,9 @@ from datetime import datetime
 from os import getcwd
 import sys
 sys.path.insert(0,getcwd())
+sys.path.insert(0,getcwd()+'/..')
+sys.path.insert(0,getcwd()+'/tflite_convertor/')
+
 print ('getcwd() = %s' % getcwd())
 
 import tensorflow as tf
@@ -32,7 +35,8 @@ from test_util  import create_test_input
 from test_util  import get_deconv_module
 from test_util  import ModuleEndpointName
 from test_util  import ModelTestConfig
-
+from test_util  import save_pb_ckpt
+from test_util  import convert_to_tflite
 
 
 class ModuleTest(tf.test.TestCase):
@@ -115,13 +119,14 @@ class ModuleTest(tf.test.TestCase):
         with tf.name_scope(name=scope):
             input_width     = 2
             input_height    = 2
-            input_shape     = [None, input_height,input_width,1]
-            unpool_rate     = 3
+            input_shape     = [1, input_height,input_width,1]
+            unpool_rate     = 2
 
             expected_output_shape = [input_shape[0],
                                      input_shape[1]*unpool_rate,
                                      input_shape[2]*unpool_rate,
                                      input_shape[3]]
+
 
             inputs = create_test_input(batchsize= input_shape[0],
                                        heightsize=input_shape[1],
@@ -154,13 +159,15 @@ class ModuleTest(tf.test.TestCase):
 
 
 
+
+
     def test_transconv_unknown_batchsize_shape(self):
         '''
             this func check the below test case:
                 - when a module is built without specifying batch_norm size,
                   check whether the model output has a proper batch_size given by an input
         '''
-        scope = 'unitest'
+        scope = 'unittest'
 
         model_config        = ModelTestConfig()
         TEST_MODULE_NAME    = 'conv2dtrans_unpool'
@@ -184,7 +191,11 @@ class ModuleTest(tf.test.TestCase):
                                                            model_config=model_config,
                                                            scope=scope)
 
-            expected_prefix = scope
+            init = tf.global_variables_initializer()
+            ckpt_saver = tf.train.Saver(tf.global_variables())
+
+
+            expected_prefix = scope + '0'
             self.assertTrue(module_output.op.name.startswith(expected_prefix))
             self.assertListEqual(module_output.get_shape().as_list(),
                                  [None,
@@ -224,14 +235,6 @@ class ModuleTest(tf.test.TestCase):
             tb_summary_writer.close()
 
 
-            # write pbfile of graph_def
-            savedir = getcwd() + '/pbfiles'
-            if not tf.gfile.Exists(savedir):
-                tf.gfile.MakeDirs(savedir)
-
-            pbfilename = TEST_MODULE_NAME + '.pb'
-            pbtxtfilename = TEST_MODULE_NAME + '.pbtxt'
-
         with self.test_session(graph=module_graph) as sess:
             sess.run(tf.global_variables_initializer())
             output = sess.run(module_output, {inputs: images.eval()})
@@ -239,13 +242,24 @@ class ModuleTest(tf.test.TestCase):
             print ('[TfTest] output shape = %s' % list(output.shape))
             print ('[TfTest] expected_output_shape = %s' % expected_output_shape)
 
-            print("TF graph_def is saved in pb at %s." % savedir + pbfilename)
-            tf.train.write_graph(graph_or_graph_def=sess.graph_def,
-                                 logdir=savedir,
-                                 name=pbfilename)
-            tf.train.write_graph(graph_or_graph_def=sess.graph_def,
-                                 logdir=savedir,
-                                 name=pbtxtfilename,as_text=True)
+
+            # tflite compatibility check
+            expected_output_name = 'unittest0/' + TEST_MODULE_NAME + '_out'
+
+            output_node_name = 'unittest0/' + TEST_MODULE_NAME + '/' + expected_output_name
+
+            pbsavedir, pbfilename, ckptfilename = \
+                save_pb_ckpt(module_name=TEST_MODULE_NAME,
+                             init=init,
+                             sess=sess,
+                             ckpt_saver=ckpt_saver)
+
+            convert_to_tflite(module_name=TEST_MODULE_NAME,
+                              pbsavedir=pbsavedir,
+                              pbfilename=pbfilename,
+                              ckptfilename=ckptfilename,
+                              output_node_name=output_node_name,
+                              input_shape=input_shape)
 
 
 

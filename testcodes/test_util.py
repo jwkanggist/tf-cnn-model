@@ -16,7 +16,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-# from os import getcwd
+from os import getcwd
 # import sys
 # sys.path.insert(0,getcwd())
 # print ('getcwd() at test_util.py = %s' % getcwd())
@@ -34,6 +34,89 @@ from tf_conv_module import get_residual_module
 
 from tf_deconv_module import get_nearest_neighbor_unpool2d_module
 from tf_deconv_module import get_transconv_unpool2d_module
+from tflite_convertor import TFliteConvertor
+PATH_TENSORFLOW_SRC = '/Users/jwkangmacpro2/SourceCodes/tensorflow/'
+
+
+
+def save_pb_ckpt(module_name,init,sess,ckpt_saver):
+    print('------------------------------------------------')
+    print('[tfTest] write pb files')
+    pbsavedir = getcwd() + '/pb_files/'
+    if not tf.gfile.Exists(pbsavedir):
+        tf.gfile.MakeDirs(pbsavedir)
+
+    ckptsavedir = pbsavedir + '/ckpt/'
+    if not tf.gfile.Exists(ckptsavedir):
+        tf.gfile.MakeDirs(ckptsavedir)
+
+    pbfilename = module_name + '.pb'
+    pbtxtfilename = module_name + '.pbtxt'
+    ckptfilename = module_name + '.ckpt'
+
+    sess.run(init)
+    print("TF graph_def is saved in pb at %s" % pbsavedir + pbfilename)
+    print("TF ckpt saved: %s" % ckptsavedir + ckptfilename)
+
+    tf.train.write_graph(graph_or_graph_def=sess.graph_def,
+                         logdir=pbsavedir,
+                         name=pbfilename,
+                         as_text=False)
+
+    tf.train.write_graph(graph_or_graph_def=sess.graph_def,
+                         logdir=pbsavedir,
+                         name=pbtxtfilename,
+                         as_text=True)
+
+    ckpt_saver.save(sess=sess,
+                    save_path=ckptsavedir + ckptfilename)
+
+    print('[tftest] pb and ckpt are generated successful')
+
+    return pbsavedir,pbfilename,ckptfilename
+
+
+def convert_to_tflite(module_name,pbsavedir,pbfilename,ckptfilename,output_node_name,input_shape):
+    # check tflite compatability
+    print('------------------------------------------------')
+    print('[tfTest] tflite compatability check')
+
+    tflitedir = getcwd() + '/tflite_files/'
+    if not tf.gfile.Exists(tflitedir):
+        tf.gfile.MakeDirs(tflitedir)
+    tflitefilename      = module_name + '.tflite'
+    tflite_convertor    = TFliteConvertor()
+
+    #output_node_name = 'unittest0/' + module_name + '/' + expected_output_name
+
+    # converting to frozen graph
+    tflite_convertor.set_config_for_frozen_graph(input_dir_path=pbsavedir,
+                                                 input_pb_name=pbfilename,
+                                                 input_ckpt_name='ckpt/' + ckptfilename,
+                                                 output_dir_path=pbsavedir,
+                                                 output_node_names=output_node_name)
+    tflite_convertor.convert_to_frozen_graph()
+    print("Your tflite at %s" % tflitedir + tflitefilename)
+
+    # converting to tfilte graph
+    tflite_convertor.set_config_for_tflite(input_dir_path=pbsavedir,
+                                           output_dir_path=tflitedir,
+                                           input_pb_file='frozen_' + pbfilename,
+                                           output_tflite_file=tflitefilename,
+                                           input_shape=str(input_shape[0]) + ',' +
+                                                       str(input_shape[1]) + ',' +
+                                                       str(input_shape[2]) + ',' +
+                                                       str(input_shape[3]),
+                                           output_array=output_node_name,
+                                           tf_src_dir_path=PATH_TENSORFLOW_SRC)
+
+    # frozen grpah to tflite conversion
+    tflite_convertor.convert_to_tflite_from_frozen_graph()
+    print('[tftest] tflite compatability check successful')
+
+
+
+
 
 def create_test_input(batchsize,heightsize,widthsize,channelnum):
 
@@ -43,7 +126,7 @@ def create_test_input(batchsize,heightsize,widthsize,channelnum):
     '''
 
     if None in [batchsize, heightsize,widthsize,channelnum]:
-        return tf.placeholder(tf.float32, [batchsize,heightsize,widthsize,channelnum])
+        return tf.placeholder(tf.float32, [batchsize,heightsize,widthsize,channelnum],name='input')
     else:
         return tf.to_float(
             np.tile(
