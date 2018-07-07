@@ -166,6 +166,7 @@ def get_inception_v2_module(ch_in,
 
         net = model_config.activation_fn(features=net,
                                          name=sc.name + '_out')
+
         end_points[sc.name + '_in'] = ch_in
         end_points[sc.name + '_out'] = net
 
@@ -245,6 +246,8 @@ def get_separable_conv2d_module(ch_in,
                 end_points = slim.utils.convert_collection_to_dict(
                     endpoint_collection, clear_collection=True)
 
+        net = tf.identity(input=net,
+                          name=sc.name + '_out' )
         end_points[sc.name + '_in'] = ch_in
         end_points[sc.name + '_out'] = net
 
@@ -335,12 +338,14 @@ def get_linear_bottleneck_module(ch_in,
                                       scope=                scope + '_bottleneck')
 
                     net = model_config.normalizer_fn(inputs=        net,
-                                                     activation_fn= None,
-                                                     scope=sc.name + '_out')
+                                                     activation_fn= None)
 
                     # Convert end_points_collection into a dictionary of end_points.
                     end_points = slim.utils.convert_collection_to_dict(
                         endpoint_collection, clear_collection=True)
+
+        net = tf.identity(input=net,
+                          name=sc.name + '_out' )
 
         end_points[sc.name + '_in'] = ch_in
         end_points[sc.name + '_out'] = net
@@ -461,6 +466,9 @@ def get_inverted_bottleneck_module(ch_in,
                        y=net,
                        name=scope + '_shortcut_sum')
 
+        net = tf.identity(input=net,
+                          name=sc.name + '_out' )
+
         end_points[sc.name + '_in'] = ch_in
         end_points[sc.name + '_out'] = net
 
@@ -567,6 +575,9 @@ def get_residual_module(ch_in,
         net = tf.add(x=shortcut_out,
                      y=net,
                      name=scope + '_shortcut_sum')
+
+        net = tf.identity(input=net,
+                          name=sc.name + '_out' )
 
         end_points[sc.name + '_in'] = ch_in
         end_points[sc.name + '_out'] = net

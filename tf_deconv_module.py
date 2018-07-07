@@ -159,6 +159,8 @@ def get_transconv_unpool2d_module(inputs,
         end_points = slim.utils.convert_collection_to_dict(
             endpoint_collection, clear_collection=True)
 
+        net = tf.identity(input=net,
+                          name=sc.name + '_out' )
         end_points[scope + '_out'] = net
         end_points[scope + '_in'] = inputs
 
