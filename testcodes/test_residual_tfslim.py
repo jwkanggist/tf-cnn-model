@@ -83,7 +83,6 @@ class ModuleTest(tf.test.TestCase):
                                                       conv_type=TEST_MODULE_NAME,
                                                       scope=scope)
 
-            module_output= tf.nn.relu6(module_output,name='unittest0/'+TEST_MODULE_NAME+'_out')
             init    = tf.global_variables_initializer()
             ckpt_saver = tf.train.Saver(tf.global_variables())
 
@@ -123,7 +122,7 @@ class ModuleTest(tf.test.TestCase):
 
 
         with self.test_session(graph=module_graph) as sess:
-            output_node_name =  expected_output_name
+            output_node_name = 'unittest0/' + TEST_MODULE_NAME + '/' + expected_output_name
 
             pbsavedir, pbfilename, ckptfilename = \
                 save_pb_ckpt(module_name=TEST_MODULE_NAME,

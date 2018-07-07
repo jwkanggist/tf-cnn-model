@@ -191,7 +191,6 @@ class ModuleTest(tf.test.TestCase):
                                                            model_config=model_config,
                                                            scope=scope)
 
-            module_output= tf.nn.relu6(module_output,name='unittest0/'+TEST_MODULE_NAME+'_out')
             init = tf.global_variables_initializer()
             ckpt_saver = tf.train.Saver(tf.global_variables())
 
@@ -245,8 +244,9 @@ class ModuleTest(tf.test.TestCase):
 
 
             # tflite compatibility check
-            expected_output_name = 'unittest0/'+TEST_MODULE_NAME+'_out'
-            output_node_name =  expected_output_name
+            expected_output_name = 'unittest0/' + TEST_MODULE_NAME + '_out'
+
+            output_node_name = 'unittest0/' + TEST_MODULE_NAME + '/' + expected_output_name
 
             pbsavedir, pbfilename, ckptfilename = \
                 save_pb_ckpt(module_name=TEST_MODULE_NAME,
