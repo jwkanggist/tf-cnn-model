@@ -33,7 +33,7 @@ import tensorflow as tf
 from test_util  import create_test_input
 from test_util  import get_module
 from test_util  import ModuleEndpointName
-from test_util  import ModelTestConfig
+from test_util  import ConvModuleConfig
 from test_util  import save_pb_ckpt
 from test_util  import convert_to_tflite
 
@@ -51,7 +51,7 @@ class ModuleTest(tf.test.TestCase):
     def test_endpoint_name_shape(self):
         ch_in_num       = 3
         ch_out_num      = 256
-        model_config    = ModelTestConfig()
+        model_config    = ConvModuleConfig()
         scope           = 'unittest'
         stride          = 2
         kernel_size     = 3
@@ -154,7 +154,7 @@ class ModuleTest(tf.test.TestCase):
     def test_midpoint_name_shape(self):
         ch_in_num = 3
         ch_out_num = 256
-        model_config = ModelTestConfig()
+        model_config = ConvModuleConfig()
         scope = 'unittest'
         stride = 2
         kernel_size = 3
@@ -207,7 +207,7 @@ class ModuleTest(tf.test.TestCase):
         '''
         ch_in_num = 3
         ch_out_num = 256
-        model_config = ModelTestConfig()
+        model_config = ConvModuleConfig()
         scope = 'unittest'
         stride = 2
         kernel_size = 3

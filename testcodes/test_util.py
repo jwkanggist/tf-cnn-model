@@ -348,35 +348,45 @@ class ModuleEndpointName(object):
 
 
 
-class ModelTestConfig(object):
+class ConvModuleConfig(object):
 
     def __init__(self):
+        self.is_trainable = True
+        self.weights_initializer = tf.contrib.layers.xavier_initializer()
+        self.weights_regularizer = tf.contrib.layers.l2_regularizer(4E-5)
+        self.biases_initializer = slim.init_ops.zeros_initializer()
+        self.normalizer_fn = slim.batch_norm
+        self.activation_fn = tf.nn.relu6
 
-        self.is_trainable       = True
+        # batch_norm
+        self.batch_norm_decay = 0.999
+        self.batch_norm_fused = True
+
+
+class DeconvModuleConfig(object):
+    def __init__(self):
+        # for unpooling
+        self.is_trainable = True
         self.weights_initializer = tf.contrib.layers.xavier_initializer()
         self.weights_regularizer = tf.contrib.layers.l2_regularizer(4E-5)
         self.biases_initializer  = slim.init_ops.zeros_initializer()
         self.normalizer_fn      = slim.batch_norm
-
         self.activation_fn      = tf.nn.relu6
-        self.dtype              = tf.float32
 
         # batch_norm
         self.batch_norm_decay   = 0.999
         self.batch_norm_fused   = True
 
 
+class ModelTestConfig(object):
+
+    def __init__(self):
+
         # meta parameter
         self.depth_multiplier   = 1.0
         self.resol_multiplier   = 1.0
+        self.dtype              = tf.float32
 
-        # for unpoolinbg
-        self.unpool_weights_initializer = tf.contrib.layers.xavier_initializer()
-        self.unpool_weights_regularizer = tf.contrib.layers.l2_regularizer(4E-5)
-        self.unpool_biases_initializer  = slim.init_ops.zeros_initializer()
-        self.unpool_normalizer_fn      = slim.batch_norm
-        self.unpool_activation_fn      = tf.nn.relu6
+        self.conv_config = ConvModuleConfig()
+        self.deconv_config = DeconvModuleConfig()
 
-        # batch_norm
-        self.unpool_batch_norm_decay   = 0.999
-        self.unpool_batch_norm_fused   = True

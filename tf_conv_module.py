@@ -424,6 +424,7 @@ def get_inverted_bottleneck_module(ch_in,
                                                        weights_regularizer= model_config.weights_regularizer,
                                                        trainable=           model_config.is_trainable,
                                                        scope=               scope + '_dwise_conv')
+
                     # pointwise conv with 1x1 kernal
                     # followed by batch_norm
                     net = slim.conv2d(inputs            = net,

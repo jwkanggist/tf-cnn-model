@@ -34,7 +34,7 @@ import tensorflow as tf
 from test_util  import create_test_input
 from test_util  import get_deconv_module
 from test_util  import ModuleEndpointName
-from test_util  import ModelTestConfig
+from test_util  import DeconvModuleConfig
 from test_util  import save_pb_ckpt
 from test_util  import convert_to_tflite
 
@@ -113,7 +113,7 @@ class ModuleTest(tf.test.TestCase):
     def test_transconv_unpool_name_shape(self):
         scope = 'unitest'
 
-        model_config        = ModelTestConfig()
+        model_config        = DeconvModuleConfig()
         TEST_MODULE_NAME    = 'conv2dtrans_unpool'
 
         with tf.name_scope(name=scope):
@@ -169,7 +169,7 @@ class ModuleTest(tf.test.TestCase):
         '''
         scope = 'unittest'
 
-        model_config        = ModelTestConfig()
+        model_config        = DeconvModuleConfig()
         TEST_MODULE_NAME    = 'conv2dtrans_unpool'
         batch_size          = 1
 

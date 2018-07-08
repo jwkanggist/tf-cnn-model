@@ -134,24 +134,24 @@ def get_transconv_unpool2d_module(inputs,
                             outputs_collections = endpoint_collection,
                             kernel_size         = unpool_rate,
                             stride              = unpool_rate,
-                            weights_initializer = model_config.unpool_weights_initializer,
-                            weights_regularizer = model_config.unpool_weights_regularizer,
-                            biases_initializer  = model_config.unpool_biases_initializer,
+                            weights_initializer = model_config.weights_initializer,
+                            weights_regularizer = model_config.weights_regularizer,
+                            biases_initializer  = model_config.biases_initializer,
                             trainable           = model_config.is_trainable,
                             activation_fn       = None,
                             padding             = 'VALID'):
 
 
-            with slim.arg_scope([model_config.unpool_normalizer_fn],
-                                decay           = model_config.unpool_batch_norm_decay,
-                                fused           = model_config.unpool_batch_norm_fused,
+            with slim.arg_scope([model_config.normalizer_fn],
+                                decay           = model_config.batch_norm_decay,
+                                fused           = model_config.batch_norm_fused,
                                 is_training     = model_config.is_trainable,
-                                activation_fn   = model_config.unpool_activation_fn):
+                                activation_fn   = model_config.activation_fn):
 
                 # conv2d transpose
                 net     = slim.conv2d_transpose(inputs          = net,
                                                 num_outputs     = ch_out_num,
-                                                normalizer_fn   = model_config.unpool_normalizer_fn,
+                                                normalizer_fn   = model_config.normalizer_fn,
                                                 scope           =  scope)
 
 
