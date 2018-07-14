@@ -36,7 +36,6 @@ from test_util  import get_deconv_module
 from test_util  import ModuleEndpointName
 from test_util  import DeconvModuleConfig
 from test_util  import save_pb_ckpt
-from test_util  import convert_to_tflite
 
 
 class ModuleTest(tf.test.TestCase):
@@ -254,12 +253,17 @@ class ModuleTest(tf.test.TestCase):
                              sess=sess,
                              ckpt_saver=ckpt_saver)
 
-            convert_to_tflite(module_name=TEST_MODULE_NAME,
-                              pbsavedir=pbsavedir,
-                              pbfilename=pbfilename,
-                              ckptfilename=ckptfilename,
-                              output_node_name=output_node_name,
-                              input_shape=input_shape)
+            print('------------------------------------------------')
+            tflitedir = getcwd() + '/tflite_files/'
+            if not tf.gfile.Exists(tflitedir):
+                tf.gfile.MakeDirs(tflitedir)
+            tflitefilename = TEST_MODULE_NAME + '.tflite'
+
+            toco = tf.contrib.lite.TocoConverter.from_session(sess=sess,
+                                                              input_tensors=[inputs],
+                                                              output_tensors=[module_output])
+            tflite_model    = toco.convert()
+            open(tflitedir + '/' + tflitefilename,'wb').write(tflite_model)
 
 
 

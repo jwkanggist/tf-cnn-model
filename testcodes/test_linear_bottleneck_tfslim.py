@@ -32,9 +32,8 @@ import tensorflow as tf
 from test_util  import create_test_input
 from test_util  import get_module
 from test_util  import ModuleEndpointName
-from test_util  import ModelTestConfig
+from test_util  import ConvModuleConfig
 from test_util  import save_pb_ckpt
-from test_util  import convert_to_tflite
 
 
 TEST_MODULE_NAME =  'linear_bottleneck'
@@ -55,7 +54,7 @@ class ModuleTest(tf.test.TestCase):
 
         ch_in_num       = 3
         ch_out_num      = 256
-        model_config    = ModelTestConfig()
+        model_config    = ConvModuleConfig()
         scope           = 'unittest'
         stride          = 2
         kernel_size     = 3
@@ -130,26 +129,20 @@ class ModuleTest(tf.test.TestCase):
                              sess=sess,
                              ckpt_saver=ckpt_saver)
 
-            convert_to_tflite(module_name=TEST_MODULE_NAME,
-                              pbsavedir=pbsavedir,
-                              pbfilename=pbfilename,
-                              ckptfilename=ckptfilename,
-                              output_node_name=output_node_name,
-                              input_shape=input_shape)
-
             # # check tflite compatibility
-            # print('------------------------------------------------')
-            # print ('[tfTest] tflite compatibility check')
-            # toco = tf.contrib.lite.toco_convert(input_data=sess.graph_def,
-            #                                     input_tensors = [inputs],
-            #                                     output_tensors= [module_output])
+            print('------------------------------------------------')
+            print('[tfTest] convert to tflite')
+            tflitedir = getcwd() + '/tflite_files/'
+            if not tf.gfile.Exists(tflitedir):
+                tf.gfile.MakeDirs(tflitedir)
+            tflitefilename = TEST_MODULE_NAME + '.tflite'
 
-            # from tensorflow 1.9 ----------------------------------
-            # toco = tf.contrib.lite.TocoConverter.from_session(sess=sess,
-            #                                                   input_tensors=[inputs],
-            #                                                   output_tensors=[module_output])
-            # tflite_model    = toco.convert()
-            # open(tflitedir + '/' + tflitefilename,'wb').write(tflite_model)
+            toco = tf.contrib.lite.TocoConverter.from_session(sess=sess,
+                                                              input_tensors=[inputs],
+                                                              output_tensors=[module_output])
+            tflite_model    = toco.convert()
+            open(tflitedir + '/' + tflitefilename,'wb').write(tflite_model)
+            print('[tfTest] tflite conversion successful')
 
 
 
@@ -208,7 +201,7 @@ class ModuleTest(tf.test.TestCase):
         '''
         ch_in_num = 3
         ch_out_num = 256
-        model_config = ModelTestConfig()
+        model_config = ConvModuleConfig()
         scope = 'unittest'
         stride = 2
         kernel_size = 3
