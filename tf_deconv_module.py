@@ -34,17 +34,17 @@ def get_nearest_neighbor_unpool2d_module(inputs,
                                          scope = None):
     '''
         the neareset neighbor unpooling implementation via
-        tf.reshape and tf.concat
+        tf.reshape tf.tile and tf.concat
         written by jwkang, 2018 June
     '''
     input_shape = inputs.get_shape().as_list()
-    batch_size   = input_shape[0]
+    batch_size  = input_shape[0]
     height      = input_shape[1]
     width       = input_shape[2]
     channelnum  = input_shape[3]
 
     unpool_rate_sqr         = unpool_rate * unpool_rate
-    shape_for_reshape       = [-1, unpool_rate, unpool_rate, channelnum]
+    shape_for_reshape       = [batch_size, unpool_rate, unpool_rate, channelnum]
     end_points              = {}
 
     with tf.variable_scope(name_or_scope=scope,
@@ -54,9 +54,11 @@ def get_nearest_neighbor_unpool2d_module(inputs,
         inputs_reshaped     = tf.reshape(tensor=inputs,
                                          shape=[-1,height*width,1,channelnum])
 
-        # tf tile is not supported for tflite (180627)
+        # # tf tile is not supported for tflite (180627)
         input_broadcasted   = tf.tile(input=inputs_reshaped,
                                       multiples=[1,1,unpool_rate_sqr,1])
+
+
 
         # the first block row matrix
         index = 0

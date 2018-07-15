@@ -51,44 +51,58 @@ class ModuleTest(tf.test.TestCase):
         input_height    = 2
         input_shape     = [1, input_height,input_width,1]
 
-
-        x = tf.to_float([[0, 1],
-                         [2, 3]])
-        x = tf.reshape(x,shape=input_shape)
-
-
-        y_unpool2_test1_expected = tf.to_float([[0,0,1,1],
-                                                [0,0,1,1],
-                                                [2,2,3,3],
-                                                [2,2,3,3]])
-
-        y_unpool2_test1_expected = tf.reshape(y_unpool2_test1_expected,
-                                              shape=[1,input_height*2,input_width*2,1])
-
-        y_unpool3_test1_expected = tf.to_float([[0, 0, 0, 1, 1, 1],
-                                                [0, 0, 0, 1, 1, 1],
-                                                [0, 0, 0, 1, 1, 1],
-                                                [2, 2, 2, 3, 3, 3],
-                                                [2, 2, 2, 3, 3, 3],
-                                                [2, 2, 2, 3, 3, 3]])
-
-        y_unpool3_test1_expected  = tf.reshape(y_unpool3_test1_expected,
-                                               shape=[1,input_height*3,input_width*3,1])
+        module_graph = tf.Graph()
+        with module_graph.as_default():
+            x = tf.to_float([[0, 1],
+                             [2, 3]])
+            x = tf.reshape(x,shape=input_shape)
 
 
-        y_unpool2_test1,end_point_test1  =  get_deconv_module(inputs=x,
-                                                                unpool_rate=2,
-                                                                module_type=TEST_MODULE_NAME,
-                                                                layer_index=0,
-                                                                scope=scope)
+            y_unpool2_test1_expected = tf.to_float([[0,0,1,1],
+                                                    [0,0,1,1],
+                                                    [2,2,3,3],
+                                                    [2,2,3,3]])
 
-        y_unpool3_test1,end_point_test1 = get_deconv_module(inputs=x,
-                                                              unpool_rate=3,
-                                                              module_type=TEST_MODULE_NAME,
-                                                              layer_index=1,
-                                                              scope=scope)
+            y_unpool2_test1_expected = tf.reshape(y_unpool2_test1_expected,
+                                                  shape=[1,input_height*2,input_width*2,1])
 
-        with self.test_session() as sess:
+            y_unpool3_test1_expected = tf.to_float([[0, 0, 0, 1, 1, 1],
+                                                    [0, 0, 0, 1, 1, 1],
+                                                    [0, 0, 0, 1, 1, 1],
+                                                    [2, 2, 2, 3, 3, 3],
+                                                    [2, 2, 2, 3, 3, 3],
+                                                    [2, 2, 2, 3, 3, 3]])
+
+            y_unpool3_test1_expected  = tf.reshape(y_unpool3_test1_expected,
+                                                   shape=[1,input_height*3,input_width*3,1])
+
+
+            y_unpool2_test1,end_point_test1  =  get_deconv_module(inputs=x,
+                                                                    unpool_rate=2,
+                                                                    module_type=TEST_MODULE_NAME,
+                                                                    layer_index=0,
+                                                                    scope=scope)
+
+            y_unpool3_test1,end_point_test1 = get_deconv_module(inputs=x,
+                                                                  unpool_rate=3,
+                                                                  module_type=TEST_MODULE_NAME,
+                                                                  layer_index=1,
+                                                                  scope=scope)
+
+        # tensorboard graph summary =============
+        now = datetime.utcnow().strftime("%Y%m%d%H%M%S")
+        tb_logdir_path = getcwd() + '/tf_logs'
+        tb_logdir = "{}/run-{}/".format(tb_logdir_path, now)
+
+        if not tf.gfile.Exists(tb_logdir_path):
+            tf.gfile.MakeDirs(tb_logdir_path)
+
+        # summary
+        tb_summary_writer = tf.summary.FileWriter(logdir=tb_logdir)
+        tb_summary_writer.add_graph(module_graph)
+        tb_summary_writer.close()
+
+        with self.test_session(graph=module_graph) as sess:
             print('--------------------------------------------')
             print ('[tfTest] run test_nearest_neighbor_unpool()')
             sess.run(tf.global_variables_initializer())
@@ -104,6 +118,18 @@ class ModuleTest(tf.test.TestCase):
             print ('[test1] output shape of y_unpool2 = %s' % y_unpool2_test1.get_shape().as_list())
             print ('[test1] output shape of y_unpool3 = %s' % y_unpool3_test1.get_shape().as_list())
 
+
+            print('------------------------------------------------')
+            tflitedir = getcwd() + '/tflite_files/'
+            if not tf.gfile.Exists(tflitedir):
+                tf.gfile.MakeDirs(tflitedir)
+            tflitefilename = TEST_MODULE_NAME + '.tflite'
+
+            toco = tf.contrib.lite.TocoConverter.from_session(sess=sess,
+                                                              input_tensors=[x],
+                                                              output_tensors=[y_unpool3_test1])
+            tflite_model    = toco.convert()
+            open(tflitedir + '/' + tflitefilename,'wb').write(tflite_model)
 
 
 
