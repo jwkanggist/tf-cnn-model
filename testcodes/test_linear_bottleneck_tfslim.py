@@ -34,6 +34,7 @@ from test_util  import get_module
 from test_util  import ModuleEndpointName
 from test_util  import ConvModuleConfig
 from test_util  import save_pb_ckpt
+from test_util  import convert_to_frozen_pb
 
 
 TEST_MODULE_NAME =  'linear_bottleneck'
@@ -52,7 +53,7 @@ class ModuleTest(tf.test.TestCase):
 
 
 
-        ch_in_num       = 3
+        ch_in_num       = 256
         ch_out_num      = 256
         model_config    = ConvModuleConfig()
         scope           = 'unittest'
@@ -129,6 +130,16 @@ class ModuleTest(tf.test.TestCase):
                              sess=sess,
                              ckpt_saver=ckpt_saver)
 
+
+            # frozen graph generation
+            convert_to_frozen_pb(module_name=TEST_MODULE_NAME,
+                                 pbsavedir=pbsavedir,
+                                 pbfilename=pbfilename,
+                                 ckptfilename=ckptfilename,
+                                 output_node_name=output_node_name,
+                                 input_shape=input_shape)
+
+
             # # check tflite compatibility
             print('------------------------------------------------')
             print('[tfTest] convert to tflite')
@@ -147,9 +158,9 @@ class ModuleTest(tf.test.TestCase):
 
 
     def test_midpoint_name_shape(self):
-        ch_in_num = 3
+        ch_in_num = 256
         ch_out_num = 256
-        model_config = ModelTestConfig()
+        model_config = ConvModuleConfig()
         scope = 'unittest'
         stride = 2
         kernel_size = 3
@@ -199,7 +210,7 @@ class ModuleTest(tf.test.TestCase):
                 - when a module is built without specifying batch_norm size,
                   check whether the model output has a proper batch_size given by an input
         '''
-        ch_in_num = 3
+        ch_in_num = 256
         ch_out_num = 256
         model_config = ConvModuleConfig()
         scope = 'unittest'

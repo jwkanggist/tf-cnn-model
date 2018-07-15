@@ -35,6 +35,7 @@ from tf_conv_module import get_residual_module
 from tf_deconv_module import get_nearest_neighbor_unpool2d_module
 from tf_deconv_module import get_transconv_unpool2d_module
 from tflite_convertor import TFliteConvertor
+
 PATH_TENSORFLOW_SRC = '/Users/jwkangmacpro2/SourceCodes/tensorflow/'
 
 
@@ -74,6 +75,33 @@ def save_pb_ckpt(module_name,init,sess,ckpt_saver):
     print('[tftest] pb and ckpt are generated successful')
 
     return pbsavedir,pbfilename,ckptfilename
+
+
+
+
+def convert_to_frozen_pb(module_name,pbsavedir,pbfilename,ckptfilename,output_node_name,input_shape):
+    print('------------------------------------------------')
+    print('[tfTest] frozen pb conversion')
+
+    tflitedir = getcwd() + '/tflite_files/'
+    if not tf.gfile.Exists(tflitedir):
+        tf.gfile.MakeDirs(tflitedir)
+    tflitefilename      = module_name + '.tflite'
+    tflite_convertor    = TFliteConvertor()
+
+    #output_node_name = 'unittest0/' + module_name + '/' + expected_output_name
+
+    # converting to frozen graph
+    tflite_convertor.set_config_for_frozen_graph(input_dir_path=pbsavedir,
+                                                 input_pb_name=pbfilename,
+                                                 input_ckpt_name='ckpt/' + ckptfilename,
+                                                 output_dir_path=pbsavedir,
+                                                 output_node_names=output_node_name)
+    tflite_convertor.convert_to_frozen_graph()
+    print('[tftest] frozen graph is successfully generated.')
+
+
+
 
 
 def convert_to_tflite(module_name,pbsavedir,pbfilename,ckptfilename,output_node_name,input_shape):
@@ -289,7 +317,7 @@ class ModuleEndpointName(object):
                                 'unittest0/residual/residual_front_conv1x1',
                                 'unittest0/residual/residual_mid_conv3x3',
                                 'unittest0/residual/residual_rear_conv1x1',
-                                'unittest0/residual/residual_shortcut_conv1x1',
+                                # 'unittest0/residual/residual_shortcut_conv1x1',
                                 'unittest0/residual/residual_shortcut_maxpool',
                                 'unittest0/residual_out']
             self.shape_dict = {
@@ -297,9 +325,9 @@ class ModuleEndpointName(object):
                                 self.name_list[1]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3] / 2.0],
                                 self.name_list[2]: [output_shape[0], output_shape[1], output_shape[2], output_shape[3] / 2.0],
                                 self.name_list[3]: output_shape,
-                                self.name_list[4]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3]],
+                                # self.name_list[4]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3]],
+                                self.name_list[4]: output_shape,
                                 self.name_list[5]: output_shape,
-                                self.name_list[6]: output_shape,
                                 }
 
         elif conv_type == 'inverted_bottleneck':
@@ -307,7 +335,7 @@ class ModuleEndpointName(object):
                                 'unittest0/inverted_bottleneck/inverted_bottleneck_bottleneck',
                                 'unittest0/inverted_bottleneck/inverted_bottleneck_dwise_conv',
                                 'unittest0/inverted_bottleneck/inverted_bottleneck_pwise_conv',
-                                'unittest0/inverted_bottleneck/inverted_bottleneck_shortcut_conv1x1',
+                                # 'unittest0/inverted_bottleneck/inverted_bottleneck_shortcut_conv1x1',
                                 'unittest0/inverted_bottleneck/inverted_bottleneck_shortcut_maxpool',
                                 'unittest0/inverted_bottleneck_out']
             self.shape_dict ={
@@ -315,9 +343,9 @@ class ModuleEndpointName(object):
                                 self.name_list[1]: [input_shape[0], input_shape[1], input_shape[2], input_shape[3] * 2.0],
                                 self.name_list[2]: [output_shape[0], output_shape[1], output_shape[2], input_shape[3] * 2.0],
                                 self.name_list[3]: output_shape,
-                                self.name_list[4]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3]],
+                                # self.name_list[4]: [input_shape[0], input_shape[1], input_shape[2], output_shape[3]],
+                                self.name_list[4]: output_shape,
                                 self.name_list[5]: output_shape,
-                                self.name_list[6]: output_shape,
                                 }
 
         elif conv_type == 'linear_bottleneck':
