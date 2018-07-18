@@ -50,9 +50,9 @@ def get_nearest_neighbor_unpool2d_module(inputs,
     with tf.variable_scope(name_or_scope=scope,
                            default_name='nearest_neighbor_unpool',
                            values=[inputs]) as sc:
-
+        height_times_width = height * width
         inputs_reshaped     = tf.reshape(tensor=inputs,
-                                         shape=[-1,height*width,1,channelnum])
+                                         shape=[batch_size,height_times_width,1,channelnum])
 
         # # tf tile is not supported for tflite (180627)
         input_broadcasted   = tf.tile(input=inputs_reshaped,
