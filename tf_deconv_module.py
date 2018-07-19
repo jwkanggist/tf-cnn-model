@@ -50,6 +50,7 @@ def get_nearest_neighbor_unpool2d_module(inputs,
     with tf.variable_scope(name_or_scope=scope,
                            default_name='nearest_neighbor_unpool',
                            values=[inputs]) as sc:
+
         height_times_width = height * width
         inputs_reshaped     = tf.reshape(tensor=inputs,
                                          shape=[batch_size,height_times_width,1,channelnum])
@@ -58,16 +59,16 @@ def get_nearest_neighbor_unpool2d_module(inputs,
         input_broadcasted   = tf.tile(input=inputs_reshaped,
                                       multiples=[1,1,unpool_rate_sqr,1])
 
-
+        input_broadcasted_unstack   = tf.unstack(input_broadcasted,axis=1)
 
         # the first block row matrix
         index = 0
-        output = tf.reshape(tensor=input_broadcasted[:, index, :, :],
+        output = tf.reshape(tensor=input_broadcasted_unstack[index],
                             shape=shape_for_reshape)
 
         for w_index in range(1, width):
             index = w_index
-            curr_mat = tf.reshape(tensor=input_broadcasted[:, index, :, :],
+            curr_mat = tf.reshape(tensor=input_broadcasted_unstack[index],
                                   shape=shape_for_reshape)
 
             output = tf.concat(values=[output, curr_mat],
@@ -77,13 +78,13 @@ def get_nearest_neighbor_unpool2d_module(inputs,
         for h_index in range(1,height):
 
             index         = h_index * width
-            block_row_mat = tf.reshape(tensor=input_broadcasted[:, index, :, :],
+            block_row_mat = tf.reshape(tensor=input_broadcasted_unstack[index],
                                        shape=shape_for_reshape)
 
             for w_index in range(1, width):
 
                 index           = h_index * width + w_index
-                curr_mat        = tf.reshape(tensor=input_broadcasted[:,index,:,:],
+                curr_mat        = tf.reshape(tensor=input_broadcasted_unstack[index],
                                              shape=shape_for_reshape)
                 block_row_mat   = tf.concat(values = [block_row_mat,curr_mat],axis=2)
 
