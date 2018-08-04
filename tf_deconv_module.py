@@ -43,13 +43,14 @@ def get_bicubic_resize_module(inputs,
     with tf.variable_scope(name_or_scope=scope,
                            default_name='nearest_neighbor_resize',
                            values=[inputs]) as sc:
+
         output = tf.image.resize_bicubic(images=inputs,
                                           size=[output_height, output_width],
                                           align_corners=False,
-                                          name=scope + '_out')
+                                          name = scope + '_out')
 
-        end_points[sc.name + '_out'] = output
         end_points[sc.name + '_in'] = inputs
+        end_points[sc.name + '_out'] = output
 
     return output, end_points
 
@@ -76,8 +77,8 @@ def get_bilinear_resize_module(inputs,
                                           align_corners=False,
                                           name=scope + '_out')
 
-        end_points[sc.name + '_out'] = output
         end_points[sc.name + '_in'] = inputs
+        end_points[sc.name + '_out'] = output
 
     return output, end_points
 
@@ -106,8 +107,8 @@ def get_nearest_neighbor_resize_module(inputs,
                                                align_corners=False,
                                                name=scope + '_out')
 
-        end_points[sc.name + '_out']    = output
         end_points[sc.name + '_in']     = inputs
+        end_points[sc.name + '_out']    = output
 
     return output,end_points
 

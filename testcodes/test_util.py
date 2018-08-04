@@ -34,6 +34,11 @@ from tf_conv_module import get_residual_module
 
 from tf_deconv_module import get_nearest_neighbor_unpool2d_module
 from tf_deconv_module import get_transconv_unpool2d_module
+from tf_deconv_module import get_nearest_neighbor_resize_module
+from tf_deconv_module import get_bilinear_resize_module
+from tf_deconv_module import get_bicubic_resize_module
+
+
 from tflite_convertor import TFliteConvertor
 
 PATH_TENSORFLOW_SRC = '/Users/jwkangmacpro2/SourceCodes/tensorflow/'
@@ -242,18 +247,36 @@ def get_deconv_module(inputs,
     scope = scope + str(layer_index)
     net = inputs
 
-    with tf.variable_scope(name_or_scope =scope,default_name='unittest0',values=[inputs]):
+    with tf.variable_scope(name_or_scope=scope,default_name='hg_deconv',values=[net]):
 
-        if module_type is 'nearest_neighbor_unpool':
-            net,endpoint = get_nearest_neighbor_unpool2d_module(inputs=net,
-                                                               unpool_rate=unpool_rate,
-                                                               scope =module_type)
+        if module_type is 'nearest_neighbor_resize':
+            net,end_points = get_nearest_neighbor_resize_module(inputs=net,
+                                                               resize_rate=unpool_rate,
+                                                               scope = module_type)
+
+        elif module_type is 'bilinear_resize':
+            net, end_points = get_bilinear_resize_module(inputs=net,
+                                                         resize_rate=unpool_rate,
+                                                         scope= module_type)
+
+        elif module_type is 'bicubic_resize':
+            net, end_points = get_bicubic_resize_module(inputs = net,
+                                                      resize_rate= unpool_rate,
+                                                      scope= module_type)
+
+
         elif module_type is 'conv2dtrans_unpool':
-            net,endpoint = get_transconv_unpool2d_module(inputs=net,
-                                                          unpool_rate=unpool_rate,
+            net,end_points = get_transconv_unpool2d_module(inputs=net,
+                                                          unpool_rate = unpool_rate,
                                                           model_config=model_config,
-                                                          scope=module_type)
-    return net,endpoint
+                                                          scope= module_type)
+
+        elif module_type is 'nearest_neighbor_unpool':
+            net, end_points = get_nearest_neighbor_unpool2d_module(inputs=net,
+                                                                   unpool_rate=unpool_rate,
+                                                                   scope=module_type)
+    return net,end_points
+
 
 
 
@@ -365,14 +388,42 @@ class ModuleEndpointName(object):
 
         elif conv_type == 'conv2dtrans_unpool':
             self.name_list = ['conv2dtrans_unpool_in',
-                              'unitest0/conv2dtrans_unpool/conv2dtrans_unpool',
+                              'unittest0/conv2dtrans_unpool/conv2dtrans_unpool',
                               'conv2dtrans_unpool_out']
 
             self.shape_dict = {
                                 self.name_list[0]: input_shape,
-                                self.name_list[1]:output_shape,
+                                self.name_list[1]: output_shape,
                                 self.name_list[2]: output_shape,
                                 }
+
+        elif conv_type == 'nearest_neighbor_resize':
+            self.name_list = ['unittest0/nearest_neighbor_resize_in',
+                              'unittest0/nearest_neighbor_resize_out']
+
+            self.shape_dict = {
+                                self.name_list[0]: input_shape,
+                                self.name_list[1]: output_shape,
+                                }
+
+        elif conv_type == 'bilinear_resize':
+            self.name_list = ['unittest0/bilinear_resize_in',
+                              'unittest0/bilinear_resize_out']
+
+            self.shape_dict = {
+                                self.name_list[0]: input_shape,
+                                self.name_list[1]: output_shape,
+                                }
+
+        elif conv_type == 'bicubic_resize':
+            self.name_list = ['unittest0/bicubic_resize_in',
+                              'unittest0/bicubic_resize_out']
+
+            self.shape_dict = {
+                                self.name_list[0]: input_shape,
+                                self.name_list[1]: output_shape,
+                                }
+
 
 
 

@@ -120,23 +120,23 @@ class ModuleTest(tf.test.TestCase):
 
 
             print('------------------------------------------------')
-            tflitedir = getcwd() + '/tflite_files/'
-            if not tf.gfile.Exists(tflitedir):
-                tf.gfile.MakeDirs(tflitedir)
-            tflitefilename = TEST_MODULE_NAME + '.tflite'
-
-            toco = tf.contrib.lite.TocoConverter.from_session(sess=sess,
-                                                              input_tensors=[x],
-                                                              output_tensors=[y_unpool3_test1])
-            tflite_model    = toco.convert()
-            open(tflitedir + '/' + tflitefilename,'wb').write(tflite_model)
+            # tflitedir = getcwd() + '/tflite_files/'
+            # if not tf.gfile.Exists(tflitedir):
+            #     tf.gfile.MakeDirs(tflitedir)
+            # tflitefilename = TEST_MODULE_NAME + '.tflite'
+            #
+            # toco = tf.contrib.lite.TocoConverter.from_session(sess=sess,
+            #                                                   input_tensors=[x],
+            #                                                   output_tensors=[y_unpool3_test1])
+            # tflite_model    = toco.convert()
+            # open(tflitedir + '/' + tflitefilename,'wb').write(tflite_model)
 
 
 
 
 
     def test_transconv_unpool_name_shape(self):
-        scope = 'unitest'
+        scope = 'unittest'
 
         model_config        = DeconvModuleConfig()
         TEST_MODULE_NAME    = 'conv2dtrans_unpool'
@@ -292,6 +292,150 @@ class ModuleTest(tf.test.TestCase):
             open(tflitedir + '/' + tflitefilename,'wb').write(tflite_model)
 
 
+
+
+
+    def test_bilinear_resize_name_shape(self):
+        scope = 'unittest'
+
+        model_config        = DeconvModuleConfig()
+        TEST_MODULE_NAME    = 'bilinear_resize'
+
+        with tf.name_scope(name=scope):
+            input_width     = 2
+            input_height    = 2
+            input_shape     = [1, input_height,input_width,1]
+            unpool_rate     = 2
+
+            expected_output_shape = [input_shape[0],
+                                     input_shape[1]*unpool_rate,
+                                     input_shape[2]*unpool_rate,
+                                     input_shape[3]]
+
+
+            inputs = create_test_input(batchsize= input_shape[0],
+                                       heightsize=input_shape[1],
+                                       widthsize =input_shape[2],
+                                       channelnum= input_shape[3])
+
+
+            y_unpool2, midpoint=  get_deconv_module(inputs=inputs,
+                                                      unpool_rate=unpool_rate,
+                                                      module_type=TEST_MODULE_NAME,
+                                                      model_config=model_config,
+                                                      scope=scope)
+
+            expected_midpoint = ModuleEndpointName(conv_type=TEST_MODULE_NAME,
+                                                   input_shape=input_shape,
+                                                   output_shape=expected_output_shape)
+
+
+            print('------------------------------------------------')
+            print('[tfTest] run test_bilinear_resize_name_shape()')
+            print('[tfTest] midpoint name and shape')
+            print('[tfTest] unpool rate = %s' % unpool_rate)
+
+            self.assertItemsEqual(midpoint.keys(), expected_midpoint.name_list)
+
+            for name, shape in six.iteritems(expected_midpoint.shape_dict):
+                print ('%s : shape = %s' %(name,shape))
+                self.assertListEqual(midpoint[name].get_shape().as_list(),shape)
+
+
+
+
+    def test_nearest_neighbor_resize_name_shape(self):
+        scope = 'unittest'
+
+        model_config        = DeconvModuleConfig()
+        TEST_MODULE_NAME    = 'nearest_neighbor_resize'
+
+        with tf.name_scope(name=scope):
+            input_width     = 2
+            input_height    = 2
+            input_shape     = [1, input_height,input_width,1]
+            unpool_rate     = 2
+
+            expected_output_shape = [input_shape[0],
+                                     input_shape[1]*unpool_rate,
+                                     input_shape[2]*unpool_rate,
+                                     input_shape[3]]
+
+
+            inputs = create_test_input(batchsize= input_shape[0],
+                                       heightsize=input_shape[1],
+                                       widthsize =input_shape[2],
+                                       channelnum= input_shape[3])
+
+
+            y_unpool2, midpoint=  get_deconv_module(inputs=inputs,
+                                                      unpool_rate=unpool_rate,
+                                                      module_type=TEST_MODULE_NAME,
+                                                      model_config=model_config,
+                                                      scope=scope)
+
+            expected_midpoint = ModuleEndpointName(conv_type=TEST_MODULE_NAME,
+                                                   input_shape=input_shape,
+                                                   output_shape=expected_output_shape)
+
+
+            print('------------------------------------------------')
+            print('[tfTest] run test_nearest_neighbor_resize_name_shape()')
+            print('[tfTest] midpoint name and shape')
+            print('[tfTest] unpool rate = %s' % unpool_rate)
+
+            self.assertItemsEqual(midpoint.keys(), expected_midpoint.name_list)
+
+            for name, shape in six.iteritems(expected_midpoint.shape_dict):
+                print ('%s : shape = %s' %(name,shape))
+                self.assertListEqual(midpoint[name].get_shape().as_list(),shape)
+
+
+    def test_bicubic_resize_name_shape(self):
+        scope = 'unittest'
+
+        model_config        = DeconvModuleConfig()
+        TEST_MODULE_NAME    = 'bicubic_resize'
+
+        with tf.name_scope(name=scope):
+            input_width     = 2
+            input_height    = 2
+            input_shape     = [1, input_height,input_width,1]
+            unpool_rate     = 2
+
+            expected_output_shape = [input_shape[0],
+                                     input_shape[1]*unpool_rate,
+                                     input_shape[2]*unpool_rate,
+                                     input_shape[3]]
+
+
+            inputs = create_test_input(batchsize= input_shape[0],
+                                       heightsize=input_shape[1],
+                                       widthsize =input_shape[2],
+                                       channelnum= input_shape[3])
+
+
+            y_unpool2, midpoint=  get_deconv_module(inputs=inputs,
+                                                      unpool_rate=unpool_rate,
+                                                      module_type=TEST_MODULE_NAME,
+                                                      model_config=model_config,
+                                                      scope=scope)
+
+            expected_midpoint = ModuleEndpointName(conv_type=TEST_MODULE_NAME,
+                                                   input_shape=input_shape,
+                                                   output_shape=expected_output_shape)
+
+
+            print('------------------------------------------------')
+            print('[tfTest] run test_bicubic_resize_name_shape()')
+            print('[tfTest] midpoint name and shape')
+            print('[tfTest] unpool rate = %s' % unpool_rate)
+
+            self.assertItemsEqual(midpoint.keys(), expected_midpoint.name_list)
+
+            for name, shape in six.iteritems(expected_midpoint.shape_dict):
+                print ('%s : shape = %s' %(name,shape))
+                self.assertListEqual(midpoint[name].get_shape().as_list(),shape)
 
 
 if __name__ == '__main__':
