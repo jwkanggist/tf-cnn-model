@@ -19,7 +19,6 @@ from __future__ import print_function
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
 
-import numpy as np
 
 # where we adopt the NHWC format.
 
@@ -28,6 +27,94 @@ import numpy as np
     deconvolutional layer modules
 
 '''
+
+
+def get_bicubic_resize_module(inputs,
+                                       resize_rate,
+                                       scope=None):
+    input_shape = inputs.get_shape().as_list()
+    output_height = int(input_shape[1] * resize_rate)
+    output_width = int(input_shape[2] * resize_rate)
+
+    print('[deconv] output_height = %s' % output_height)
+    print('[deconv] output_width = %s' % output_width)
+    end_points = {}
+
+    with tf.variable_scope(name_or_scope=scope,
+                           default_name='nearest_neighbor_resize',
+                           values=[inputs]) as sc:
+        output = tf.image.resize_bicubic(images=inputs,
+                                          size=[output_height, output_width],
+                                          align_corners=False,
+                                          name=scope + '_out')
+
+        end_points[sc.name + '_out'] = output
+        end_points[sc.name + '_in'] = inputs
+
+    return output, end_points
+
+
+
+
+
+def get_bilinear_resize_module(inputs,
+                                       resize_rate,
+                                       scope=None):
+    input_shape = inputs.get_shape().as_list()
+    output_height = int(input_shape[1] * resize_rate)
+    output_width = int(input_shape[2] * resize_rate)
+
+    print('[deconv] output_height = %s' % output_height)
+    print('[deconv] output_width = %s' % output_width)
+    end_points = {}
+
+    with tf.variable_scope(name_or_scope=scope,
+                           default_name='nearest_neighbor_resize',
+                           values=[inputs]) as sc:
+        output = tf.image.resize_bilinear(images=inputs,
+                                          size=[output_height, output_width],
+                                          align_corners=False,
+                                          name=scope + '_out')
+
+        end_points[sc.name + '_out'] = output
+        end_points[sc.name + '_in'] = inputs
+
+    return output, end_points
+
+
+
+
+
+def get_nearest_neighbor_resize_module(inputs,
+                                      resize_rate,
+                                      scope = None):
+
+    input_shape = inputs.get_shape().as_list()
+    output_height = int(input_shape[1] * resize_rate)
+    output_width  = int(input_shape[2] * resize_rate)
+
+    print('[deconv] output_height = %s' % output_height)
+    print('[deconv] output_width = %s' % output_width)
+    end_points              = {}
+
+    with tf.variable_scope(name_or_scope=scope,
+                           default_name='nearest_neighbor_resize',
+                           values=[inputs]) as sc:
+
+        output = tf.image.resize_nearest_neighbor(images=inputs,
+                                               size=[output_height, output_width],
+                                               align_corners=False,
+                                               name=scope + '_out')
+
+        end_points[sc.name + '_out']    = output
+        end_points[sc.name + '_in']     = inputs
+
+    return output,end_points
+
+
+
+
+
 
 def get_nearest_neighbor_unpool2d_module(inputs,
                                          unpool_rate,
