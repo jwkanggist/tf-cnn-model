@@ -30,8 +30,9 @@ import tensorflow.contrib.slim as slim
 
 
 def get_bicubic_resize_module(inputs,
-                                       resize_rate,
-                                       scope=None):
+                              resize_rate,
+                              scope=None):
+
     input_shape = inputs.get_shape().as_list()
     output_height = int(input_shape[1] * resize_rate)
     output_width = int(input_shape[2] * resize_rate)
@@ -59,8 +60,9 @@ def get_bicubic_resize_module(inputs,
 
 
 def get_bilinear_resize_module(inputs,
-                                       resize_rate,
-                                       scope=None):
+                               resize_rate,
+                               scope=None):
+
     input_shape = inputs.get_shape().as_list()
     output_height = int(input_shape[1] * resize_rate)
     output_width = int(input_shape[2] * resize_rate)
