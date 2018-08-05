@@ -37,8 +37,8 @@ def get_bicubic_resize_module(inputs,
     output_height = int(input_shape[1] * resize_rate)
     output_width = int(input_shape[2] * resize_rate)
 
-    print('[deconv] output_height = %s' % output_height)
-    print('[deconv] output_width = %s' % output_width)
+    # print('[deconv] output_height = %s' % output_height)
+    # print('[deconv] output_width = %s' % output_width)
     end_points = {}
 
     with tf.variable_scope(name_or_scope=scope,
@@ -67,8 +67,8 @@ def get_bilinear_resize_module(inputs,
     output_height = int(input_shape[1] * resize_rate)
     output_width = int(input_shape[2] * resize_rate)
 
-    print('[deconv] output_height = %s' % output_height)
-    print('[deconv] output_width = %s' % output_width)
+    # print('[deconv] output_height = %s' % output_height)
+    # print('[deconv] output_width = %s' % output_width)
     end_points = {}
 
     with tf.variable_scope(name_or_scope=scope,
@@ -96,8 +96,8 @@ def get_nearest_neighbor_resize_module(inputs,
     output_height = int(input_shape[1] * resize_rate)
     output_width  = int(input_shape[2] * resize_rate)
 
-    print('[deconv] output_height = %s' % output_height)
-    print('[deconv] output_width = %s' % output_width)
+    # print('[deconv] output_height = %s' % output_height)
+    # print('[deconv] output_width = %s' % output_width)
     end_points              = {}
 
     with tf.variable_scope(name_or_scope=scope,
