@@ -85,17 +85,18 @@ def get_bilinear_resize_module(inputs,
 
         expand_ch_num = np.floor(output_channel_num * 6.0)
 
-        output, end_points_inverted_residual = \
-            get_inverted_bottleneck_module(ch_in        =net,
-                                           ch_out_num   =output_channel_num,
-                                           expand_ch_num=expand_ch_num,
-                                           kernel_size  =3,
-                                           stride       =1,
-                                           model_config = model_config,
-                                           scope        =scope + '_inverted_bottleneck')
 
-        end_points[sc.name + '_in'] = inputs
-        end_points[sc.name + '_out'] = output
+    output, end_points_inverted_residual = \
+        get_inverted_bottleneck_module(ch_in        =net,
+                                       ch_out_num   =output_channel_num,
+                                       expand_ch_num=expand_ch_num,
+                                       kernel_size  =3,
+                                       stride       =1,
+                                       model_config = model_config,
+                                       scope        =scope + '_inverted_bottleneck')
+
+    end_points[sc.name + '_in'] = inputs
+    end_points[sc.name + '_out'] = output
 
     return output, end_points
 
