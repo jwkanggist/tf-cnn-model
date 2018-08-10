@@ -18,7 +18,9 @@ from __future__ import print_function
 
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
+import numpy as np
 
+from tf_conv_module import get_inverted_bottleneck_module
 
 # where we adopt the NHWC format.
 
@@ -33,16 +35,16 @@ def get_bicubic_resize_module(inputs,
                               resize_rate,
                               scope=None):
 
-    input_shape = inputs.get_shape().as_list()
-    output_height = int(input_shape[1] * resize_rate)
-    output_width = int(input_shape[2] * resize_rate)
+    input_shape         = inputs.get_shape().as_list()
+    output_height       = int(input_shape[1] * resize_rate)
+    output_width        = int(input_shape[2] * resize_rate)
 
     # print('[deconv] output_height = %s' % output_height)
     # print('[deconv] output_width = %s' % output_width)
     end_points = {}
 
     with tf.variable_scope(name_or_scope=scope,
-                           default_name='nearest_neighbor_resize',
+                           default_name='bicubic_resize',
                            values=[inputs]) as sc:
 
         output = tf.image.resize_bicubic(images=inputs,
@@ -61,23 +63,36 @@ def get_bicubic_resize_module(inputs,
 
 def get_bilinear_resize_module(inputs,
                                resize_rate,
+                               model_config,
                                scope=None):
 
     input_shape = inputs.get_shape().as_list()
     output_height = int(input_shape[1] * resize_rate)
     output_width = int(input_shape[2] * resize_rate)
+    output_channel_num  = int(input_shape[3])
 
     # print('[deconv] output_height = %s' % output_height)
     # print('[deconv] output_width = %s' % output_width)
     end_points = {}
 
     with tf.variable_scope(name_or_scope=scope,
-                           default_name='nearest_neighbor_resize',
+                           default_name='bilinear_resize',
                            values=[inputs]) as sc:
-        output = tf.image.resize_bilinear(images=inputs,
+        net = tf.image.resize_bilinear(images=inputs,
                                           size=[output_height, output_width],
                                           align_corners=False,
-                                          name=scope + '_out')
+                                          name=scope + '_resize')
+
+        expand_ch_num = np.floor(output_channel_num * 6.0)
+
+        output, end_points_inverted_residual = \
+            get_inverted_bottleneck_module(ch_in        =net,
+                                           ch_out_num   =output_channel_num,
+                                           expand_ch_num=expand_ch_num,
+                                           kernel_size  =3,
+                                           stride       =1,
+                                           model_config = model_config,
+                                           scope        =scope + '_inverted_bottleneck')
 
         end_points[sc.name + '_in'] = inputs
         end_points[sc.name + '_out'] = output
