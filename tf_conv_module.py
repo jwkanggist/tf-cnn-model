@@ -246,8 +246,8 @@ def get_separable_conv2d_module(ch_in,
                 end_points = slim.utils.convert_collection_to_dict(
                     endpoint_collection, clear_collection=True)
 
-        net = tf.identity(input=net,
-                          name=sc.name + '_out' )
+        # net = tf.identity(input=net,
+        #                   name=sc.name + '_out' )
         end_points[sc.name + '_in'] = ch_in
         end_points[sc.name + '_out'] = net
 
@@ -465,10 +465,10 @@ def get_inverted_bottleneck_module(ch_in,
         # elementwise sum for shortcut connection
         net   = tf.add(x=shortcut_out,
                        y=net,
-                       name=scope + '_shortcut_sum')
+                       name=scope + '_out')
 
-        net = tf.identity(input=net,
-                          name=sc.name + '_out' )
+        # net = tf.identity(input=net,
+        #                   name=sc.name + '_out' )
 
         end_points[sc.name + '_in'] = ch_in
         end_points[sc.name + '_out'] = net
@@ -575,10 +575,10 @@ def get_residual_module(ch_in,
         # elementwise sum for shortcut connection
         net = tf.add(x=shortcut_out,
                      y=net,
-                     name=scope + '_shortcut_sum')
+                     name=scope + '_out')
 
-        net = tf.identity(input=net,
-                          name=sc.name + '_out' )
+        # net = tf.identity(input=net,
+        #                   name=sc.name + '_out' )
 
         end_points[sc.name + '_in'] = ch_in
         end_points[sc.name + '_out'] = net
@@ -586,3 +586,48 @@ def get_residual_module(ch_in,
     return net,end_points
 
 
+
+def get_conv2d_seq(ch_in,
+                  ch_out_num,
+                  model_config,
+                  scope= None):
+
+    net         = ch_in
+    end_points  = {}
+
+    with tf.variable_scope(name_or_scope=scope,default_name='conv2d_seq',values=[ch_in]) as sc:
+        scope = 'conv2d_seq'
+
+        endpoint_collection = sc.original_name_scope + '_end_points'
+        with slim.arg_scope([slim.conv2d],
+                            kernel_size         = [model_config.kernel_size,model_config.kernel_size],
+                            weights_initializer = model_config.weights_initializer,
+                            weights_regularizer = model_config.weights_regularizer,
+                            biases_initializer  = model_config.biases_initializer,
+                            trainable           = model_config.is_trainable,
+                            normalizer_fn       = model_config.normalizer_fn,
+                            padding             = 'SAME',
+                            stride              = [1,1],
+                            activation_fn       = None,
+                            outputs_collections = endpoint_collection):
+
+            with slim.arg_scope([model_config.normalizer_fn],
+                                decay           = model_config.batch_norm_decay,
+                                fused           = model_config.batch_norm_fused,
+                                is_training     = model_config.is_trainable,
+                                activation_fn   = model_config.activation_fn):
+
+                # N sequence of conv2d
+                for conv_index in range(model_config.num_of_conv):
+                    net = slim.conv2d(inputs        = net,
+                                      num_outputs   = ch_out_num,
+                                      scope         = scope + '_conv2d_' + str(conv_index))
+
+        # Convert end_points_collection into a dictionary of end_points.
+        end_points = slim.utils.convert_collection_to_dict(
+            endpoint_collection, clear_collection=True)
+
+        end_points[sc.name + '_out'] = net
+        end_points[sc.name + '_in'] = ch_in
+
+    return net, end_points

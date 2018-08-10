@@ -95,6 +95,7 @@ def get_bilinear_resize_module(inputs,
                                        model_config = model_config,
                                        scope        =scope + '_inverted_bottleneck')
 
+    end_points.update(end_points_inverted_residual)
     end_points[sc.name + '_in'] = inputs
     end_points[sc.name + '_out'] = output
 
