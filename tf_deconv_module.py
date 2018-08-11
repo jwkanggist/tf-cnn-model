@@ -64,6 +64,7 @@ def get_bicubic_resize_module(inputs,
 def get_bilinear_resize_module(inputs,
                                resize_rate,
                                model_config,
+                               is_conv_after_resize,
                                scope=None):
 
     input_shape = inputs.get_shape().as_list()
@@ -83,19 +84,21 @@ def get_bilinear_resize_module(inputs,
                                           align_corners=False,
                                           name=scope + '_resize')
 
-        expand_ch_num = np.floor(output_channel_num * 6.0)
+        expand_ch_num = np.floor(output_channel_num * model_config.invbottle_expansion_rate)
 
+    if is_conv_after_resize:
+        output, end_points_inverted_residual = \
+            get_inverted_bottleneck_module(ch_in        =net,
+                                           ch_out_num   =output_channel_num,
+                                           expand_ch_num=expand_ch_num,
+                                           kernel_size  =3,
+                                           stride       =1,
+                                           model_config = model_config,
+                                           scope        =scope + '_inverted_bottleneck')
+        end_points.update(end_points_inverted_residual)
+    else:
+        output = net
 
-    output, end_points_inverted_residual = \
-        get_inverted_bottleneck_module(ch_in        =net,
-                                       ch_out_num   =output_channel_num,
-                                       expand_ch_num=expand_ch_num,
-                                       kernel_size  =3,
-                                       stride       =1,
-                                       model_config = model_config,
-                                       scope        =scope + '_inverted_bottleneck')
-
-    end_points.update(end_points_inverted_residual)
     end_points[sc.name + '_in'] = inputs
     end_points[sc.name + '_out'] = output
 
