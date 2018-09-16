@@ -24,12 +24,12 @@ from datetime import datetime
 
 class ModelSavePath(object):
 
-    def __init__(self):
-        self.save_dir        = getcwd() + '/pb_and_ckpt/lenet5/'
+    def __init__(self,save_path):
+        self.save_dir        = save_path
 
-        self.filename_pbtxt  = 'tf_graph_def_lenet5.pbtxt'
-        self.filename_pb     = 'tf_graph_def_lenet5.pb'
-        self.filename_ckpt   = 'lenet5_model_variable.ckpt'
+        self.filename_pbtxt  = 'lenet5.pbtxt'
+        self.filename_pb     = 'lenet5.pb'
+        self.filename_ckpt   = 'lenet5.ckpt'
         self.datetime_now = datetime.utcnow().strftime("%Y%m%d%H%M%S")
         self.set_model_export_dir()
 
@@ -51,7 +51,7 @@ class ModelSavePath(object):
 
 class Lenet5(object):
 
-    def __init__(self,dropout_keeprate_for_fc,dtype=tf.float32):
+    def __init__(self,dropout_keeprate_for_fc,save_ckpt_path,dtype=tf.float32):
 
         self.dtype = dtype
         self.dropout_keeprate_for_fc = dropout_keeprate_for_fc
@@ -67,14 +67,14 @@ class Lenet5(object):
                                dtype=self.dtype)
 
         self.s2_layer = PoolingLayer(layer_index=2,
-                                   num_input_channels=self.c1_layer.num_output_channels,
+                                    num_input_channels=self.c1_layer.num_output_channels,
                                     tile_size=2,
                                     pool_stride=2,
                                     pool_padding='VALID',
                                     pooling_type='avg')
 
         self.c3_layer = Conv2dLayer(layer_index=3,
-                                  num_input_channels=self.s2_layer.num_output_channels,
+                                   num_input_channels=self.s2_layer.num_output_channels,
                                    filter_size=5,
                                    num_filters=16,
                                    filter_stride=1,
@@ -83,7 +83,7 @@ class Lenet5(object):
                                    dtype=self.dtype)
 
         self.s4_layer = PoolingLayer(layer_index=4,
-                                   num_input_channels=self.c3_layer.num_output_channels,
+                                    num_input_channels=self.c3_layer.num_output_channels,
                                     tile_size=2,
                                     pool_stride=2,
                                     pool_padding='VALID',
@@ -128,7 +128,9 @@ class Lenet5(object):
 
         # tf model saver
         self.tf_model_saver = None
-        self.model_savepath_worker = ModelSavePath()
+        self.model_savepath_worker = ModelSavePath(save_ckpt_path)
+
+
 
 
 
