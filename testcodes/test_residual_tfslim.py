@@ -50,8 +50,6 @@ class ModuleTest(tf.test.TestCase):
 
     def test_endpoint_name_shape(self):
 
-
-
         ch_in_num       = 256
         ch_out_num      = 256
         model_config    = ConvModuleConfig()
@@ -65,7 +63,6 @@ class ModuleTest(tf.test.TestCase):
         # expected output shape
         expected_output_height  = input_shape[1]/stride
         expected_output_width   = input_shape[2]/stride
-
         expected_output_shape   = [input_shape[0],expected_output_height,expected_output_width,ch_out_num]
 
         module_graph = tf.Graph()
@@ -253,7 +250,7 @@ class ModuleTest(tf.test.TestCase):
         # which generate a sample image using np.arange()
         print('------------------------------------------------')
         print ('[tfTest] run test_unknown_batchsize_shape()')
-        images = create_test_input(  batchsize=input_shape[0],
+        images = create_test_input( batchsize=input_shape[0],
                                     heightsize=input_shape[1],
                                     widthsize=input_shape[2],
                                     channelnum=input_shape[3])
